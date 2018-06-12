@@ -9,16 +9,16 @@ are steps to get started:
 1. **Install the proper dependencies**. You can do this by installing the
    Anaconda environment specified in `environment.yml`:
 
-      conda env create -f environment.yml
+       conda env create -f environment.yml
 
 2. Once this is finished, activate the environment
 
-      conda activate textbook
+       conda activate textbook
 
 3. Build the textbook with the following command:
 
 
-      python scripts/generate_textbook.py
+       python scripts/generate_textbook.py
 
 This will:
 
@@ -37,11 +37,11 @@ your newly-created Markdown files.
    for more information on how Jekyll and GitHub interact.
 2. Ensure that your notebooks have been converted to markdown:
 
-      python scripts/generate_textbook.py
+       python scripts/generate_textbook.py
 
 3. Run the Jekyll site preview command:
 
-      bundle exec jekyll serve
+       bundle exec jekyll serve
 
 This should open up a port on your computer with a live version of the textbook.
 
