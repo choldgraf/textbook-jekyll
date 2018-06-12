@@ -4,11 +4,10 @@ li a.level_2 {
   padding-left: 1em;
 }
 
-article.page {
-  width: 70%;
-}
-
 div.sidebar {
   width: 25%;
-  height: calc( 100vh - 2em ) !important;
+}
+
+section.page__content p {
+    font-size: .9em;
 }

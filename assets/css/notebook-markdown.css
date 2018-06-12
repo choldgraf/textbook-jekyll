@@ -9,6 +9,7 @@ article.page .interact-button,article.page .previous_page,article.page .next_pag
   font-size:1.2em;
   font-weight:700;
   padding:.4em 1em;
+  margin-bottom: .5em;
 }
 
 article.page .interact-button:hover,article.page .interact-button:focus,article.page .previous_page:hover,article.page .next_page:hover
@@ -76,7 +77,7 @@ pre .nn
 
 .output_png img,p img
 {
-  max-width:100% !important;
+  width:100% !important;
 }
 
 pre .o,pre .k
