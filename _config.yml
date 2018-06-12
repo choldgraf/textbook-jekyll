@@ -28,8 +28,8 @@ teaser                   : # path of fallback teaser image, e.g. "/assets/images
 # Data 8 settings
 hub_url                  : "http://datahub.berkeley.edu"  # The URL for your JupyterHub. Should be a string.
 hub_name                 : "DataHub"  # The name of your JupyterHub
-textbook_url             : "https://github.com/choldgraf/data8-textbook"  # The URL for your version of the textbook on GitHub.
-textbook_branch          : "gh-pages"  # The branch on which your textbook is hosted.
+textbook_url             : "https://github.com/choldgraf/textbook-jekyll"  # The URL for your version of the textbook on GitHub.
+textbook_branch          : "master"  # The branch on which your textbook is hosted.
 masthead                 : false  # Whether to include a masthead with the site. If false, the site will *only* be a textbook.
 number_chapters          : false  # Whether to number the chapers in the sidebar for the textbook
 
