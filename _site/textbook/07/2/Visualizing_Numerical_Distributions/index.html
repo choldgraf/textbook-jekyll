@@ -1,0 +1,1850 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Visualizing Numerical Distributions ### - Data 8 Textbook</title>
+<meta name="description" content="">
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Data 8 Textbook">
+<meta property="og:title" content="Visualizing Numerical Distributions ###">
+<meta property="og:url" content="http://localhost:4000/jupyterhub-for-education-template/textbook/07/2/Visualizing_Numerical_Distributions/">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/jupyterhub-for-education-template/textbook/07/2/Visualizing_Numerical_Distributions/">
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "Berkeley DSEP",
+      "url": "http://localhost:4000/jupyterhub-for-education-template",
+      "sameAs": null
+    }
+  </script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/jupyterhub-for-education-template/feed.xml" type="application/atom+xml" rel="alternate" title="Data 8 Textbook Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/jupyterhub-for-education-template/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+    <link rel="stylesheet" href="/jupyterhub-for-education-template/assets/css/notebook-markdown.css">
+    <link rel="stylesheet" href="/jupyterhub-for-education-template/assets/css/custom.css">
+    <link rel="shortcut icon" type="image/png" href="/jupyterhub-for-education-template/favicon.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$']],
+        processEscapes: false
+      }
+    });
+    // MathJax Configuration
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+    function getQueryVariable(variable)
+    {
+           var query = window.location.search.substring(1);
+           var vars = query.split("&");
+           for (var i=0;i<vars.length;i++) {
+                   var pair = vars[i].split("=");
+                   if(pair[0] == variable){return pair[1];}
+           }
+           return(false);
+    }
+    window.onload = function() {
+        window.hubUrl = getQueryVariable("hubUrl");
+        if (window.hubUrl !== false) {
+            if (window.hubUrl.indexOf('http') < 0) {
+                window.hubUrl = 'http://' + window.hubUrl;
+            }
+            link = $("a.interact-button")[0];
+            if (link !== undefined) {
+                var href = link.getAttribute('href');
+                href = href.replace("http://datahub.berkeley.edu", window.hubUrl);
+                link.setAttribute('href', href);
+            }
+        }
+    }
+    </script>
+  </head>
+
+  <body class="layout--textbook">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="/jupyterhub-for-education-template/">Data 8 Textbook</a>
+        <ul class="visible-links">
+          
+            
+            <li class="masthead__menu-item">
+              <a href="http://localhost:4000/jupyterhub-for-education-template/about/" >About</a>
+            </li>
+          
+            
+            <li class="masthead__menu-item">
+              <a href="http://localhost:4000/jupyterhub-for-education-template/syllabus/" >Syllabus</a>
+            </li>
+          
+            
+            <li class="masthead__menu-item">
+              <a href="http://localhost:4000/jupyterhub-for-education-template/references/" >Resources</a>
+            </li>
+          
+            
+            <li class="masthead__menu-item">
+              <a href="http://localhost:4000/jupyterhub-for-education-template/textbook/01/what-is-data-science" >Textbook</a>
+            </li>
+          
+          <li class="masthead__menu-item">
+            <a href="http://datahub.berkeley.edu">DataHub</a>
+          </li>
+        </ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle Menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/01/what-is-data-science"><span class="nav__sub-title">1. Data Science</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/01/1/intro" class="level_1">1.1 Introduction</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/01/1/1/computational-tools" class="level_2">1.1.1 Computational Tools</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/01/1/2/statistical-techniques" class="level_2">1.1.2 Statistical Techniques</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/01/2/why-data-science" class="level_1">1.2 Why Data Science?</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/01/3/Plotting_the_Classics" class="level_1">1.3 Plotting the Classics</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/01/3/1/Literary_Characters" class="level_2">1.3.1 Literary Characters</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/01/3/2/Another_Kind_Of_Character" class="level_2">1.3.2 Another Kind of Character</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/02/causality-and-experiments"><span class="nav__sub-title">2. Causality and Experiments</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/02/1/observation-and-visualization-john-snow-and-the-broad-street-pump" class="level_1">2.1 John Snow and the Broad Street Pump</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/02/2/snow-s-grand-experiment" class="level_1">2.2 Snow’s “Grand Experiment”</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/02/3/establishing-causality" class="level_1">2.3 Establishing Causality</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/02/4/randomization" class="level_1">2.4 Randomization</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/02/5/endnote" class="level_1">2.5 Endnote</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/03/programming-in-python"><span class="nav__sub-title">3. Programming in Python</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/03/1/Expressions" class="level_1">3.1 Expressions</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/03/2/Names" class="level_1">3.2 Names</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/03/2/1/Growth" class="level_2">3.2.1 Example: Growth Rates</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/03/3/Calls" class="level_1">3.3 Call Expressions</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/03/4/Introduction_to_Tables" class="level_1">3.4 Introduction to Tables</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/04/Types"><span class="nav__sub-title">4. Data Types</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/04/1/Numbers" class="level_1">4.1 Numbers</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/04/2/Strings" class="level_1">4.2 Strings</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/04/2/1/String_Methods" class="level_2">4.2.1 String Methods</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/04/3/Comparison" class="level_1">4.3 Comparisons</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/05/Collections"><span class="nav__sub-title">5. Sequences</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/05/1/Arrays" class="level_1">5.1 Arrays</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/05/2/Ranges" class="level_1">5.2 Ranges</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/05/3/More_on_Arrays" class="level_1">5.3 More on Arrays</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/06/Tables"><span class="nav__sub-title">6. Tables</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/06/1/Sorting_Rows" class="level_1">6.1 Sorting Rows</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/06/2/Selecting_Rows" class="level_1">6.2 Selecting Rows</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/06/3/Example_Trends_in_the_Population_of_the_United_States" class="level_1">6.3 Example: Population Trends</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/06/4/Example_Gender_Ratio_in_the_US_Population" class="level_1">6.4 Example: Trends in Gender</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/07/Visualization"><span class="nav__sub-title">7. Visualization</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/07/1/Visualizing_Categorical_Distributions" class="level_1">7.1 Categorical Distributions</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/07/2/Visualizing_Numerical_Distributions" class="level_1">7.2 Numerical Distributions</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/07/3/Overlaid_Graphs" class="level_1">7.3 Overlaid Graphs</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/08/Functions_and_Tables"><span class="nav__sub-title">8. Functions and Tables</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/08/1/Applying_a_Function_to_a_Column" class="level_1">8.1 Applying Functions to Columns</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/08/2/Classifying_by_One_Variable" class="level_1">8.2 Classifying by One Variable</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/08/3/Cross-Classifying_by_More_than_One_Variable" class="level_1">8.3 Cross-Classifying</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/08/4/Joining_Tables_by_Columns" class="level_1">8.4 Joining Tables by Columns</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/08/5/Bike_Sharing_in_the_Bay_Area" class="level_1">8.5 Bike Sharing in the Bay Area</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/09/Randomness"><span class="nav__sub-title">9. Randomness</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/09/1/Conditional_Statements" class="level_1">9.1 Conditional Statements</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/09/2/Iteration" class="level_1">9.2 Iteration</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/09/3/Simulation" class="level_1">9.3 Simulation</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/09/4/Monty_Hall_Problem" class="level_1">9.4 The Monty Hall Problem</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/09/5/Finding_Probabilities" class="level_1">9.5 Finding Probabilities</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/10/Sampling_and_Empirical_Distributions"><span class="nav__sub-title">10. Sampling and Empirical Distributions</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/10/1/Empirical_Distributions" class="level_1">10.1 Empirical Distributions</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/10/2/Sampling_from_a_Population" class="level_1">10.2 Sampling from a Population</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/10/3/Empirical_Distribution_of_a_Statistic" class="level_1">10.3 Empirical Distibution of a Statistic</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/11/Testing_Hypotheses"><span class="nav__sub-title">11. Testing Hypotheses</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/11/1/Assessing_Models" class="level_1">11.1 Assessing Models</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/11/2/Multiple_Categories" class="level_1">11.2 Multiple Categories</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/11/3/Decisions_and_Uncertainty" class="level_1">11.3 Decisions and Uncertainty</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/12/Comparing_Two_Samples"><span class="nav__sub-title">12. Comparing Two Samples</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/12/1/AB_Testing" class="level_1">12.1 A/B Testing</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/12/2/Deflategate" class="level_1">12.2 Deflategate</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/12/3/Causality" class="level_1">12.3 Causality</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/13/Estimation"><span class="nav__sub-title">13. Estimation</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/13/1/Percentiles" class="level_1">13.1 Percentiles</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/13/2/Bootstrap" class="level_1">13.2 The Bootstrap</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/13/3/Confidence_Intervals" class="level_1">13.3 Confidence Intervals</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/13/4/Using_Confidence_Intervals" class="level_1">13.4 Using Confidence Intervals</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/14/Why_the_Mean_Matters"><span class="nav__sub-title">14. Why the Mean Matters</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/14/1/Properties_of_the_Mean" class="level_1">14.1 Properties of the Mean</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/14/2/Variability" class="level_1">14.2 Variability</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/14/3/SD_and_the_Normal_Curve" class="level_1">14.3 The SD and the Normal Curve</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/14/4/Central_Limit_Theorem" class="level_1">14.4 The Central Limit Theorem</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/14/5/Variability_of_the_Sample_Mean" class="level_1">14.5 The Variability of the Sample Mean</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/14/6/Choosing_a_Sample_Size" class="level_1">14.6 Choosing a Sample Size</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/15/Prediction"><span class="nav__sub-title">15. Prediction</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/15/1/Correlation" class="level_1">15.1 Correlation</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/15/2/Regression_Line" class="level_1">15.2 The Regression Line</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/15/3/Method_of_Least_Squares" class="level_1">15.3 The Method of Least Squares</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/15/4/Least_Squares_Regression" class="level_1">15.4 Least Squares Regression</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/15/5/Visual_Diagnostics" class="level_1">15.5 Visual Diagnostics</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/15/6/Numerical_Diagnostics" class="level_1">15.6 Numerical Diagnostics</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/16/Inference_for_Regression"><span class="nav__sub-title">16. Inference for Regression</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/16/1/Regression_Model" class="level_1">16.1 A Regression Model</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/16/2/Inference_for_the_True_Slope" class="level_1">16.2 Inference for the True Slope</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/16/3/Prediction_Intervals" class="level_1">16.3 Prediction Intervals</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/17/Classification"><span class="nav__sub-title">17. Classification</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/17/1/Nearest_Neighbors" class="level_1">17.1 Nearest Neighbors</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/17/2/Training_and_Testing" class="level_1">17.2 Training and Testing</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/17/3/Rows_of_Tables" class="level_1">17.3 Rows of Tables</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/17/4/Implementing_the_Classifier" class="level_1">17.4 Implementing the Classifier</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/17/5/Accuracy_of_the_Classifier" class="level_1">17.5 The Accuracy of the Classifier</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/17/6/Multiple_Regression" class="level_1">17.6 Multiple Regression</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/18/Updating_Predictions"><span class="nav__sub-title">18. Updating Predictions</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/18/1/More_Likely_than_Not_Binary_Classifier" class="level_1">18.1 A "More Likely Than Not" Binary Classifier</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/18/2/Making_Decisions" class="level_1">18.2 Making Decisions</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Visualizing Numerical Distributions ###">
+    
+    
+    
+    <!-- INTERACT LINKS -->
+    <a class="interact-button" href="http://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https://github.com/choldgraf/data8-textbook&amp;branch=gh-pages&amp;subPath=notebooks/07/2/Visualizing_Numerical_Distributions.ipynb">Interact</a>
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <!-- <h1 id="page-title" class="page__title" itemprop="headline">Visualizing Numerical Distributions ###
+</h1> -->
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <h3 id="visualizing-numerical-distributions">Visualizing Numerical Distributions</h3>
+
+<p>Many of the variables that data scientists study are <em>quantitative</em> or <em>numerical</em>. Their values are numbers on which you can perform arithmetic. Examples that we have seen include the number of periods in chapters of a book, the amount of money made by movies, and the age of people in the United States.</p>
+
+<p>The values of a categorical variable can be given numerical codes, but that doesn’t make the variable quantitative. In the example in which we studied Census data broken down by age group, the categorial variable <code class="highlighter-rouge">SEX</code> had the numerical codes <code class="highlighter-rouge">1</code> for ‘Male,’ <code class="highlighter-rouge">2</code> for ‘Female,’ and <code class="highlighter-rouge">0</code> for the aggregate of both groups <code class="highlighter-rouge">1</code> and <code class="highlighter-rouge">2</code>. While 0, 1, and 2 are numbers, in this context it doesn’t make sense to subtract 1 from 2, or take the average of 0, 1, and 2, or perform other arithmetic on the three values. <code class="highlighter-rouge">SEX</code> is a categorical variable even though the values have been given a numerical code.</p>
+
+<p>For our main example, we will return to a dataset that we studied when we were visualizing categorical data. It is the table <code class="highlighter-rouge">top</code>, which consists of data from U.S.A.’s top grossing movies of all time. For convenience, here is the description of the table again.</p>
+
+<p>The first column contains the title of the movie. The second column contains the name of the studio that produced the movie. The third contains the domestic box office gross in dollars, and the fourth contains the  gross amount that would have been earned from ticket sales at 2016 prices. The fifth contains the release year of the movie.</p>
+
+<p>There are 200 movies on the list. Here are the top ten according to the unadjusted gross receipts in the column <code class="highlighter-rouge">Gross</code>.</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">top</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="n">path_data</span> <span class="o">+</span> <span class="s">'top_movies.csv'</span><span class="p">)</span>
+<span class="c"># Make the numbers in the Gross and Gross (Adjusted) columns look nicer:</span>
+<span class="n">top</span><span class="o">.</span><span class="n">set_format</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">NumberFormatter</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>Title</th> <th>Studio</th> <th>Gross</th> <th>Gross (Adjusted)</th> <th>Year</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Star Wars: The Force Awakens             </td> <td>Buena Vista (Disney)</td> <td>906,723,418</td> <td>906,723,400     </td> <td>2015</td>
+        </tr>
+        <tr>
+            <td>Avatar                                   </td> <td>Fox                 </td> <td>760,507,625</td> <td>846,120,800     </td> <td>2009</td>
+        </tr>
+        <tr>
+            <td>Titanic                                  </td> <td>Paramount           </td> <td>658,672,302</td> <td>1,178,627,900   </td> <td>1997</td>
+        </tr>
+        <tr>
+            <td>Jurassic World                           </td> <td>Universal           </td> <td>652,270,625</td> <td>687,728,000     </td> <td>2015</td>
+        </tr>
+        <tr>
+            <td>Marvel's The Avengers                    </td> <td>Buena Vista (Disney)</td> <td>623,357,910</td> <td>668,866,600     </td> <td>2012</td>
+        </tr>
+        <tr>
+            <td>The Dark Knight                          </td> <td>Warner Bros.        </td> <td>534,858,444</td> <td>647,761,600     </td> <td>2008</td>
+        </tr>
+        <tr>
+            <td>Star Wars: Episode I - The Phantom Menace</td> <td>Fox                 </td> <td>474,544,677</td> <td>785,715,000     </td> <td>1999</td>
+        </tr>
+        <tr>
+            <td>Star Wars                                </td> <td>Fox                 </td> <td>460,998,007</td> <td>1,549,640,500   </td> <td>1977</td>
+        </tr>
+        <tr>
+            <td>Avengers: Age of Ultron                  </td> <td>Buena Vista (Disney)</td> <td>459,005,868</td> <td>465,684,200     </td> <td>2015</td>
+        </tr>
+        <tr>
+            <td>The Dark Knight Rises                    </td> <td>Warner Bros.        </td> <td>448,139,099</td> <td>500,961,700     </td> <td>2012</td>
+        </tr>
+    </tbody>
+</table>
+<p>... (190 rows omitted)</p>
+</div>
+
+<h3 id="visualizing-the-distribution-of-the-adjusted-receipts">Visualizing the Distribution of the Adjusted Receipts</h3>
+
+<p>In this section we will draw graphs of the distribution of the numerical variable in the column <code class="highlighter-rouge">Gross (Adjusted)</code>. For simplicity, let’s create a smaller table that has the information that we need. And since three-digit numbers are easier to work with than nine-digit numbers, let’s measure the <code class="highlighter-rouge">Adjusted Gross</code> receipts in millions of dollars. Note how <code class="highlighter-rouge">round</code> is used to retain only two decimal places.</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">millions</span> <span class="o">=</span> <span class="n">top</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="s">'Adjusted Gross'</span><span class="p">,</span> 
+                                     <span class="n">np</span><span class="o">.</span><span class="nb">round</span><span class="p">(</span><span class="n">top</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="mf">1e6</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">millions</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>Title</th> <th>Adjusted Gross</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Star Wars: The Force Awakens             </td> <td>906.72        </td>
+        </tr>
+        <tr>
+            <td>Avatar                                   </td> <td>846.12        </td>
+        </tr>
+        <tr>
+            <td>Titanic                                  </td> <td>1178.63       </td>
+        </tr>
+        <tr>
+            <td>Jurassic World                           </td> <td>687.73        </td>
+        </tr>
+        <tr>
+            <td>Marvel's The Avengers                    </td> <td>668.87        </td>
+        </tr>
+        <tr>
+            <td>The Dark Knight                          </td> <td>647.76        </td>
+        </tr>
+        <tr>
+            <td>Star Wars: Episode I - The Phantom Menace</td> <td>785.72        </td>
+        </tr>
+        <tr>
+            <td>Star Wars                                </td> <td>1549.64       </td>
+        </tr>
+        <tr>
+            <td>Avengers: Age of Ultron                  </td> <td>465.68        </td>
+        </tr>
+        <tr>
+            <td>The Dark Knight Rises                    </td> <td>500.96        </td>
+        </tr>
+    </tbody>
+</table>
+<p>... (190 rows omitted)</p>
+</div>
+
+<h3 id="a-histogram">A Histogram</h3>
+<p>A <em>histogram</em> of a numerical dataset looks very much like a bar chart, though it has some important differences that we will examine in this section. First, let’s just draw a histogram of the adjusted receipts.</p>
+
+<p>The <code class="highlighter-rouge">hist</code> method generates a histogram of the values in a column. The optional <code class="highlighter-rouge">unit</code> argument is used in the labels on the two axes. The histogram shows the distribution of the adjusted gross amounts, in millions of 2016 dollars.</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">millions</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="s">'Adjusted Gross'</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s">"Million Dollars"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="/jupyterhub-for-education-template/images/textbook/07/2/Visualizing_Numerical_Distributions_6_0.png" alt="png" /></p>
+
+<h3 id="the-horizontal-axis">The Horizontal Axis</h3>
+
+<p>The amounts have been grouped into contiguous intervals called <em>bins</em>. Although in this dataset no movie grossed an amount that is exactly on the edge between two bins, <code class="highlighter-rouge">hist</code> does have to account for situations where there might have been values at the edges. So <code class="highlighter-rouge">hist</code> has an <em>endpoint convention</em>: bins include the data at their left endpoint, but not the data at their right endpoint.</p>
+
+<p>We will use the notation [<em>a</em>, <em>b</em>) for the bin that starts at <em>a</em> and ends at <em>b</em> but doesn’t include <em>b</em>.</p>
+
+<p>Sometimes, adjustments have to be made in the first or last bin, to ensure that the smallest and largest values of the variable are included. You saw an example of such an adjustment in the Census data studied earlier, where an age of “100” years actually meant “100 years old or older.”</p>
+
+<p>We can see that there are 10 bins (some bars are so low that they are hard to see), and that they all have the same width. We can also see that none of the movies grossed fewer than 300 million dollars; that is because we are considering only the top grossing movies of all time.</p>
+
+<p>It is a little harder to see exactly where the ends of the bins are situated. For example, it is not easy to pinpoint exactly where the value 500 lies on the horizontal axis. So it is hard to judge exactly where one bar ends and the next begins.</p>
+
+<p>The optional argument <code class="highlighter-rouge">bins</code> can be used with <code class="highlighter-rouge">hist</code> to specify the endpoints of the bins. It must consist of a sequence of numbers that starts with the left end of the first bin and ends with the right end of the last bin. We will start by setting the numbers in <code class="highlighter-rouge">bins</code> to be 300, 400, 500, and so on, ending with 2000.</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">millions</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="s">'Adjusted Gross'</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span><span class="mi">2001</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="n">unit</span><span class="o">=</span><span class="s">"Million Dollars"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="/jupyterhub-for-education-template/images/textbook/07/2/Visualizing_Numerical_Distributions_8_0.png" alt="png" /></p>
+
+<p>The horizontal axis of this figure is easier to read. The labels 200, 400, 600, and so on are centered at the corresponding values. The tallest bar is for movies that grossed between 300 million and 400 million dollars.</p>
+
+<p>A very small number of movies grossed 800 million dollars or more. This results in the figure being “skewed to the right,” or, less formally, having “a long right hand tail.” Distributions of variables like income or rent in large populations also often have this kind of shape.</p>
+
+<h3 id="the-counts-in-the-bins">The Counts in the Bins</h3>
+
+<p>The counts of values in the bins can be computed from a table using the <code class="highlighter-rouge">bin</code> method, which takes a column label or index and an optional sequence or number of bins. The result is a tabular form of a histogram. The first column lists the left endpoints of the bins (but see the note about the final value, below). The second column contains the counts of all values in the <code class="highlighter-rouge">Adjusted Gross</code> column that are in the corresponding bin. That is, it counts all the <code class="highlighter-rouge">Adjusted Gross</code> values that are greater than or equal to the value in <code class="highlighter-rouge">bin</code>, but less than the next value in <code class="highlighter-rouge">bin</code>.</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">bin_counts</span> <span class="o">=</span> <span class="n">millions</span><span class="o">.</span><span class="nb">bin</span><span class="p">(</span><span class="s">'Adjusted Gross'</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span><span class="mi">2001</span><span class="p">,</span><span class="mi">100</span><span class="p">))</span>
+<span class="n">bin_counts</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>bin</th> <th>Adjusted Gross count</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>300 </td> <td>81                  </td>
+        </tr>
+        <tr>
+            <td>400 </td> <td>52                  </td>
+        </tr>
+        <tr>
+            <td>500 </td> <td>28                  </td>
+        </tr>
+        <tr>
+            <td>600 </td> <td>16                  </td>
+        </tr>
+        <tr>
+            <td>700 </td> <td>7                   </td>
+        </tr>
+        <tr>
+            <td>800 </td> <td>5                   </td>
+        </tr>
+        <tr>
+            <td>900 </td> <td>3                   </td>
+        </tr>
+        <tr>
+            <td>1000</td> <td>1                   </td>
+        </tr>
+        <tr>
+            <td>1100</td> <td>3                   </td>
+        </tr>
+        <tr>
+            <td>1200</td> <td>2                   </td>
+        </tr>
+        <tr>
+            <td>1300</td> <td>0                   </td>
+        </tr>
+        <tr>
+            <td>1400</td> <td>0                   </td>
+        </tr>
+        <tr>
+            <td>1500</td> <td>1                   </td>
+        </tr>
+        <tr>
+            <td>1600</td> <td>0                   </td>
+        </tr>
+        <tr>
+            <td>1700</td> <td>1                   </td>
+        </tr>
+        <tr>
+            <td>1800</td> <td>0                   </td>
+        </tr>
+        <tr>
+            <td>1900</td> <td>0                   </td>
+        </tr>
+        <tr>
+            <td>2000</td> <td>0                   </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<p>Notice the <code class="highlighter-rouge">bin</code> value 2000 in the last row. That’s not the left end-point of any bar – it’s the right end point of the last bar. By the endpoint convention, the data there are not included. So the corresponding <code class="highlighter-rouge">count</code> is recorded as 0, and would have been recorded as 0 even if there had been movies that made more than $2,000$ million dollars. When either <code class="highlighter-rouge">bin</code> or <code class="highlighter-rouge">hist</code> is called with a <code class="highlighter-rouge">bins</code> argument, the graph only considers values that are in the specified bins.</p>
+
+<p>Once values have been binned, the resulting counts can be used to generate a histogram using the <code class="highlighter-rouge">bin_column</code> named argument to specify which column contains the bin lower bounds.</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">bin_counts</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="s">'Adjusted Gross count'</span><span class="p">,</span> <span class="n">bin_column</span><span class="o">=</span><span class="s">'bin'</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s">'Million Dollars'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="/jupyterhub-for-education-template/images/textbook/07/2/Visualizing_Numerical_Distributions_13_0.png" alt="png" /></p>
+
+<h3 id="the-vertical-axis-density-scale">The Vertical Axis: Density Scale</h3>
+
+<p>The horizontal axis of a histogram is straightforward to read, once we have taken care of details like the ends of the bins. The features of the vertical axis require a little more attention. We will go over them one by one.</p>
+
+<p>Let’s start by examining how to calculate the numbers on the vertical axis. If the calculation seems a little strange, have patience – the rest of the section will explain the reasoning.</p>
+
+<p><strong>Calculation.</strong> The height of each bar is the percent of elements that fall into the corresponding bin, relative to the width of the bin.</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">counts</span> <span class="o">=</span> <span class="n">bin_counts</span><span class="o">.</span><span class="n">relabeled</span><span class="p">(</span><span class="s">'Adjusted Gross count'</span><span class="p">,</span> <span class="s">'Count'</span><span class="p">)</span>
+<span class="n">percents</span> <span class="o">=</span> <span class="n">counts</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
+    <span class="s">'Percent'</span><span class="p">,</span> <span class="p">(</span><span class="n">counts</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s">'Count'</span><span class="p">)</span><span class="o">/</span><span class="mi">200</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span>
+    <span class="p">)</span>
+<span class="n">heights</span> <span class="o">=</span> <span class="n">percents</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
+    <span class="s">'Height'</span><span class="p">,</span> <span class="n">percents</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s">'Percent'</span><span class="p">)</span><span class="o">/</span><span class="mi">100</span>
+    <span class="p">)</span>
+<span class="n">heights</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>bin</th> <th>Count</th> <th>Percent</th> <th>Height</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>300 </td> <td>81   </td> <td>40.5   </td> <td>0.405 </td>
+        </tr>
+        <tr>
+            <td>400 </td> <td>52   </td> <td>26     </td> <td>0.26  </td>
+        </tr>
+        <tr>
+            <td>500 </td> <td>28   </td> <td>14     </td> <td>0.14  </td>
+        </tr>
+        <tr>
+            <td>600 </td> <td>16   </td> <td>8      </td> <td>0.08  </td>
+        </tr>
+        <tr>
+            <td>700 </td> <td>7    </td> <td>3.5    </td> <td>0.035 </td>
+        </tr>
+        <tr>
+            <td>800 </td> <td>5    </td> <td>2.5    </td> <td>0.025 </td>
+        </tr>
+        <tr>
+            <td>900 </td> <td>3    </td> <td>1.5    </td> <td>0.015 </td>
+        </tr>
+        <tr>
+            <td>1000</td> <td>1    </td> <td>0.5    </td> <td>0.005 </td>
+        </tr>
+        <tr>
+            <td>1100</td> <td>3    </td> <td>1.5    </td> <td>0.015 </td>
+        </tr>
+        <tr>
+            <td>1200</td> <td>2    </td> <td>1      </td> <td>0.01  </td>
+        </tr>
+    </tbody>
+</table>
+<p>... (8 rows omitted)</p>
+</div>
+
+<p>Go over the numbers on the vertical axis of the histogram above to check that the column <code class="highlighter-rouge">Heights</code> looks correct.</p>
+
+<p>The calculations will become clear if we just examine the first row of the table.</p>
+
+<p>Remember that there are 200 movies in the dataset. The [300, 400) bin contains 81 movies. That’s 40.5% of all the movies:
+<script type="math/tex">\mbox{Percent} = \frac{81}{200} \cdot 100 = 40.5</script></p>
+
+<p>The width of the [300, 400) bin is $ 400 - 300 = 100$. So
+<script type="math/tex">\mbox{Height} = \frac{40.5}{100} = 0.405</script></p>
+
+<p>The code for calculating the heights used the facts that there are 200 movies in all and that the width of each bin is 100.</p>
+
+<p><strong>Units.</strong> The height of the bar is 40.5% divided by 100 million dollars, and so the height is 0.405% per million dollars.</p>
+
+<p>This method of drawing histograms creates a vertical axis that is said to be <em>on the density scale</em>. The height of bar is <strong>not</strong> the percent of entries in the bin; it is the percent of entries in the bin relative to the amount of space in the bin. That is why the height measures crowdedness or <em>density</em>.</p>
+
+<p>Let’s see why this matters.</p>
+
+<h3 id="unequal-bins">Unequal Bins</h3>
+<p>An advantage of the histogram over a bar chart is that a histogram can contain bins of unequal width. Below, the values in the <code class="highlighter-rouge">Millions</code> column are binned into three uneven categories.</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">uneven</span> <span class="o">=</span> <span class="n">make_array</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="mi">1500</span><span class="p">)</span>
+<span class="n">millions</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="s">'Adjusted Gross'</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">uneven</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s">"Million Dollars"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="/jupyterhub-for-education-template/images/textbook/07/2/Visualizing_Numerical_Distributions_20_0.png" alt="png" /></p>
+
+<p>Here are the counts in the three bins.</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">millions</span><span class="o">.</span><span class="nb">bin</span><span class="p">(</span><span class="s">'Adjusted Gross'</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">uneven</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>bin</th> <th>Adjusted Gross count</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>300 </td> <td>81                  </td>
+        </tr>
+        <tr>
+            <td>400 </td> <td>80                  </td>
+        </tr>
+        <tr>
+            <td>600 </td> <td>37                  </td>
+        </tr>
+        <tr>
+            <td>1500</td> <td>0                   </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<p>Although the ranges [300, 400) and [400, 600) have nearly identical counts, the bar over the former is twice as tall as the latter because it is only half as wide. The density of values in the [300, 400) is twice as much as the density in [400, 600).</p>
+
+<p>Histograms help us visualize where on the number line the data are most concentrated, epecially when the bins are uneven.</p>
+
+<h3 id="the-problem-with-simply-plotting-counts">The Problem with Simply Plotting Counts</h3>
+<p>It is possible to display counts directly in a chart, using the <code class="highlighter-rouge">normed=False</code> option of the <code class="highlighter-rouge">hist</code> method. The resulting chart has the same shape as a histogram when the bins all have equal widths, though the numbers on the vertical axis are different.</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">millions</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="s">'Adjusted Gross'</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span><span class="mi">2001</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="n">normed</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="/jupyterhub-for-education-template/images/textbook/07/2/Visualizing_Numerical_Distributions_25_0.png" alt="png" /></p>
+
+<p>While the count scale is perhaps more natural to interpret than the density scale, the chart becomes highly misleading when bins have different widths. Below, it appears (due to the count scale) that high-grossing movies are quite common, when in fact we have seen that they are relatively rare.</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">millions</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="s">'Adjusted Gross'</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">uneven</span><span class="p">,</span> <span class="n">normed</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="/jupyterhub-for-education-template/images/textbook/07/2/Visualizing_Numerical_Distributions_27_0.png" alt="png" /></p>
+
+<p>Even though the method used is called <code class="highlighter-rouge">hist</code>, <strong>the figure above is NOT A HISTOGRAM.</strong> It misleadingly exaggerates the proportion of movies grossing at least 600 million dollars. The height of each bar is simply plotted at the number of movies in the bin, <em>without accounting for the difference in the widths of the bins</em>.</p>
+
+<p>The picture becomes even more absurd if the last two bins are combined.</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">very_uneven</span> <span class="o">=</span> <span class="n">make_array</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">1500</span><span class="p">)</span>
+<span class="n">millions</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="s">'Adjusted Gross'</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">very_uneven</span><span class="p">,</span> <span class="n">normed</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="/jupyterhub-for-education-template/images/textbook/07/2/Visualizing_Numerical_Distributions_29_0.png" alt="png" /></p>
+
+<p>In this count-based figure, the shape of the distribution of movies is lost entirely.</p>
+
+<h3 id="the-histogram-general-principles-and-calculation">The Histogram: General Principles and Calculation</h3>
+
+<p>The figure above shows that what the eye perceives as “big” is area, not just height. This observation becomes particularly important when the bins have different widths.</p>
+
+<p>That is why a histogram has two defining properties:</p>
+
+<ol>
+  <li>The bins are drawn to scale and are contiguous (though some might be empty), because the values on the horizontal axis are numerical.</li>
+  <li>The <strong>area</strong> of each bar is proportional to the number of entries in the bin.</li>
+</ol>
+
+<p>Property 2 is the key to drawing a histogram, and is usually achieved as follows:</p>
+
+<script type="math/tex; mode=display">\mbox{area of bar} ~=~ \mbox{percent of entries in bin}</script>
+
+<p>The calculation of the heights just uses the fact that the bar is a rectangle:</p>
+
+<script type="math/tex; mode=display">\mbox{area of bar} = \mbox{height of bar} \times \mbox{width of bin}</script>
+
+<p>and so</p>
+
+<script type="math/tex; mode=display">\mbox{height of bar} ~=~ 
+\frac{\mbox{area of bar}}{\mbox{width of bin}} ~=~
+\frac{\mbox{percent of entries in bin}}{\mbox{width of bin}}</script>
+
+<p>The units of height are “percent per unit on the horizontal axis.”</p>
+
+<p>When drawn using this method, the histogram is said to be drawn on the density scale. On this scale:</p>
+<ul>
+  <li>The area of each bar is equal to the percent of data values that are in the corresponding bin.</li>
+  <li>The total area of all the bars in the histogram is 100%. Speaking in terms of proportions, we say that the areas of all the bars in a histogram “sum to 1”.</li>
+</ul>
+
+<h3 id="flat-tops-and-the-level-of-detail">Flat Tops and the Level of Detail</h3>
+
+<p>Even though the density scale correctly represents percents using area, some detail is lost by grouping values into bins.</p>
+
+<p>Take another look at the [300, 400) bin in the figure below. The flat top of the bar, at the level 0.405% per million dollars, hides the fact that the movies are somewhat unevenly distributed across that bin.</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">millions</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="s">'Adjusted Gross'</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">uneven</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s">"Million Dollars"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="/jupyterhub-for-education-template/images/textbook/07/2/Visualizing_Numerical_Distributions_33_0.png" alt="png" /></p>
+
+<p>To see this, let us split the [300, 400) bin into 10 narrower bins, each of width 10 million dollars.</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">some_tiny_bins</span> <span class="o">=</span> <span class="n">make_array</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">310</span><span class="p">,</span> <span class="mi">320</span><span class="p">,</span> <span class="mi">330</span><span class="p">,</span> <span class="mi">340</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">360</span><span class="p">,</span> <span class="mi">370</span><span class="p">,</span> <span class="mi">380</span><span class="p">,</span> <span class="mi">390</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="mi">1500</span><span class="p">)</span>
+<span class="n">millions</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="s">'Adjusted Gross'</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">some_tiny_bins</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s">'Million Dollars'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="/jupyterhub-for-education-template/images/textbook/07/2/Visualizing_Numerical_Distributions_35_0.png" alt="png" /></p>
+
+<p>Some of the skinny bars are taller than 0.405 and others are shorter; the first two have heights of 0 because there are no data between 300 and 320. By putting a flat top at the level 0.405 across the whole bin, we are deciding to ignore the finer detail and are using the flat level as a rough approximation. Often, though not always, this is sufficient for understanding the general shape of the distribution.</p>
+
+<p><strong>The height as a rough approximation.</strong>
+This observation gives us a different way of thinking about the height.
+Look again at the [300, 400) bin in the earlier histograms. As we have seen, the bin is 100 million dollars wide and contains 40.5% of the data. Therefore the height of the corresponding bar is 0.405% per million dollars.</p>
+
+<p>Now think of the bin as consisting of 100 narrow bins that are each 1 million dollars wide. The bar’s height of “0.405% per million dollars” means that as a rough approximation, 0.405% of the movies are in each of those 100 skinny bins of width 1 million dollars.</p>
+
+<p>Notice that because we have the entire dataset that is being used to draw the histograms, we can draw the histograms to as fine a level of detail as the data and our patience will allow. However, if you are looking at a histogram in a book or on a website, and you don’t have access to the underlying dataset, then it becomes important to have a clear understanding of the “rough approximation” created by the flat tops.</p>
+
+<h3 id="histograms-qa">Histograms Q&amp;A</h3>
+<p>Let’s draw the histogram again, this time with four bins, and check our understanding of the concepts.</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">uneven_again</span> <span class="o">=</span> <span class="n">make_array</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">450</span><span class="p">,</span> <span class="mi">1500</span><span class="p">)</span>
+<span class="n">millions</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="s">'Adjusted Gross'</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">uneven_again</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s">'Million Dollars'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="/jupyterhub-for-education-template/images/textbook/07/2/Visualizing_Numerical_Distributions_40_0.png" alt="png" /></p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">millions</span><span class="o">.</span><span class="nb">bin</span><span class="p">(</span><span class="s">'Adjusted Gross'</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">uneven_again</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>bin</th> <th>Adjusted Gross count</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>300 </td> <td>32                  </td>
+        </tr>
+        <tr>
+            <td>350 </td> <td>49                  </td>
+        </tr>
+        <tr>
+            <td>400 </td> <td>25                  </td>
+        </tr>
+        <tr>
+            <td>450 </td> <td>92                  </td>
+        </tr>
+        <tr>
+            <td>1500</td> <td>0                   </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<p>Look again at the histogram, and compare the [400, 450) bin with the [450, 1500) bin.</p>
+
+<p><strong>Q</strong>: Which has more movies in it?</p>
+
+<p><strong>A</strong>: The [450, 1500) bin. It has 92 movies, compared with 25 movies in the [400, 450) bin.</p>
+
+<p><strong>Q</strong>: Then why is the [450, 1500) bar so much shorter than the [400, 450) bar?</p>
+
+<p><strong>A</strong>: Because height represents density per unit of space in the bin, not the number of movies in the bin. The [450, 1500) bin does have more movies than the [400, 450) bin, but it is also a whole lot wider. So it is less crowded. The density of movies in it is much lower.</p>
+
+<h3 id="differences-between-bar-charts-and-histograms">Differences Between Bar Charts and Histograms</h3>
+
+<ul>
+  <li>Bar charts display one quantity per category. They are often used to display the distributions of categorical variables. Histograms display the distributions of quantitative variables.</li>
+  <li>All the bars in a bar chart have the same width, and there is an equal amount of space between consecutive bars. The bars of a histogram can have different widths, and they are contiguous.</li>
+  <li>The lengths (or heights, if the bars are drawn vertically) of the bars in a bar chart are proportional to the value for each category. The heights of bars in a histogram measure densities; the <em>areas</em> of bars in a histogram are proportional to the numbers of entries in the bins.</li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/jupyterhub-for-education-template/textbook/07/1/Visualizing_Categorical_Distributions" class="pagination--pager" title="7.1 Categorical Distributions
+">Previous</a>
+    
+    
+      <a href="/jupyterhub-for-education-template/textbook/07/3/Overlaid_Graphs" class="pagination--pager" title="7.3 Overlaid Graphs
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+    
+    
+    
+    
+    
+    <li><a href="/jupyterhub-for-education-template/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2018 Berkeley DSEP. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/jupyterhub-for-education-template/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
+
+
+
+
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,1701 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>The Monty Hall Problem ### - Data 8 Textbook</title>
+<meta name="description" content="">
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Data 8 Textbook">
+<meta property="og:title" content="The Monty Hall Problem ###">
+<meta property="og:url" content="http://localhost:4000/jupyterhub-for-education-template/textbook/09/4/Monty_Hall_Problem/">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/jupyterhub-for-education-template/textbook/09/4/Monty_Hall_Problem/">
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "Berkeley DSEP",
+      "url": "http://localhost:4000/jupyterhub-for-education-template",
+      "sameAs": null
+    }
+  </script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/jupyterhub-for-education-template/feed.xml" type="application/atom+xml" rel="alternate" title="Data 8 Textbook Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/jupyterhub-for-education-template/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+    <link rel="stylesheet" href="/jupyterhub-for-education-template/assets/css/notebook-markdown.css">
+    <link rel="stylesheet" href="/jupyterhub-for-education-template/assets/css/custom.css">
+    <link rel="shortcut icon" type="image/png" href="/jupyterhub-for-education-template/favicon.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$']],
+        processEscapes: false
+      }
+    });
+    // MathJax Configuration
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+    function getQueryVariable(variable)
+    {
+           var query = window.location.search.substring(1);
+           var vars = query.split("&");
+           for (var i=0;i<vars.length;i++) {
+                   var pair = vars[i].split("=");
+                   if(pair[0] == variable){return pair[1];}
+           }
+           return(false);
+    }
+    window.onload = function() {
+        window.hubUrl = getQueryVariable("hubUrl");
+        if (window.hubUrl !== false) {
+            if (window.hubUrl.indexOf('http') < 0) {
+                window.hubUrl = 'http://' + window.hubUrl;
+            }
+            link = $("a.interact-button")[0];
+            if (link !== undefined) {
+                var href = link.getAttribute('href');
+                href = href.replace("http://datahub.berkeley.edu", window.hubUrl);
+                link.setAttribute('href', href);
+            }
+        }
+    }
+    </script>
+  </head>
+
+  <body class="layout--textbook">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="/jupyterhub-for-education-template/">Data 8 Textbook</a>
+        <ul class="visible-links">
+          
+            
+            <li class="masthead__menu-item">
+              <a href="http://localhost:4000/jupyterhub-for-education-template/about/" >About</a>
+            </li>
+          
+            
+            <li class="masthead__menu-item">
+              <a href="http://localhost:4000/jupyterhub-for-education-template/syllabus/" >Syllabus</a>
+            </li>
+          
+            
+            <li class="masthead__menu-item">
+              <a href="http://localhost:4000/jupyterhub-for-education-template/references/" >Resources</a>
+            </li>
+          
+            
+            <li class="masthead__menu-item">
+              <a href="http://localhost:4000/jupyterhub-for-education-template/textbook/01/what-is-data-science" >Textbook</a>
+            </li>
+          
+          <li class="masthead__menu-item">
+            <a href="http://datahub.berkeley.edu">DataHub</a>
+          </li>
+        </ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle Menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/01/what-is-data-science"><span class="nav__sub-title">1. Data Science</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/01/1/intro" class="level_1">1.1 Introduction</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/01/1/1/computational-tools" class="level_2">1.1.1 Computational Tools</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/01/1/2/statistical-techniques" class="level_2">1.1.2 Statistical Techniques</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/01/2/why-data-science" class="level_1">1.2 Why Data Science?</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/01/3/Plotting_the_Classics" class="level_1">1.3 Plotting the Classics</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/01/3/1/Literary_Characters" class="level_2">1.3.1 Literary Characters</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/01/3/2/Another_Kind_Of_Character" class="level_2">1.3.2 Another Kind of Character</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/02/causality-and-experiments"><span class="nav__sub-title">2. Causality and Experiments</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/02/1/observation-and-visualization-john-snow-and-the-broad-street-pump" class="level_1">2.1 John Snow and the Broad Street Pump</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/02/2/snow-s-grand-experiment" class="level_1">2.2 Snow’s “Grand Experiment”</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/02/3/establishing-causality" class="level_1">2.3 Establishing Causality</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/02/4/randomization" class="level_1">2.4 Randomization</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/02/5/endnote" class="level_1">2.5 Endnote</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/03/programming-in-python"><span class="nav__sub-title">3. Programming in Python</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/03/1/Expressions" class="level_1">3.1 Expressions</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/03/2/Names" class="level_1">3.2 Names</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/03/2/1/Growth" class="level_2">3.2.1 Example: Growth Rates</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/03/3/Calls" class="level_1">3.3 Call Expressions</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/03/4/Introduction_to_Tables" class="level_1">3.4 Introduction to Tables</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/04/Types"><span class="nav__sub-title">4. Data Types</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/04/1/Numbers" class="level_1">4.1 Numbers</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/04/2/Strings" class="level_1">4.2 Strings</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/04/2/1/String_Methods" class="level_2">4.2.1 String Methods</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/04/3/Comparison" class="level_1">4.3 Comparisons</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/05/Collections"><span class="nav__sub-title">5. Sequences</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/05/1/Arrays" class="level_1">5.1 Arrays</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/05/2/Ranges" class="level_1">5.2 Ranges</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/05/3/More_on_Arrays" class="level_1">5.3 More on Arrays</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/06/Tables"><span class="nav__sub-title">6. Tables</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/06/1/Sorting_Rows" class="level_1">6.1 Sorting Rows</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/06/2/Selecting_Rows" class="level_1">6.2 Selecting Rows</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/06/3/Example_Trends_in_the_Population_of_the_United_States" class="level_1">6.3 Example: Population Trends</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/06/4/Example_Gender_Ratio_in_the_US_Population" class="level_1">6.4 Example: Trends in Gender</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/07/Visualization"><span class="nav__sub-title">7. Visualization</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/07/1/Visualizing_Categorical_Distributions" class="level_1">7.1 Categorical Distributions</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/07/2/Visualizing_Numerical_Distributions" class="level_1">7.2 Numerical Distributions</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/07/3/Overlaid_Graphs" class="level_1">7.3 Overlaid Graphs</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/08/Functions_and_Tables"><span class="nav__sub-title">8. Functions and Tables</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/08/1/Applying_a_Function_to_a_Column" class="level_1">8.1 Applying Functions to Columns</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/08/2/Classifying_by_One_Variable" class="level_1">8.2 Classifying by One Variable</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/08/3/Cross-Classifying_by_More_than_One_Variable" class="level_1">8.3 Cross-Classifying</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/08/4/Joining_Tables_by_Columns" class="level_1">8.4 Joining Tables by Columns</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/08/5/Bike_Sharing_in_the_Bay_Area" class="level_1">8.5 Bike Sharing in the Bay Area</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/09/Randomness"><span class="nav__sub-title">9. Randomness</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/09/1/Conditional_Statements" class="level_1">9.1 Conditional Statements</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/09/2/Iteration" class="level_1">9.2 Iteration</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/09/3/Simulation" class="level_1">9.3 Simulation</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/09/4/Monty_Hall_Problem" class="level_1">9.4 The Monty Hall Problem</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/09/5/Finding_Probabilities" class="level_1">9.5 Finding Probabilities</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/10/Sampling_and_Empirical_Distributions"><span class="nav__sub-title">10. Sampling and Empirical Distributions</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/10/1/Empirical_Distributions" class="level_1">10.1 Empirical Distributions</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/10/2/Sampling_from_a_Population" class="level_1">10.2 Sampling from a Population</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/10/3/Empirical_Distribution_of_a_Statistic" class="level_1">10.3 Empirical Distibution of a Statistic</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/11/Testing_Hypotheses"><span class="nav__sub-title">11. Testing Hypotheses</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/11/1/Assessing_Models" class="level_1">11.1 Assessing Models</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/11/2/Multiple_Categories" class="level_1">11.2 Multiple Categories</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/11/3/Decisions_and_Uncertainty" class="level_1">11.3 Decisions and Uncertainty</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/12/Comparing_Two_Samples"><span class="nav__sub-title">12. Comparing Two Samples</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/12/1/AB_Testing" class="level_1">12.1 A/B Testing</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/12/2/Deflategate" class="level_1">12.2 Deflategate</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/12/3/Causality" class="level_1">12.3 Causality</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/13/Estimation"><span class="nav__sub-title">13. Estimation</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/13/1/Percentiles" class="level_1">13.1 Percentiles</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/13/2/Bootstrap" class="level_1">13.2 The Bootstrap</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/13/3/Confidence_Intervals" class="level_1">13.3 Confidence Intervals</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/13/4/Using_Confidence_Intervals" class="level_1">13.4 Using Confidence Intervals</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/14/Why_the_Mean_Matters"><span class="nav__sub-title">14. Why the Mean Matters</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/14/1/Properties_of_the_Mean" class="level_1">14.1 Properties of the Mean</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/14/2/Variability" class="level_1">14.2 Variability</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/14/3/SD_and_the_Normal_Curve" class="level_1">14.3 The SD and the Normal Curve</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/14/4/Central_Limit_Theorem" class="level_1">14.4 The Central Limit Theorem</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/14/5/Variability_of_the_Sample_Mean" class="level_1">14.5 The Variability of the Sample Mean</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/14/6/Choosing_a_Sample_Size" class="level_1">14.6 Choosing a Sample Size</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/15/Prediction"><span class="nav__sub-title">15. Prediction</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/15/1/Correlation" class="level_1">15.1 Correlation</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/15/2/Regression_Line" class="level_1">15.2 The Regression Line</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/15/3/Method_of_Least_Squares" class="level_1">15.3 The Method of Least Squares</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/15/4/Least_Squares_Regression" class="level_1">15.4 Least Squares Regression</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/15/5/Visual_Diagnostics" class="level_1">15.5 Visual Diagnostics</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/15/6/Numerical_Diagnostics" class="level_1">15.6 Numerical Diagnostics</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/16/Inference_for_Regression"><span class="nav__sub-title">16. Inference for Regression</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/16/1/Regression_Model" class="level_1">16.1 A Regression Model</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/16/2/Inference_for_the_True_Slope" class="level_1">16.2 Inference for the True Slope</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/16/3/Prediction_Intervals" class="level_1">16.3 Prediction Intervals</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/17/Classification"><span class="nav__sub-title">17. Classification</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/17/1/Nearest_Neighbors" class="level_1">17.1 Nearest Neighbors</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/17/2/Training_and_Testing" class="level_1">17.2 Training and Testing</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/17/3/Rows_of_Tables" class="level_1">17.3 Rows of Tables</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/17/4/Implementing_the_Classifier" class="level_1">17.4 Implementing the Classifier</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/17/5/Accuracy_of_the_Classifier" class="level_1">17.5 The Accuracy of the Classifier</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/17/6/Multiple_Regression" class="level_1">17.6 Multiple Regression</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/18/Updating_Predictions"><span class="nav__sub-title">18. Updating Predictions</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/18/1/More_Likely_than_Not_Binary_Classifier" class="level_1">18.1 A "More Likely Than Not" Binary Classifier</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/18/2/Making_Decisions" class="level_1">18.2 Making Decisions</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="The Monty Hall Problem ###">
+    
+    
+    
+    <!-- INTERACT LINKS -->
+    <a class="interact-button" href="http://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https://github.com/choldgraf/data8-textbook&amp;branch=gh-pages&amp;subPath=notebooks/09/4/Monty_Hall_Problem.ipynb">Interact</a>
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <!-- <h1 id="page-title" class="page__title" itemprop="headline">The Monty Hall Problem ###
+</h1> -->
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <h3 id="the-monty-hall-problem">The Monty Hall Problem</h3>
+<p>This <a href="https://en.wikipedia.org/wiki/Monty_Hall_problem">problem</a> has flummoxed many people over the years, <a href="https://web.archive.org/web/20140413131827/http://www.decisionsciences.org/DecisionLine/Vol30/30_1/vazs30_1.pdf">mathematicians included</a>. Let’s see if we can work it out by simulation.</p>
+
+<p>The setting is derived from a television game show called “Let’s Make a Deal”. Monty Hall hosted this show in the 1960’s, and it has since led to a number of spin-offs. An exciting part of the show was that while the contestants had the chance to win great prizes, they might instead end up with “zonks” that were less desirable. This is the basis for what is now known as <em>the Monty Hall problem</em>.</p>
+
+<p>The setting is a game show in which the contestant is faced with three closed doors. Behind one of the doors is a fancy car, and behind each of the other two there is a goat. The contestant doesn’t know where the car is, and has to attempt to find it under the following rules.</p>
+
+<ul>
+  <li>The contestant makes an initial choice, but that door isn’t opened.</li>
+  <li>At least one of the other two doors must have a goat behind it. Monty opens one of these doors to reveal a goat, displayed in all its glory in <a href="https://en.wikipedia.org/wiki/Monty_Hall_problem">Wikipedia</a>:</li>
+</ul>
+
+<p><img src="/images/monty_hall_goat.png" alt="Monty Hall goat" /></p>
+
+<ul>
+  <li>There are two doors left, one of which was the contestant’s original choice. One of the doors has the car behind it, and the other one has a goat. The contestant now gets to choose which of the two doors to open.</li>
+</ul>
+
+<p>The contestant has a decision to make. Which door should she choose to open, if she wants the car? Should she stick with her initial choice, or switch to the other door? That is the Monty Hall problem.</p>
+
+<h3 id="the-solution">The Solution</h3>
+
+<p>In any problem involving chances, the assumptions about randomness are important. It’s reasonable to assume that there is a 1/3 chance that the contestant’s initial choice is the door that has the car behind it.</p>
+
+<p>The solution to the problem is quite straightforward under this assumption, though the straightforward solution doesn’t convince everyone. Here it is anyway.</p>
+
+<ul>
+  <li>The chance that the car is behind the originally chosen door is 1/3.</li>
+  <li>The car is behind either the originally chosen door or the door that remains. It can’t be anywhere else.</li>
+  <li>Therefore, the chance that the car is behind the door that remains is 2/3.</li>
+  <li>Therefore, the contestant should switch.</li>
+</ul>
+
+<p>That’s it. End of story.</p>
+
+<p>Not convinced? Then let’s simulate the game and see how the results turn out.</p>
+
+<h3 id="simulation">Simulation</h3>
+<p>The simulation will be more complex that those we have done so far. Let’s break it down.</p>
+
+<h3 id="step-1-what-to-simulate">Step 1: What to Simulate</h3>
+<p>For each play we will simulate what’s behind all three doors:</p>
+<ul>
+  <li>the one the contestant first picks</li>
+  <li>the one that Monty throws out</li>
+  <li>the remaining door
+So we will be keeping track of three quantitites, not just one.</li>
+</ul>
+
+<h3 id="step-2-simulating-one-play">Step 2: Simulating One Play</h3>
+<p>The bulk of our work consists of simulating one play of the game. This involves several pieces.</p>
+
+<h4 id="the-doors">The Doors</h4>
+<p>We start by setting up two useful arrays – <code class="highlighter-rouge">doors</code> and <code class="highlighter-rouge">goats</code> – that will allow us to distinguish the three doors and the two goats.</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">doors</span> <span class="o">=</span> <span class="n">make_array</span><span class="p">(</span><span class="s">'Car'</span><span class="p">,</span> <span class="s">'Goat 1'</span><span class="p">,</span> <span class="s">'Goat 2'</span><span class="p">)</span>
+<span class="n">goats</span> <span class="o">=</span> <span class="n">make_array</span><span class="p">(</span><span class="s">'Goat 1'</span><span class="p">,</span> <span class="s">'Goat 2'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h4 id="identifying-goats">Identifying Goats</h4>
+
+<p>We are going to have to recognize whether a door has a goat behind it or not. We can just label each door with what’s behind it; the contestant can’t see what we are doing!</p>
+
+<p>The function <code class="highlighter-rouge">is_goat</code> takes a door label and returns a Boolean signifying whether or not it is a goat.</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">is_goat</span><span class="p">(</span><span class="n">door_name</span><span class="p">):</span>
+
+    <span class="k">if</span> <span class="n">door_name</span> <span class="o">==</span> <span class="s">"Goat 1"</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">True</span>
+    <span class="k">elif</span> <span class="n">door_name</span> <span class="o">==</span> <span class="s">"Goat 2"</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">False</span>
+
+</code></pre></div></div>
+
+<p>Let’s check that this function can indeed tell goats from cars.</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">is_goat</span><span class="p">(</span><span class="s">'Goat 1'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>True
+</code></pre></div></div>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">is_goat</span><span class="p">(</span><span class="s">'Goat 2'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>True
+</code></pre></div></div>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">is_goat</span><span class="p">(</span><span class="s">'Car'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>False
+</code></pre></div></div>
+
+<h4 id="one-play">One Play</h4>
+
+<p>If the contestant’s original choice is a door with a goat, Monty must throw out the other goat, and what will remain is the car. If the original choice is the door with a car, Monty must throw out one of the two goats, and what will remain is the other goat.</p>
+
+<p>It is clear, therefore, that the function <code class="highlighter-rouge">other_one</code> defined in an earlier section will be useful. It takes a string and a two-element array; if the string is equal to one of the elements, it returns the other one.</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">other_one</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a_b</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">a_b</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="mi">0</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">a_b</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">x</span> <span class="o">==</span> <span class="n">a_b</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">a_b</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s">'Input Not Valid'</span>
+</code></pre></div></div>
+
+<p>If the contestant’s original choice is a goat, then the outcome of the game could be one of the following two:</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">original</span> <span class="o">=</span> <span class="s">'Goat 1'</span>
+<span class="n">make_array</span><span class="p">(</span><span class="n">original</span><span class="p">,</span> <span class="n">other_one</span><span class="p">(</span><span class="n">original</span><span class="p">,</span> <span class="n">goats</span><span class="p">),</span> <span class="s">'Car'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array(['Goat 1', 'Goat 2', 'Car'], dtype='&lt;U6')
+</code></pre></div></div>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">original</span> <span class="o">=</span> <span class="s">'Goat 2'</span>
+<span class="n">make_array</span><span class="p">(</span><span class="n">original</span><span class="p">,</span> <span class="n">other_one</span><span class="p">(</span><span class="n">original</span><span class="p">,</span> <span class="n">goats</span><span class="p">),</span> <span class="s">'Car'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array(['Goat 2', 'Goat 1', 'Car'], dtype='&lt;U6')
+</code></pre></div></div>
+
+<p>If the original choice happens to be the car, then let’s assume Monty throws out one of the two goats at random, and the other goat is behind the remaining door.</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">original</span> <span class="o">=</span> <span class="s">'Car'</span>
+<span class="n">throw_out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">goats</span><span class="p">)</span>
+<span class="n">make_array</span><span class="p">(</span><span class="n">original</span><span class="p">,</span> <span class="n">throw_out</span><span class="p">,</span> <span class="n">other_one</span><span class="p">(</span><span class="n">throw_out</span><span class="p">,</span> <span class="n">goats</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array(['Car', 'Goat 1', 'Goat 2'], dtype='&lt;U6')
+</code></pre></div></div>
+
+<h4 id="a-function-to-simulate-one-play">A Function to Simulate One Play</h4>
+<p>Now we define a function <code class="highlighter-rouge">monty_hall</code> that simulates the game and returns an array of three strings in this order:</p>
+<ul>
+  <li>what is behind the contestant’s original choice of door</li>
+  <li>what Monty throws out</li>
+  <li>what is behind the remaining door</li>
+</ul>
+
+<p>We can now put all this code together into a single function <code class="highlighter-rouge">monty_hall</code> to simulate the result of one game. The function takes no arguments.</p>
+
+<p>The contestant’s original choice will be a door chosen at random from among the three doors.</p>
+
+<p>To check whether the original choice is a goat or not, we first write a little function named <code class="highlighter-rouge">is_goat</code>.</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">monty_hall</span><span class="p">():</span>
+
+    <span class="s">""" Play the Monty Hall game once
+    and return an array of three strings:
+    
+    original choice, what Monty throws out, what remains
+    """</span>
+    
+    <span class="n">original</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">doors</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">is_goat</span><span class="p">(</span><span class="n">original</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">make_array</span><span class="p">(</span><span class="n">original</span><span class="p">,</span> <span class="n">other_one</span><span class="p">(</span><span class="n">original</span><span class="p">,</span> <span class="n">goats</span><span class="p">),</span> <span class="s">'Car'</span><span class="p">)</span>
+    
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">throw_out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">goats</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">make_array</span><span class="p">(</span><span class="n">original</span><span class="p">,</span> <span class="n">throw_out</span><span class="p">,</span> <span class="n">other_one</span><span class="p">(</span><span class="n">throw_out</span><span class="p">,</span> <span class="n">goats</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>Let’s play the game a few times! Here is one outcome. You should run the cell several times to see how the outcome changes.</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">monty_hall</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array(['Car', 'Goat 1', 'Goat 2'], dtype='&lt;U6')
+</code></pre></div></div>
+
+<h3 id="step-3-number-of-repetitions">Step 3: Number of Repetitions</h3>
+<p>To gauge the frequency with which the different outcomes occur, we have to play the games many times and collect the results. Let’s run 10,000 repetitions.</p>
+
+<h3 id="step-4-coding-the-simulation">Step 4: Coding the Simulation</h3>
+<p>It’s time to run the simulation. We will start by defining three empty arrays, one each for the original choice, what Monty throws out, and what remains.</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">original</span> <span class="o">=</span> <span class="n">make_array</span><span class="p">()</span>     <span class="c"># original choice</span>
+<span class="n">throw_out</span> <span class="o">=</span> <span class="n">make_array</span><span class="p">()</span>    <span class="c"># what Monty throws out</span>
+<span class="n">remains</span> <span class="o">=</span> <span class="n">make_array</span><span class="p">()</span>      <span class="c"># what remains</span>
+
+<span class="n">num_repetitions</span> <span class="o">=</span> <span class="mi">10000</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">num_repetitions</span><span class="p">):</span> 
+    <span class="n">result</span> <span class="o">=</span> <span class="n">monty_hall</span><span class="p">()</span>    <span class="c"># the result of one game</span>
+    
+    <span class="c"># Collect the results in the appropriate arrays</span>
+    <span class="n">original</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">original</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+    <span class="n">throw_out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">throw_out</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+    <span class="n">remains</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">remains</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>The simulation is done. As always, the majority of the work is in generating the simulated outcome of one repetition.</p>
+
+<h3 id="visualization">Visualization</h3>
+
+<p>We can now put all the results into one table for ease of visualization.</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">results</span> <span class="o">=</span> <span class="n">Table</span><span class="p">()</span><span class="o">.</span><span class="n">with_columns</span><span class="p">(</span>
+    <span class="s">'Original Door Choice'</span><span class="p">,</span> <span class="n">original</span><span class="p">,</span>
+    <span class="s">'Monty Throws Out'</span><span class="p">,</span> <span class="n">throw_out</span><span class="p">,</span>
+    <span class="s">'Remaining Door'</span><span class="p">,</span> <span class="n">remains</span>
+<span class="p">)</span>
+<span class="n">results</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>Original Door Choice</th> <th>Monty Throws Out</th> <th>Remaining Door</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Goat 2              </td> <td>Goat 1          </td> <td>Car           </td>
+        </tr>
+        <tr>
+            <td>Car                 </td> <td>Goat 1          </td> <td>Goat 2        </td>
+        </tr>
+        <tr>
+            <td>Goat 1              </td> <td>Goat 2          </td> <td>Car           </td>
+        </tr>
+        <tr>
+            <td>Goat 2              </td> <td>Goat 1          </td> <td>Car           </td>
+        </tr>
+        <tr>
+            <td>Goat 2              </td> <td>Goat 1          </td> <td>Car           </td>
+        </tr>
+        <tr>
+            <td>Goat 2              </td> <td>Goat 1          </td> <td>Car           </td>
+        </tr>
+        <tr>
+            <td>Car                 </td> <td>Goat 2          </td> <td>Goat 1        </td>
+        </tr>
+        <tr>
+            <td>Goat 1              </td> <td>Goat 2          </td> <td>Car           </td>
+        </tr>
+        <tr>
+            <td>Car                 </td> <td>Goat 2          </td> <td>Goat 1        </td>
+        </tr>
+        <tr>
+            <td>Car                 </td> <td>Goat 1          </td> <td>Goat 2        </td>
+        </tr>
+    </tbody>
+</table>
+<p>... (9990 rows omitted)</p>
+</div>
+
+<p>To see whether the contestant should stick with her original choice or switch, let’s see how frequently the car is behind each of her two options.</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">results</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s">'Original Door Choice'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>Original Door Choice</th> <th>count</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Car                 </td> <td>3383 </td>
+        </tr>
+        <tr>
+            <td>Goat 1              </td> <td>3335 </td>
+        </tr>
+        <tr>
+            <td>Goat 2              </td> <td>3282 </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">results</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s">'Remaining Door'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>Remaining Door</th> <th>count</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Car           </td> <td>6617 </td>
+        </tr>
+        <tr>
+            <td>Goat 1        </td> <td>1730 </td>
+        </tr>
+        <tr>
+            <td>Goat 2        </td> <td>1653 </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<p>As our solution said, the car is behind the remaining door two-thirds of the time, to a pretty good approximation. The contestant is twice as likely to get the car if she switches than if she sticks with her original choice.</p>
+
+<p>To see this graphically, we can join the two tables above and draw overlaid bar charts.</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">results_o</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s">'Original Door Choice'</span><span class="p">)</span>
+<span class="n">results_r</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s">'Remaining Door'</span><span class="p">)</span>
+<span class="n">joined</span> <span class="o">=</span> <span class="n">results_o</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">'Original Door Choice'</span><span class="p">,</span> <span class="n">results_r</span><span class="p">,</span> <span class="s">'Remaining Door'</span><span class="p">)</span>
+<span class="n">combined</span> <span class="o">=</span> <span class="n">joined</span><span class="o">.</span><span class="n">relabeled</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s">'Item'</span><span class="p">)</span><span class="o">.</span><span class="n">relabeled</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s">'Original Door'</span><span class="p">)</span><span class="o">.</span><span class="n">relabeled</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s">'Remaining Door'</span><span class="p">)</span>
+<span class="n">combined</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>Item</th> <th>Original Door</th> <th>Remaining Door</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Car   </td> <td>3383         </td> <td>6617          </td>
+        </tr>
+        <tr>
+            <td>Goat 1</td> <td>3335         </td> <td>1730          </td>
+        </tr>
+        <tr>
+            <td>Goat 2</td> <td>3282         </td> <td>1653          </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">combined</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="/jupyterhub-for-education-template/images/textbook/09/4/Monty_Hall_Problem_32_0.png" alt="png" /></p>
+
+<p>Notice how the three blue bars are almost equal – the original choice is equally likely to be any of the three available items. But the gold bar corresponding to <code class="highlighter-rouge">Car</code> is twice as long as the blue.</p>
+
+<p>The simulation confirms that the contestant is twice as likely to win if she switches.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/jupyterhub-for-education-template/textbook/09/3/Simulation" class="pagination--pager" title="9.3 Simulation
+">Previous</a>
+    
+    
+      <a href="/jupyterhub-for-education-template/textbook/09/5/Finding_Probabilities" class="pagination--pager" title="9.5 Finding Probabilities
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+    
+    
+    
+    
+    
+    <li><a href="/jupyterhub-for-education-template/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2018 Berkeley DSEP. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/jupyterhub-for-education-template/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
+
+
+
+
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,1798 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Rows of Tables ### - Data 8 Textbook</title>
+<meta name="description" content="">
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Data 8 Textbook">
+<meta property="og:title" content="Rows of Tables ###">
+<meta property="og:url" content="http://localhost:4000/jupyterhub-for-education-template/textbook/17/3/Rows_of_Tables/">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/jupyterhub-for-education-template/textbook/17/3/Rows_of_Tables/">
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "Berkeley DSEP",
+      "url": "http://localhost:4000/jupyterhub-for-education-template",
+      "sameAs": null
+    }
+  </script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/jupyterhub-for-education-template/feed.xml" type="application/atom+xml" rel="alternate" title="Data 8 Textbook Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/jupyterhub-for-education-template/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+    <link rel="stylesheet" href="/jupyterhub-for-education-template/assets/css/notebook-markdown.css">
+    <link rel="stylesheet" href="/jupyterhub-for-education-template/assets/css/custom.css">
+    <link rel="shortcut icon" type="image/png" href="/jupyterhub-for-education-template/favicon.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$']],
+        processEscapes: false
+      }
+    });
+    // MathJax Configuration
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+    function getQueryVariable(variable)
+    {
+           var query = window.location.search.substring(1);
+           var vars = query.split("&");
+           for (var i=0;i<vars.length;i++) {
+                   var pair = vars[i].split("=");
+                   if(pair[0] == variable){return pair[1];}
+           }
+           return(false);
+    }
+    window.onload = function() {
+        window.hubUrl = getQueryVariable("hubUrl");
+        if (window.hubUrl !== false) {
+            if (window.hubUrl.indexOf('http') < 0) {
+                window.hubUrl = 'http://' + window.hubUrl;
+            }
+            link = $("a.interact-button")[0];
+            if (link !== undefined) {
+                var href = link.getAttribute('href');
+                href = href.replace("http://datahub.berkeley.edu", window.hubUrl);
+                link.setAttribute('href', href);
+            }
+        }
+    }
+    </script>
+  </head>
+
+  <body class="layout--textbook">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="/jupyterhub-for-education-template/">Data 8 Textbook</a>
+        <ul class="visible-links">
+          
+            
+            <li class="masthead__menu-item">
+              <a href="http://localhost:4000/jupyterhub-for-education-template/about/" >About</a>
+            </li>
+          
+            
+            <li class="masthead__menu-item">
+              <a href="http://localhost:4000/jupyterhub-for-education-template/syllabus/" >Syllabus</a>
+            </li>
+          
+            
+            <li class="masthead__menu-item">
+              <a href="http://localhost:4000/jupyterhub-for-education-template/references/" >Resources</a>
+            </li>
+          
+            
+            <li class="masthead__menu-item">
+              <a href="http://localhost:4000/jupyterhub-for-education-template/textbook/01/what-is-data-science" >Textbook</a>
+            </li>
+          
+          <li class="masthead__menu-item">
+            <a href="http://datahub.berkeley.edu">DataHub</a>
+          </li>
+        </ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle Menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/01/what-is-data-science"><span class="nav__sub-title">1. Data Science</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/01/1/intro" class="level_1">1.1 Introduction</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/01/1/1/computational-tools" class="level_2">1.1.1 Computational Tools</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/01/1/2/statistical-techniques" class="level_2">1.1.2 Statistical Techniques</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/01/2/why-data-science" class="level_1">1.2 Why Data Science?</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/01/3/Plotting_the_Classics" class="level_1">1.3 Plotting the Classics</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/01/3/1/Literary_Characters" class="level_2">1.3.1 Literary Characters</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/01/3/2/Another_Kind_Of_Character" class="level_2">1.3.2 Another Kind of Character</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/02/causality-and-experiments"><span class="nav__sub-title">2. Causality and Experiments</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/02/1/observation-and-visualization-john-snow-and-the-broad-street-pump" class="level_1">2.1 John Snow and the Broad Street Pump</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/02/2/snow-s-grand-experiment" class="level_1">2.2 Snow’s “Grand Experiment”</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/02/3/establishing-causality" class="level_1">2.3 Establishing Causality</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/02/4/randomization" class="level_1">2.4 Randomization</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/02/5/endnote" class="level_1">2.5 Endnote</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/03/programming-in-python"><span class="nav__sub-title">3. Programming in Python</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/03/1/Expressions" class="level_1">3.1 Expressions</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/03/2/Names" class="level_1">3.2 Names</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/03/2/1/Growth" class="level_2">3.2.1 Example: Growth Rates</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/03/3/Calls" class="level_1">3.3 Call Expressions</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/03/4/Introduction_to_Tables" class="level_1">3.4 Introduction to Tables</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/04/Types"><span class="nav__sub-title">4. Data Types</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/04/1/Numbers" class="level_1">4.1 Numbers</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/04/2/Strings" class="level_1">4.2 Strings</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/04/2/1/String_Methods" class="level_2">4.2.1 String Methods</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/04/3/Comparison" class="level_1">4.3 Comparisons</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/05/Collections"><span class="nav__sub-title">5. Sequences</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/05/1/Arrays" class="level_1">5.1 Arrays</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/05/2/Ranges" class="level_1">5.2 Ranges</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/05/3/More_on_Arrays" class="level_1">5.3 More on Arrays</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/06/Tables"><span class="nav__sub-title">6. Tables</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/06/1/Sorting_Rows" class="level_1">6.1 Sorting Rows</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/06/2/Selecting_Rows" class="level_1">6.2 Selecting Rows</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/06/3/Example_Trends_in_the_Population_of_the_United_States" class="level_1">6.3 Example: Population Trends</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/06/4/Example_Gender_Ratio_in_the_US_Population" class="level_1">6.4 Example: Trends in Gender</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/07/Visualization"><span class="nav__sub-title">7. Visualization</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/07/1/Visualizing_Categorical_Distributions" class="level_1">7.1 Categorical Distributions</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/07/2/Visualizing_Numerical_Distributions" class="level_1">7.2 Numerical Distributions</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/07/3/Overlaid_Graphs" class="level_1">7.3 Overlaid Graphs</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/08/Functions_and_Tables"><span class="nav__sub-title">8. Functions and Tables</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/08/1/Applying_a_Function_to_a_Column" class="level_1">8.1 Applying Functions to Columns</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/08/2/Classifying_by_One_Variable" class="level_1">8.2 Classifying by One Variable</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/08/3/Cross-Classifying_by_More_than_One_Variable" class="level_1">8.3 Cross-Classifying</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/08/4/Joining_Tables_by_Columns" class="level_1">8.4 Joining Tables by Columns</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/08/5/Bike_Sharing_in_the_Bay_Area" class="level_1">8.5 Bike Sharing in the Bay Area</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/09/Randomness"><span class="nav__sub-title">9. Randomness</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/09/1/Conditional_Statements" class="level_1">9.1 Conditional Statements</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/09/2/Iteration" class="level_1">9.2 Iteration</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/09/3/Simulation" class="level_1">9.3 Simulation</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/09/4/Monty_Hall_Problem" class="level_1">9.4 The Monty Hall Problem</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/09/5/Finding_Probabilities" class="level_1">9.5 Finding Probabilities</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/10/Sampling_and_Empirical_Distributions"><span class="nav__sub-title">10. Sampling and Empirical Distributions</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/10/1/Empirical_Distributions" class="level_1">10.1 Empirical Distributions</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/10/2/Sampling_from_a_Population" class="level_1">10.2 Sampling from a Population</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/10/3/Empirical_Distribution_of_a_Statistic" class="level_1">10.3 Empirical Distibution of a Statistic</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/11/Testing_Hypotheses"><span class="nav__sub-title">11. Testing Hypotheses</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/11/1/Assessing_Models" class="level_1">11.1 Assessing Models</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/11/2/Multiple_Categories" class="level_1">11.2 Multiple Categories</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/11/3/Decisions_and_Uncertainty" class="level_1">11.3 Decisions and Uncertainty</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/12/Comparing_Two_Samples"><span class="nav__sub-title">12. Comparing Two Samples</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/12/1/AB_Testing" class="level_1">12.1 A/B Testing</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/12/2/Deflategate" class="level_1">12.2 Deflategate</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/12/3/Causality" class="level_1">12.3 Causality</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/13/Estimation"><span class="nav__sub-title">13. Estimation</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/13/1/Percentiles" class="level_1">13.1 Percentiles</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/13/2/Bootstrap" class="level_1">13.2 The Bootstrap</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/13/3/Confidence_Intervals" class="level_1">13.3 Confidence Intervals</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/13/4/Using_Confidence_Intervals" class="level_1">13.4 Using Confidence Intervals</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/14/Why_the_Mean_Matters"><span class="nav__sub-title">14. Why the Mean Matters</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/14/1/Properties_of_the_Mean" class="level_1">14.1 Properties of the Mean</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/14/2/Variability" class="level_1">14.2 Variability</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/14/3/SD_and_the_Normal_Curve" class="level_1">14.3 The SD and the Normal Curve</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/14/4/Central_Limit_Theorem" class="level_1">14.4 The Central Limit Theorem</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/14/5/Variability_of_the_Sample_Mean" class="level_1">14.5 The Variability of the Sample Mean</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/14/6/Choosing_a_Sample_Size" class="level_1">14.6 Choosing a Sample Size</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/15/Prediction"><span class="nav__sub-title">15. Prediction</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/15/1/Correlation" class="level_1">15.1 Correlation</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/15/2/Regression_Line" class="level_1">15.2 The Regression Line</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/15/3/Method_of_Least_Squares" class="level_1">15.3 The Method of Least Squares</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/15/4/Least_Squares_Regression" class="level_1">15.4 Least Squares Regression</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/15/5/Visual_Diagnostics" class="level_1">15.5 Visual Diagnostics</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/15/6/Numerical_Diagnostics" class="level_1">15.6 Numerical Diagnostics</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/16/Inference_for_Regression"><span class="nav__sub-title">16. Inference for Regression</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/16/1/Regression_Model" class="level_1">16.1 A Regression Model</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/16/2/Inference_for_the_True_Slope" class="level_1">16.2 Inference for the True Slope</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/16/3/Prediction_Intervals" class="level_1">16.3 Prediction Intervals</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/17/Classification"><span class="nav__sub-title">17. Classification</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/17/1/Nearest_Neighbors" class="level_1">17.1 Nearest Neighbors</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/17/2/Training_and_Testing" class="level_1">17.2 Training and Testing</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/17/3/Rows_of_Tables" class="level_1">17.3 Rows of Tables</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/17/4/Implementing_the_Classifier" class="level_1">17.4 Implementing the Classifier</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/17/5/Accuracy_of_the_Classifier" class="level_1">17.5 The Accuracy of the Classifier</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/17/6/Multiple_Regression" class="level_1">17.6 Multiple Regression</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/18/Updating_Predictions"><span class="nav__sub-title">18. Updating Predictions</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/18/1/More_Likely_than_Not_Binary_Classifier" class="level_1">18.1 A "More Likely Than Not" Binary Classifier</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/18/2/Making_Decisions" class="level_1">18.2 Making Decisions</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Rows of Tables ###">
+    
+    
+    
+    <!-- INTERACT LINKS -->
+    <a class="interact-button" href="http://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https://github.com/choldgraf/data8-textbook&amp;branch=gh-pages&amp;subPath=notebooks/17/3/Rows_of_Tables.ipynb">Interact</a>
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <!-- <h1 id="page-title" class="page__title" itemprop="headline">Rows of Tables ###
+</h1> -->
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <h3 id="rows-of-tables">Rows of Tables</h3>
+<p>Now that we have a qualitative understanding of nearest neighbor classification, it’s time to implement our classifier.</p>
+
+<p>Until this chapter, we have worked mostly with single columns of tables. But now we have to see whether one <em>individual</em> is “close” to another. Data for individuals are contained in <em>rows</em> of tables.</p>
+
+<p>So let’s start by taking a closer look at rows.</p>
+
+<p>Here is the original table <code class="highlighter-rouge">ckd</code> containing data on patients who were tested for chronic kidney disease.</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ckd</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="n">path_data</span> <span class="o">+</span> <span class="s">'ckd.csv'</span><span class="p">)</span><span class="o">.</span><span class="n">relabeled</span><span class="p">(</span><span class="s">'Blood Glucose Random'</span><span class="p">,</span> <span class="s">'Glucose'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The data corresponding to the first patient is in row 0 of the table, consistent with Python’s indexing system. The Table method <code class="highlighter-rouge">row</code> accesses the row by taking the index of the row as its argument:</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ckd</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Row(Age=48, Blood Pressure=70, Specific Gravity=1.005, Albumin=4, Sugar=0, Red Blood Cells='normal', Pus Cell='abnormal', Pus Cell clumps='present', Bacteria='notpresent', Glucose=117, Blood Urea=56, Serum Creatinine=3.8, Sodium=111, Potassium=2.5, Hemoglobin=11.2, Packed Cell Volume=32, White Blood Cell Count=6700, Red Blood Cell Count=3.9, Hypertension='yes', Diabetes Mellitus='no', Coronary Artery Disease='no', Appetite='poor', Pedal Edema='yes', Anemia='yes', Class=1)
+</code></pre></div></div>
+
+<p>Rows have their very own data type: they are <em>row objects</em>. Notice how the display shows not only the values in the row but also the labels of the corresponding columns.</p>
+
+<p>Rows are in general <strong>not arrays</strong>, as their elements can be of different types. For example, some of the elements of the row above are strings (like <code class="highlighter-rouge">'abnormal'</code>) and some are numerical. So the row can’t be converted into an array.</p>
+
+<p>However, rows share some characteristics with arrays.  You can use <code class="highlighter-rouge">item</code> to access a particular element of a row. For example, to access the Albumin level of Patient 0, we can look at the labels in the printout of the row above to find that it’s item 3:</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ckd</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>4
+</code></pre></div></div>
+
+<h3 id="converting-rows-to-arrays-when-possible">Converting Rows to Arrays (When Possible)</h3>
+<p>Rows whose elements are all numerical (or all strings) can be converted to arrays.  Converting a row to an array gives us access to arithmetic operations and other nice NumPy functions, so it is often useful.</p>
+
+<p>Recall that in the previous section we tried to classify the patients as ‘CKD’ or ‘not CKD’, based on two attributes <code class="highlighter-rouge">Hemoglobin</code> and <code class="highlighter-rouge">Glucose</code>, both measured in standard units.</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ckd</span> <span class="o">=</span> <span class="n">Table</span><span class="p">()</span><span class="o">.</span><span class="n">with_columns</span><span class="p">(</span>
+    <span class="s">'Hemoglobin'</span><span class="p">,</span> <span class="n">standard_units</span><span class="p">(</span><span class="n">ckd</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s">'Hemoglobin'</span><span class="p">)),</span>
+    <span class="s">'Glucose'</span><span class="p">,</span> <span class="n">standard_units</span><span class="p">(</span><span class="n">ckd</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s">'Glucose'</span><span class="p">)),</span>
+    <span class="s">'Class'</span><span class="p">,</span> <span class="n">ckd</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s">'Class'</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">color_table</span> <span class="o">=</span> <span class="n">Table</span><span class="p">()</span><span class="o">.</span><span class="n">with_columns</span><span class="p">(</span>
+    <span class="s">'Class'</span><span class="p">,</span> <span class="n">make_array</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+    <span class="s">'Color'</span><span class="p">,</span> <span class="n">make_array</span><span class="p">(</span><span class="s">'darkblue'</span><span class="p">,</span> <span class="s">'gold'</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">ckd</span> <span class="o">=</span> <span class="n">ckd</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">'Class'</span><span class="p">,</span> <span class="n">color_table</span><span class="p">)</span>
+<span class="n">ckd</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>Class</th> <th>Hemoglobin</th> <th>Glucose</th> <th>Color</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>0    </td> <td>0.456884  </td> <td>0.133751   </td> <td>gold </td>
+        </tr>
+        <tr>
+            <td>0    </td> <td>1.153     </td> <td>-0.947597  </td> <td>gold </td>
+        </tr>
+        <tr>
+            <td>0    </td> <td>0.770138  </td> <td>-0.762223  </td> <td>gold </td>
+        </tr>
+        <tr>
+            <td>0    </td> <td>0.596108  </td> <td>-0.190654  </td> <td>gold </td>
+        </tr>
+        <tr>
+            <td>0    </td> <td>-0.239236 </td> <td>-0.49961   </td> <td>gold </td>
+        </tr>
+        <tr>
+            <td>0    </td> <td>-0.0304002</td> <td>-0.159758  </td> <td>gold </td>
+        </tr>
+        <tr>
+            <td>0    </td> <td>0.282854  </td> <td>-0.00527964</td> <td>gold </td>
+        </tr>
+        <tr>
+            <td>0    </td> <td>0.108824  </td> <td>-0.623193  </td> <td>gold </td>
+        </tr>
+        <tr>
+            <td>0    </td> <td>0.0740178 </td> <td>-0.515058  </td> <td>gold </td>
+        </tr>
+        <tr>
+            <td>0    </td> <td>0.83975   </td> <td>-0.422371  </td> <td>gold </td>
+        </tr>
+    </tbody>
+</table>
+<p>... (148 rows omitted)</p>
+</div>
+
+<p>Here is a scatter plot of the two attributes, along with a red point corresponding to Alice, a new patient. Her value of hemoglobin is 0 (that is, at the average) and glucose 1.1 (that is, 1.1 SDs above average).</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">alice</span> <span class="o">=</span> <span class="n">make_array</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">)</span>
+<span class="n">ckd</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s">'Hemoglobin'</span><span class="p">,</span> <span class="s">'Glucose'</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s">'Color'</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">alice</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">alice</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s">'red'</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">30</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><img src="/jupyterhub-for-education-template/images/textbook/17/3/Rows_of_Tables_10_0.png" alt="png" /></p>
+
+<p>To find the distance between Alice’s point and any of the other points, we only need the values of the attributes:</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ckd_attributes</span> <span class="o">=</span> <span class="n">ckd</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s">'Hemoglobin'</span><span class="p">,</span> <span class="s">'Glucose'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ckd_attributes</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>Hemoglobin</th> <th>Glucose</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>0.456884  </td> <td>0.133751   </td>
+        </tr>
+        <tr>
+            <td>1.153     </td> <td>-0.947597  </td>
+        </tr>
+        <tr>
+            <td>0.770138  </td> <td>-0.762223  </td>
+        </tr>
+        <tr>
+            <td>0.596108  </td> <td>-0.190654  </td>
+        </tr>
+        <tr>
+            <td>-0.239236 </td> <td>-0.49961   </td>
+        </tr>
+        <tr>
+            <td>-0.0304002</td> <td>-0.159758  </td>
+        </tr>
+        <tr>
+            <td>0.282854  </td> <td>-0.00527964</td>
+        </tr>
+        <tr>
+            <td>0.108824  </td> <td>-0.623193  </td>
+        </tr>
+        <tr>
+            <td>0.0740178 </td> <td>-0.515058  </td>
+        </tr>
+        <tr>
+            <td>0.83975   </td> <td>-0.422371  </td>
+        </tr>
+    </tbody>
+</table>
+<p>... (148 rows omitted)</p>
+</div>
+
+<p>Each row consists of the coordinates of one point in our training sample. <strong>Because the rows now consist only of numerical values</strong>, it is possible to convert them to arrays.  For this, we use the function <code class="highlighter-rouge">np.array</code>, which converts any kind of sequential object, like a row, to an array. (Our old friend <code class="highlighter-rouge">make_array</code> is for <em>creating</em> arrays, not for <em>converting</em> other kinds of sequences to arrays.)</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ckd_attributes</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Row(Hemoglobin=0.5961076648232668, Glucose=-0.19065363034327712)
+</code></pre></div></div>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ckd_attributes</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([ 0.59610766, -0.19065363])
+</code></pre></div></div>
+
+<p>This is very handy because we can now use array operations on the data in each row.</p>
+
+<h3 id="distance-between-points-when-there-are-two-attributes">Distance Between Points When There are Two Attributes</h3>
+<p>The main calculation we need to do is to find the distance between Alice’s point and any other point. For this, the first thing we need is a way to compute the distance between any pair of points.</p>
+
+<p>How do we do this?  In 2-dimensional space, it’s pretty easy.  If we have a point at coordinates $(x_0,y_0)$ and another at $(x_1,y_1)$, the distance between them is</p>
+
+<script type="math/tex; mode=display">D = \sqrt{(x_0-x_1)^2 + (y_0-y_1)^2}</script>
+
+<p>(Where did this come from?  It comes from the Pythogorean theorem: we have a right triangle with side lengths $x_0-x_1$ and $y_0-y_1$, and we want to find the length of the hypotenuse.)</p>
+
+<p>In the next section we’ll see that this formula has a straightforward extension when there are more than two attributes. For now, let’s use the formula and array operations to find the distance between Alice and the patient in Row 3.</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">patient3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ckd_attributes</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">alice</span><span class="p">,</span> <span class="n">patient3</span>
+</code></pre></div></div>
+
+<div class="output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(array([0. , 1.1]), array([ 0.59610766, -0.19065363]))
+</code></pre></div></div>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">distance</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="nb">sum</span><span class="p">((</span><span class="n">alice</span> <span class="o">-</span> <span class="n">patient3</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">distance</span>
+</code></pre></div></div>
+
+<div class="output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1.421664918881847
+</code></pre></div></div>
+
+<p>We’re going to need the distance between Alice and a bunch of points, so let’s write a function called <code class="highlighter-rouge">distance</code> that computes the distance between any pair of points. The function will take two arrays, each containing the $(x, y)$ coordinates of a point.  (Remember, those are really the Hemoglobin and Glucose levels of a patient.)</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">distance</span><span class="p">(</span><span class="n">point1</span><span class="p">,</span> <span class="n">point2</span><span class="p">):</span>
+    <span class="s">"""Returns the Euclidean distance between point1 and point2.
+    
+    Each argument is an array containing the coordinates of a point."""</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="nb">sum</span><span class="p">((</span><span class="n">point1</span> <span class="o">-</span> <span class="n">point2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">distance</span><span class="p">(</span><span class="n">alice</span><span class="p">,</span> <span class="n">patient3</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1.421664918881847
+</code></pre></div></div>
+
+<p>We have begun to build our classifier: the <code class="highlighter-rouge">distance</code> function is the first building block. Now let’s work on the next piece.</p>
+
+<h3 id="using-apply-on-an-entire-row">Using <code class="highlighter-rouge">apply</code> on an Entire Row</h3>
+<p>Recall that if you want to apply a function to each element of a column of a table, one way to do that is by the call <code class="highlighter-rouge">table_name.apply(function_name, column_label)</code>. This evaluates to an array consisting of the values of the function when we call it on each element of the column. So each entry of the array is based on the corresponding row of the table.</p>
+
+<p>If you use <code class="highlighter-rouge">apply</code> without specifying a column label, then the entire row is passed to the function. Let’s see how this works on a very small table <code class="highlighter-rouge">t</code> containing the information about the first five patients in the training sample.</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">t</span> <span class="o">=</span> <span class="n">ckd_attributes</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">t</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>Hemoglobin</th> <th>Glucose</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>0.456884  </td> <td>0.133751 </td>
+        </tr>
+        <tr>
+            <td>1.153     </td> <td>-0.947597</td>
+        </tr>
+        <tr>
+            <td>0.770138  </td> <td>-0.762223</td>
+        </tr>
+        <tr>
+            <td>0.596108  </td> <td>-0.190654</td>
+        </tr>
+        <tr>
+            <td>-0.239236 </td> <td>-0.49961 </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<p>Just as an example, suppose that for each patient we want to know how unusual their most unusual attribute is.  Concretely, if a patient’s hemoglobin level is further from the average than her glucose level, we want to know how far it is from the average.  If her glucose level is further from the average than her hemoglobin level, we want to know how far that is from the average instead.</p>
+
+<p>That’s the same as taking the maximum of the absolute values of the two quantities. To do this for a particular row, we can convert the row to an array and use array operations.</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">max_abs</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="nb">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="nb">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">row</span><span class="p">)))</span>
+</code></pre></div></div>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">max_abs</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0.4996102825918697
+</code></pre></div></div>
+
+<p>And now we can apply <code class="highlighter-rouge">max_abs</code> to each row of the table <code class="highlighter-rouge">t</code>:</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">t</span><span class="o">.</span><span class="nb">apply</span><span class="p">(</span><span class="n">max_abs</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([0.4568837 , 1.15300352, 0.77013762, 0.59610766, 0.49961028])
+</code></pre></div></div>
+
+<p>This way of using <code class="highlighter-rouge">apply</code> will help us create the next building block of our classifier.</p>
+
+<h3 id="alices-k-nearest-neighbors">Alice’s $k$ Nearest Neighbors</h3>
+<p>If we want to classify Alice using a k-nearest neighbor classifier, we have to identify her $k$ nearest neighbors. What are the steps in this process? Suppose $k = 5$. Then the steps are:</p>
+<ul>
+  <li><strong>Step 1.</strong> Find the distance between Alice and each point in the training sample.</li>
+  <li><strong>Step 2.</strong> Sort the data table in increasing order of the distances.</li>
+  <li><strong>Step 3.</strong> Take the top 5 rows of the sorted table.</li>
+</ul>
+
+<p>Steps 2 and 3 seem straightforward, provided we have the distances. So let’s focus on Step 1.</p>
+
+<p>Here’s Alice:</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">alice</span>
+</code></pre></div></div>
+
+<div class="output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([0. , 1.1])
+</code></pre></div></div>
+
+<p>What we need is a function that finds the distance between Alice and another point whose coordinates are contained in a row. The function <code class="highlighter-rouge">distance</code> returns the distance between any two points whose coordinates are in arrays. We can use that to define <code class="highlighter-rouge">distance_from_alice</code>, which takes a row as its argument and returns the distance between that row and Alice.</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">distance_from_alice</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
+    <span class="s">"""Returns distance between Alice and a row of the attributes table"""</span>
+    <span class="k">return</span> <span class="n">distance</span><span class="p">(</span><span class="n">alice</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">row</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">distance_from_alice</span><span class="p">(</span><span class="n">ckd_attributes</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1.421664918881847
+</code></pre></div></div>
+
+<p>Now we can <code class="highlighter-rouge">apply</code> the function <code class="highlighter-rouge">distance_from_alice</code> to each row of <code class="highlighter-rouge">ckd_attributes</code>, and augment the table <code class="highlighter-rouge">ckd</code> with the distances. Step 1 is complete!</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">distances</span> <span class="o">=</span> <span class="n">ckd_attributes</span><span class="o">.</span><span class="nb">apply</span><span class="p">(</span><span class="n">distance_from_alice</span><span class="p">)</span>
+<span class="n">ckd_with_distances</span> <span class="o">=</span> <span class="n">ckd</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="s">'Distance from Alice'</span><span class="p">,</span> <span class="n">distances</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ckd_with_distances</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>Class</th> <th>Hemoglobin</th> <th>Glucose</th> <th>Color</th> <th>Distance from Alice</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>0    </td> <td>0.456884  </td> <td>0.133751   </td> <td>gold </td> <td>1.06882            </td>
+        </tr>
+        <tr>
+            <td>0    </td> <td>1.153     </td> <td>-0.947597  </td> <td>gold </td> <td>2.34991            </td>
+        </tr>
+        <tr>
+            <td>0    </td> <td>0.770138  </td> <td>-0.762223  </td> <td>gold </td> <td>2.01519            </td>
+        </tr>
+        <tr>
+            <td>0    </td> <td>0.596108  </td> <td>-0.190654  </td> <td>gold </td> <td>1.42166            </td>
+        </tr>
+        <tr>
+            <td>0    </td> <td>-0.239236 </td> <td>-0.49961   </td> <td>gold </td> <td>1.6174             </td>
+        </tr>
+        <tr>
+            <td>0    </td> <td>-0.0304002</td> <td>-0.159758  </td> <td>gold </td> <td>1.26012            </td>
+        </tr>
+        <tr>
+            <td>0    </td> <td>0.282854  </td> <td>-0.00527964</td> <td>gold </td> <td>1.1409             </td>
+        </tr>
+        <tr>
+            <td>0    </td> <td>0.108824  </td> <td>-0.623193  </td> <td>gold </td> <td>1.72663            </td>
+        </tr>
+        <tr>
+            <td>0    </td> <td>0.0740178 </td> <td>-0.515058  </td> <td>gold </td> <td>1.61675            </td>
+        </tr>
+        <tr>
+            <td>0    </td> <td>0.83975   </td> <td>-0.422371  </td> <td>gold </td> <td>1.73862            </td>
+        </tr>
+    </tbody>
+</table>
+<p>... (148 rows omitted)</p>
+</div>
+
+<p>For Step 2, let’s sort the table in increasing order of distance:</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sorted_by_distance</span> <span class="o">=</span> <span class="n">ckd_with_distances</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s">'Distance from Alice'</span><span class="p">)</span>
+<span class="n">sorted_by_distance</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>Class</th> <th>Hemoglobin</th> <th>Glucose</th> <th>Color</th> <th>Distance from Alice</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1    </td> <td>0.83975   </td> <td>1.2151   </td> <td>darkblue</td> <td>0.847601           </td>
+        </tr>
+        <tr>
+            <td>1    </td> <td>-0.970162 </td> <td>1.27689  </td> <td>darkblue</td> <td>0.986156           </td>
+        </tr>
+        <tr>
+            <td>0    </td> <td>-0.0304002</td> <td>0.0874074</td> <td>gold    </td> <td>1.01305            </td>
+        </tr>
+        <tr>
+            <td>0    </td> <td>0.14363   </td> <td>0.0874074</td> <td>gold    </td> <td>1.02273            </td>
+        </tr>
+        <tr>
+            <td>1    </td> <td>-0.413266 </td> <td>2.04928  </td> <td>darkblue</td> <td>1.03534            </td>
+        </tr>
+        <tr>
+            <td>0    </td> <td>0.387272  </td> <td>0.118303 </td> <td>gold    </td> <td>1.05532            </td>
+        </tr>
+        <tr>
+            <td>0    </td> <td>0.456884  </td> <td>0.133751 </td> <td>gold    </td> <td>1.06882            </td>
+        </tr>
+        <tr>
+            <td>0    </td> <td>0.178436  </td> <td>0.0410639</td> <td>gold    </td> <td>1.07386            </td>
+        </tr>
+        <tr>
+            <td>0    </td> <td>0.00440582</td> <td>0.025616 </td> <td>gold    </td> <td>1.07439            </td>
+        </tr>
+        <tr>
+            <td>0    </td> <td>-0.169624 </td> <td>0.025616 </td> <td>gold    </td> <td>1.08769            </td>
+        </tr>
+    </tbody>
+</table>
+<p>... (148 rows omitted)</p>
+</div>
+
+<p>Step 3: The top 5 rows correspond to Alice’s 5 nearest neighbors; you can replace 5 by any other positive integer.</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">alice_5_nearest_neighbors</span> <span class="o">=</span> <span class="n">sorted_by_distance</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">alice_5_nearest_neighbors</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>Class</th> <th>Hemoglobin</th> <th>Glucose</th> <th>Color</th> <th>Distance from Alice</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1    </td> <td>0.83975   </td> <td>1.2151   </td> <td>darkblue</td> <td>0.847601           </td>
+        </tr>
+        <tr>
+            <td>1    </td> <td>-0.970162 </td> <td>1.27689  </td> <td>darkblue</td> <td>0.986156           </td>
+        </tr>
+        <tr>
+            <td>0    </td> <td>-0.0304002</td> <td>0.0874074</td> <td>gold    </td> <td>1.01305            </td>
+        </tr>
+        <tr>
+            <td>0    </td> <td>0.14363   </td> <td>0.0874074</td> <td>gold    </td> <td>1.02273            </td>
+        </tr>
+        <tr>
+            <td>1    </td> <td>-0.413266 </td> <td>2.04928  </td> <td>darkblue</td> <td>1.03534            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<p>Three of Alice’s five nearest neighbors are blue points and two are gold. So a 5-nearest neighbor classifier would classify Alice as blue: it would predict that Alice has chronic kidney disease.</p>
+
+<p>The graph below zooms in on Alice and her five nearest neighbors. The two gold ones just inside the circle directly below the red point. The classifier says Alice is more like the three blue ones around her.</p>
+
+<p>We are well on our way to implementing our k-nearest neighbor classifier. In the next two sections we will put it together and assess its accuracy.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/jupyterhub-for-education-template/textbook/17/2/Training_and_Testing" class="pagination--pager" title="17.2 Training and Testing
+">Previous</a>
+    
+    
+      <a href="/jupyterhub-for-education-template/textbook/17/4/Implementing_the_Classifier" class="pagination--pager" title="17.4 Implementing the Classifier
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+    
+    
+    
+    
+    
+    <li><a href="/jupyterhub-for-education-template/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2018 Berkeley DSEP. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/jupyterhub-for-education-template/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
+
+
+
+
+
+
+
+
+  </body>
+</html>

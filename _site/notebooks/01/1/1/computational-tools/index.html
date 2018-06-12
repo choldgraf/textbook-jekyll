@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Computational Tools - Data 8 Textbook</title>
+<meta name="description" content="">
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Data 8 Textbook">
+<meta property="og:title" content="Computational Tools">
+<meta property="og:url" content="http://localhost:4000/jupyterhub-for-education-template/notebooks/01/1/1/computational-tools/">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/jupyterhub-for-education-template/notebooks/01/1/1/computational-tools/">
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "Berkeley DSEP",
+      "url": "http://localhost:4000/jupyterhub-for-education-template",
+      "sameAs": null
+    }
+  </script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/jupyterhub-for-education-template/feed.xml" type="application/atom+xml" rel="alternate" title="Data 8 Textbook Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/jupyterhub-for-education-template/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+    <link rel="stylesheet" href="/jupyterhub-for-education-template/assets/css/notebook-markdown.css">
+    <link rel="stylesheet" href="/jupyterhub-for-education-template/assets/css/custom.css">
+    <link rel="shortcut icon" type="image/png" href="/jupyterhub-for-education-template/favicon.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$']],
+        processEscapes: false
+      }
+    });
+    // MathJax Configuration
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+    function getQueryVariable(variable)
+    {
+           var query = window.location.search.substring(1);
+           var vars = query.split("&");
+           for (var i=0;i<vars.length;i++) {
+                   var pair = vars[i].split("=");
+                   if(pair[0] == variable){return pair[1];}
+           }
+           return(false);
+    }
+    window.onload = function() {
+        window.hubUrl = getQueryVariable("hubUrl");
+        if (window.hubUrl !== false) {
+            if (window.hubUrl.indexOf('http') < 0) {
+                window.hubUrl = 'http://' + window.hubUrl;
+            }
+            link = $("a.interact-button")[0];
+            if (link !== undefined) {
+                var href = link.getAttribute('href');
+                href = href.replace("http://datahub.berkeley.edu", window.hubUrl);
+                link.setAttribute('href', href);
+            }
+        }
+    }
+    </script>
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="/jupyterhub-for-education-template/">Data 8 Textbook</a>
+        <ul class="visible-links">
+          
+            
+            <li class="masthead__menu-item">
+              <a href="http://localhost:4000/jupyterhub-for-education-template/about/" >About</a>
+            </li>
+          
+            
+            <li class="masthead__menu-item">
+              <a href="http://localhost:4000/jupyterhub-for-education-template/syllabus/" >Syllabus</a>
+            </li>
+          
+            
+            <li class="masthead__menu-item">
+              <a href="http://localhost:4000/jupyterhub-for-education-template/references/" >Resources</a>
+            </li>
+          
+            
+            <li class="masthead__menu-item">
+              <a href="http://localhost:4000/jupyterhub-for-education-template/textbook/01/what-is-data-science" >Textbook</a>
+            </li>
+          
+          <li class="masthead__menu-item">
+            <a href="http://datahub.berkeley.edu">DataHub</a>
+          </li>
+        </ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle Menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Computational Tools">
+    
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <!-- <h1 id="page-title" class="page__title" itemprop="headline">Computational Tools
+</h1> -->
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <h2 id="computational-tools">Computational Tools</h2>
+
+<p>This text uses the Python 3 programming language, along with a standard set of
+numerical and data visualization tools that are used widely in commercial
+applications, scientific experiments, and open-source projects.
+Python has recruited enthusiasts from many professions that use data to draw
+conclusions. By learning the Python language, you will join a
+million-person-strong community of software developers and data scientists.</p>
+
+<p><strong>Getting Started.</strong> The easiest and recommended way to start writing programs
+in Python is to log into the companion site for this text,
+<a href="https://datahub.berkeley.edu">datahub.berkeley.edu</a>. If you have a @berkeley.edu
+email address, you already have full access to the programming environment hosted 
+on that site. If not, please 
+<a href="https://goo.gl/forms/saQpxdqzS2rKxjTc2">complete this form</a> to request access.</p>
+
+<p>You are not at all restricted to using this web-based programming environment.
+A Python program can be executed by any computer, regardless of its
+manufacturer or operating system, provided that support for the language is
+installed. If you wish to install the version of Python and its accompanying
+libraries that will match this text, we recommend the <a href="http://continuum.io/downloads">Anaconda</a>
+distribution that packages together the Python 3 language interpreter, IPython
+libraries, and the Jupyter notebook environment.</p>
+
+<p>This text includes a complete introduction to all of these computational tools.
+You will learn to write programs, generate images from data, and work with
+real-world data sets that are published online.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+      </footer>
+
+      
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+    
+    
+    
+    
+    
+    <li><a href="/jupyterhub-for-education-template/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2018 Berkeley DSEP. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/jupyterhub-for-education-template/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
+
+
+
+
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,2080 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Data 8 Textbook</title>
+<meta name="description" content="">
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Data 8 Textbook">
+<meta property="og:title" content="Data 8 Textbook">
+<meta property="og:url" content="http://localhost:4000/jupyterhub-for-education-template/textbook/06/2/Selecting_Rows/">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/jupyterhub-for-education-template/textbook/06/2/Selecting_Rows/">
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "Berkeley DSEP",
+      "url": "http://localhost:4000/jupyterhub-for-education-template",
+      "sameAs": null
+    }
+  </script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/jupyterhub-for-education-template/feed.xml" type="application/atom+xml" rel="alternate" title="Data 8 Textbook Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/jupyterhub-for-education-template/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+    <link rel="stylesheet" href="/jupyterhub-for-education-template/assets/css/notebook-markdown.css">
+    <link rel="stylesheet" href="/jupyterhub-for-education-template/assets/css/custom.css">
+    <link rel="shortcut icon" type="image/png" href="/jupyterhub-for-education-template/favicon.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$']],
+        processEscapes: false
+      }
+    });
+    // MathJax Configuration
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+    function getQueryVariable(variable)
+    {
+           var query = window.location.search.substring(1);
+           var vars = query.split("&");
+           for (var i=0;i<vars.length;i++) {
+                   var pair = vars[i].split("=");
+                   if(pair[0] == variable){return pair[1];}
+           }
+           return(false);
+    }
+    window.onload = function() {
+        window.hubUrl = getQueryVariable("hubUrl");
+        if (window.hubUrl !== false) {
+            if (window.hubUrl.indexOf('http') < 0) {
+                window.hubUrl = 'http://' + window.hubUrl;
+            }
+            link = $("a.interact-button")[0];
+            if (link !== undefined) {
+                var href = link.getAttribute('href');
+                href = href.replace("http://datahub.berkeley.edu", window.hubUrl);
+                link.setAttribute('href', href);
+            }
+        }
+    }
+    </script>
+  </head>
+
+  <body class="layout--textbook">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="/jupyterhub-for-education-template/">Data 8 Textbook</a>
+        <ul class="visible-links">
+          
+            
+            <li class="masthead__menu-item">
+              <a href="http://localhost:4000/jupyterhub-for-education-template/about/" >About</a>
+            </li>
+          
+            
+            <li class="masthead__menu-item">
+              <a href="http://localhost:4000/jupyterhub-for-education-template/syllabus/" >Syllabus</a>
+            </li>
+          
+            
+            <li class="masthead__menu-item">
+              <a href="http://localhost:4000/jupyterhub-for-education-template/references/" >Resources</a>
+            </li>
+          
+            
+            <li class="masthead__menu-item">
+              <a href="http://localhost:4000/jupyterhub-for-education-template/textbook/01/what-is-data-science" >Textbook</a>
+            </li>
+          
+          <li class="masthead__menu-item">
+            <a href="http://datahub.berkeley.edu">DataHub</a>
+          </li>
+        </ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle Menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/01/what-is-data-science"><span class="nav__sub-title">1. Data Science</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/01/1/intro" class="level_1">1.1 Introduction</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/01/1/1/computational-tools" class="level_2">1.1.1 Computational Tools</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/01/1/2/statistical-techniques" class="level_2">1.1.2 Statistical Techniques</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/01/2/why-data-science" class="level_1">1.2 Why Data Science?</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/01/3/Plotting_the_Classics" class="level_1">1.3 Plotting the Classics</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/01/3/1/Literary_Characters" class="level_2">1.3.1 Literary Characters</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/01/3/2/Another_Kind_Of_Character" class="level_2">1.3.2 Another Kind of Character</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/02/causality-and-experiments"><span class="nav__sub-title">2. Causality and Experiments</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/02/1/observation-and-visualization-john-snow-and-the-broad-street-pump" class="level_1">2.1 John Snow and the Broad Street Pump</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/02/2/snow-s-grand-experiment" class="level_1">2.2 Snow’s “Grand Experiment”</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/02/3/establishing-causality" class="level_1">2.3 Establishing Causality</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/02/4/randomization" class="level_1">2.4 Randomization</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/02/5/endnote" class="level_1">2.5 Endnote</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/03/programming-in-python"><span class="nav__sub-title">3. Programming in Python</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/03/1/Expressions" class="level_1">3.1 Expressions</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/03/2/Names" class="level_1">3.2 Names</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/03/2/1/Growth" class="level_2">3.2.1 Example: Growth Rates</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/03/3/Calls" class="level_1">3.3 Call Expressions</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/03/4/Introduction_to_Tables" class="level_1">3.4 Introduction to Tables</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/04/Types"><span class="nav__sub-title">4. Data Types</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/04/1/Numbers" class="level_1">4.1 Numbers</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/04/2/Strings" class="level_1">4.2 Strings</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/04/2/1/String_Methods" class="level_2">4.2.1 String Methods</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/04/3/Comparison" class="level_1">4.3 Comparisons</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/05/Collections"><span class="nav__sub-title">5. Sequences</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/05/1/Arrays" class="level_1">5.1 Arrays</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/05/2/Ranges" class="level_1">5.2 Ranges</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/05/3/More_on_Arrays" class="level_1">5.3 More on Arrays</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/06/Tables"><span class="nav__sub-title">6. Tables</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/06/1/Sorting_Rows" class="level_1">6.1 Sorting Rows</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/06/2/Selecting_Rows" class="level_1">6.2 Selecting Rows</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/06/3/Example_Trends_in_the_Population_of_the_United_States" class="level_1">6.3 Example: Population Trends</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/06/4/Example_Gender_Ratio_in_the_US_Population" class="level_1">6.4 Example: Trends in Gender</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/07/Visualization"><span class="nav__sub-title">7. Visualization</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/07/1/Visualizing_Categorical_Distributions" class="level_1">7.1 Categorical Distributions</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/07/2/Visualizing_Numerical_Distributions" class="level_1">7.2 Numerical Distributions</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/07/3/Overlaid_Graphs" class="level_1">7.3 Overlaid Graphs</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/08/Functions_and_Tables"><span class="nav__sub-title">8. Functions and Tables</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/08/1/Applying_a_Function_to_a_Column" class="level_1">8.1 Applying Functions to Columns</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/08/2/Classifying_by_One_Variable" class="level_1">8.2 Classifying by One Variable</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/08/3/Cross-Classifying_by_More_than_One_Variable" class="level_1">8.3 Cross-Classifying</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/08/4/Joining_Tables_by_Columns" class="level_1">8.4 Joining Tables by Columns</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/08/5/Bike_Sharing_in_the_Bay_Area" class="level_1">8.5 Bike Sharing in the Bay Area</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/09/Randomness"><span class="nav__sub-title">9. Randomness</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/09/1/Conditional_Statements" class="level_1">9.1 Conditional Statements</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/09/2/Iteration" class="level_1">9.2 Iteration</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/09/3/Simulation" class="level_1">9.3 Simulation</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/09/4/Monty_Hall_Problem" class="level_1">9.4 The Monty Hall Problem</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/09/5/Finding_Probabilities" class="level_1">9.5 Finding Probabilities</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/10/Sampling_and_Empirical_Distributions"><span class="nav__sub-title">10. Sampling and Empirical Distributions</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/10/1/Empirical_Distributions" class="level_1">10.1 Empirical Distributions</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/10/2/Sampling_from_a_Population" class="level_1">10.2 Sampling from a Population</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/10/3/Empirical_Distribution_of_a_Statistic" class="level_1">10.3 Empirical Distibution of a Statistic</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/11/Testing_Hypotheses"><span class="nav__sub-title">11. Testing Hypotheses</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/11/1/Assessing_Models" class="level_1">11.1 Assessing Models</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/11/2/Multiple_Categories" class="level_1">11.2 Multiple Categories</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/11/3/Decisions_and_Uncertainty" class="level_1">11.3 Decisions and Uncertainty</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/12/Comparing_Two_Samples"><span class="nav__sub-title">12. Comparing Two Samples</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/12/1/AB_Testing" class="level_1">12.1 A/B Testing</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/12/2/Deflategate" class="level_1">12.2 Deflategate</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/12/3/Causality" class="level_1">12.3 Causality</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/13/Estimation"><span class="nav__sub-title">13. Estimation</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/13/1/Percentiles" class="level_1">13.1 Percentiles</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/13/2/Bootstrap" class="level_1">13.2 The Bootstrap</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/13/3/Confidence_Intervals" class="level_1">13.3 Confidence Intervals</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/13/4/Using_Confidence_Intervals" class="level_1">13.4 Using Confidence Intervals</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/14/Why_the_Mean_Matters"><span class="nav__sub-title">14. Why the Mean Matters</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/14/1/Properties_of_the_Mean" class="level_1">14.1 Properties of the Mean</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/14/2/Variability" class="level_1">14.2 Variability</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/14/3/SD_and_the_Normal_Curve" class="level_1">14.3 The SD and the Normal Curve</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/14/4/Central_Limit_Theorem" class="level_1">14.4 The Central Limit Theorem</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/14/5/Variability_of_the_Sample_Mean" class="level_1">14.5 The Variability of the Sample Mean</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/14/6/Choosing_a_Sample_Size" class="level_1">14.6 Choosing a Sample Size</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/15/Prediction"><span class="nav__sub-title">15. Prediction</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/15/1/Correlation" class="level_1">15.1 Correlation</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/15/2/Regression_Line" class="level_1">15.2 The Regression Line</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/15/3/Method_of_Least_Squares" class="level_1">15.3 The Method of Least Squares</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/15/4/Least_Squares_Regression" class="level_1">15.4 Least Squares Regression</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/15/5/Visual_Diagnostics" class="level_1">15.5 Visual Diagnostics</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/15/6/Numerical_Diagnostics" class="level_1">15.6 Numerical Diagnostics</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/16/Inference_for_Regression"><span class="nav__sub-title">16. Inference for Regression</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/16/1/Regression_Model" class="level_1">16.1 A Regression Model</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/16/2/Inference_for_the_True_Slope" class="level_1">16.2 Inference for the True Slope</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/16/3/Prediction_Intervals" class="level_1">16.3 Prediction Intervals</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/17/Classification"><span class="nav__sub-title">17. Classification</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/17/1/Nearest_Neighbors" class="level_1">17.1 Nearest Neighbors</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/17/2/Training_and_Testing" class="level_1">17.2 Training and Testing</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/17/3/Rows_of_Tables" class="level_1">17.3 Rows of Tables</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/17/4/Implementing_the_Classifier" class="level_1">17.4 Implementing the Classifier</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/17/5/Accuracy_of_the_Classifier" class="level_1">17.5 The Accuracy of the Classifier</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/17/6/Multiple_Regression" class="level_1">17.6 Multiple Regression</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/18/Updating_Predictions"><span class="nav__sub-title">18. Updating Predictions</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/18/1/More_Likely_than_Not_Binary_Classifier" class="level_1">18.1 A "More Likely Than Not" Binary Classifier</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/18/2/Making_Decisions" class="level_1">18.2 Making Decisions</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    
+    
+    
+    <!-- INTERACT LINKS -->
+    <a class="interact-button" href="http://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https://github.com/choldgraf/data8-textbook&amp;branch=gh-pages&amp;subPath=notebooks/06/2/Selecting_Rows.ipynb">Interact</a>
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <!--  -->
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>Often, we would like to extract just those rows that correspond to entries with a particular feature. For example, we might want only the rows corresponding to the Warriors, or to players who earned more than $$10$ million. Or we might just want the top five earners.</p>
+
+<h3 id="specified-rows">Specified Rows</h3>
+<p>The Table method <code class="highlighter-rouge">take</code> does just that – it takes a specified set of rows. Its argument is a row index or array of indices, and it creates a new table consisting of only those rows.</p>
+
+<p>For example, if we wanted just the first row of <code class="highlighter-rouge">nba</code>, we could use <code class="highlighter-rouge">take</code> as follows.</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">nba</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>PLAYER</th> <th>POSITION</th> <th>TEAM</th> <th>SALARY</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Paul Millsap    </td> <td>PF      </td> <td>Atlanta Hawks</td> <td>18.6717</td>
+        </tr>
+        <tr>
+            <td>Al Horford      </td> <td>C       </td> <td>Atlanta Hawks</td> <td>12     </td>
+        </tr>
+        <tr>
+            <td>Tiago Splitter  </td> <td>C       </td> <td>Atlanta Hawks</td> <td>9.75625</td>
+        </tr>
+        <tr>
+            <td>Jeff Teague     </td> <td>PG      </td> <td>Atlanta Hawks</td> <td>8      </td>
+        </tr>
+        <tr>
+            <td>Kyle Korver     </td> <td>SG      </td> <td>Atlanta Hawks</td> <td>5.74648</td>
+        </tr>
+        <tr>
+            <td>Thabo Sefolosha </td> <td>SF      </td> <td>Atlanta Hawks</td> <td>4      </td>
+        </tr>
+        <tr>
+            <td>Mike Scott      </td> <td>PF      </td> <td>Atlanta Hawks</td> <td>3.33333</td>
+        </tr>
+        <tr>
+            <td>Kent Bazemore   </td> <td>SF      </td> <td>Atlanta Hawks</td> <td>2      </td>
+        </tr>
+        <tr>
+            <td>Dennis Schroder </td> <td>PG      </td> <td>Atlanta Hawks</td> <td>1.7634 </td>
+        </tr>
+        <tr>
+            <td>Tim Hardaway Jr.</td> <td>SG      </td> <td>Atlanta Hawks</td> <td>1.30452</td>
+        </tr>
+    </tbody>
+</table>
+<p>... (407 rows omitted)</p>
+</div>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">nba</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>PLAYER</th> <th>POSITION</th> <th>TEAM</th> <th>SALARY</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Paul Millsap</td> <td>PF      </td> <td>Atlanta Hawks</td> <td>18.6717</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<p>This is a new table with just the single row that we specified.</p>
+
+<p>We could also get the fourth, fifth, and sixth rows by specifying a range of indices as the argument.</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">nba</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>PLAYER</th> <th>POSITION</th> <th>TEAM</th> <th>SALARY</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Jeff Teague    </td> <td>PG      </td> <td>Atlanta Hawks</td> <td>8      </td>
+        </tr>
+        <tr>
+            <td>Kyle Korver    </td> <td>SG      </td> <td>Atlanta Hawks</td> <td>5.74648</td>
+        </tr>
+        <tr>
+            <td>Thabo Sefolosha</td> <td>SF      </td> <td>Atlanta Hawks</td> <td>4      </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<p>If we want a table of the top 5 highest paid players, we can first sort the list by salary and then <code class="highlighter-rouge">take</code> the first five rows:</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">nba</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s">'SALARY'</span><span class="p">,</span> <span class="n">descending</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>PLAYER</th> <th>POSITION</th> <th>TEAM</th> <th>SALARY</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Kobe Bryant    </td> <td>SF      </td> <td>Los Angeles Lakers </td> <td>25     </td>
+        </tr>
+        <tr>
+            <td>Joe Johnson    </td> <td>SF      </td> <td>Brooklyn Nets      </td> <td>24.8949</td>
+        </tr>
+        <tr>
+            <td>LeBron James   </td> <td>SF      </td> <td>Cleveland Cavaliers</td> <td>22.9705</td>
+        </tr>
+        <tr>
+            <td>Carmelo Anthony</td> <td>SF      </td> <td>New York Knicks    </td> <td>22.875 </td>
+        </tr>
+        <tr>
+            <td>Dwight Howard  </td> <td>C       </td> <td>Houston Rockets    </td> <td>22.3594</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<h3 id="rows-corresponding-to-a-specified-feature">Rows Corresponding to a Specified Feature</h3>
+<p>More often, we will want to access data in a set of rows that have a certain feature, but whose indices we don’t know ahead of time. For example, we might want data on all the players who made more than $$10$ million, but we don’t want to spend time counting rows in the sorted table.</p>
+
+<p>The method <code class="highlighter-rouge">where</code> does the job for us. Its output is a table with the same columns as the original but only the rows <em>where</em> the feature occurs.</p>
+
+<p>The first argument of <code class="highlighter-rouge">where</code> is the label of the column that contains the information about whether or not a row has the feature we want. If the feature is “made more than $$10$ million”, the column is <code class="highlighter-rouge">SALARY</code>.</p>
+
+<p>The second argument of <code class="highlighter-rouge">where</code> is a way of specifying the feature. A couple of examples will make the general method of specification easier to understand.</p>
+
+<p>In the first example, we extract the data for all those who earned more than $$10$ million.</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">nba</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s">'SALARY'</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">above</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>PLAYER</th> <th>POSITION</th> <th>TEAM</th> <th>SALARY</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Paul Millsap  </td> <td>PF      </td> <td>Atlanta Hawks    </td> <td>18.6717</td>
+        </tr>
+        <tr>
+            <td>Al Horford    </td> <td>C       </td> <td>Atlanta Hawks    </td> <td>12     </td>
+        </tr>
+        <tr>
+            <td>Joe Johnson   </td> <td>SF      </td> <td>Brooklyn Nets    </td> <td>24.8949</td>
+        </tr>
+        <tr>
+            <td>Thaddeus Young</td> <td>PF      </td> <td>Brooklyn Nets    </td> <td>11.236 </td>
+        </tr>
+        <tr>
+            <td>Al Jefferson  </td> <td>C       </td> <td>Charlotte Hornets</td> <td>13.5   </td>
+        </tr>
+        <tr>
+            <td>Nicolas Batum </td> <td>SG      </td> <td>Charlotte Hornets</td> <td>13.1253</td>
+        </tr>
+        <tr>
+            <td>Kemba Walker  </td> <td>PG      </td> <td>Charlotte Hornets</td> <td>12     </td>
+        </tr>
+        <tr>
+            <td>Derrick Rose  </td> <td>PG      </td> <td>Chicago Bulls    </td> <td>20.0931</td>
+        </tr>
+        <tr>
+            <td>Jimmy Butler  </td> <td>SG      </td> <td>Chicago Bulls    </td> <td>16.4075</td>
+        </tr>
+        <tr>
+            <td>Joakim Noah   </td> <td>C       </td> <td>Chicago Bulls    </td> <td>13.4   </td>
+        </tr>
+    </tbody>
+</table>
+<p>... (59 rows omitted)</p>
+</div>
+
+<p>The use of the argument <code class="highlighter-rouge">are.above(10)</code> ensured that each selected row had a value of <code class="highlighter-rouge">SALARY</code> that was greater than 10.</p>
+
+<p>There are 69 rows in the new table, corresponding to the 69 players who made more than $10$ million dollars. Arranging these rows in order makes the data easier to analyze. DeMar DeRozan of the Toronto Raptors was the “poorest” of this group, at a salary of just over $10$ million dollars.</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">nba</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s">'SALARY'</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">above</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s">'SALARY'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>PLAYER</th> <th>POSITION</th> <th>TEAM</th> <th>SALARY</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>DeMar DeRozan  </td> <td>SG      </td> <td>Toronto Raptors     </td> <td>10.05  </td>
+        </tr>
+        <tr>
+            <td>Gerald Wallace </td> <td>SF      </td> <td>Philadelphia 76ers  </td> <td>10.1059</td>
+        </tr>
+        <tr>
+            <td>Luol Deng      </td> <td>SF      </td> <td>Miami Heat          </td> <td>10.1516</td>
+        </tr>
+        <tr>
+            <td>Monta Ellis    </td> <td>SG      </td> <td>Indiana Pacers      </td> <td>10.3   </td>
+        </tr>
+        <tr>
+            <td>Wilson Chandler</td> <td>SF      </td> <td>Denver Nuggets      </td> <td>10.4494</td>
+        </tr>
+        <tr>
+            <td>Brendan Haywood</td> <td>C       </td> <td>Cleveland Cavaliers </td> <td>10.5225</td>
+        </tr>
+        <tr>
+            <td>Jrue Holiday   </td> <td>PG      </td> <td>New Orleans Pelicans</td> <td>10.5955</td>
+        </tr>
+        <tr>
+            <td>Tyreke Evans   </td> <td>SG      </td> <td>New Orleans Pelicans</td> <td>10.7346</td>
+        </tr>
+        <tr>
+            <td>Marcin Gortat  </td> <td>C       </td> <td>Washington Wizards  </td> <td>11.2174</td>
+        </tr>
+        <tr>
+            <td>Thaddeus Young </td> <td>PF      </td> <td>Brooklyn Nets       </td> <td>11.236 </td>
+        </tr>
+    </tbody>
+</table>
+<p>... (59 rows omitted)</p>
+</div>
+
+<p>How much did Stephen Curry make? For the answer, we have to access the row where the value of <code class="highlighter-rouge">PLAYER</code> is equal to <code class="highlighter-rouge">Stephen Curry</code>. That is placed a table consisting of just one line:</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">nba</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s">'PLAYER'</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">equal_to</span><span class="p">(</span><span class="s">'Stephen Curry'</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>PLAYER</th> <th>POSITION</th> <th>TEAM</th> <th>SALARY</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Stephen Curry</td> <td>PG      </td> <td>Golden State Warriors</td> <td>11.3708</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<p>Curry made just under $$11.4$ million dollars. That’s a lot of money, but it’s less than half the salary of LeBron James. You’ll find that salary in the “Top 5” table earlier in this section, or you could find it replacing <code class="highlighter-rouge">'Stephen Curry'</code> by <code class="highlighter-rouge">'LeBron James'</code> in the line of code above.</p>
+
+<p>In the code, <code class="highlighter-rouge">are</code> is used again, but this time with the <em>predicate</em> <code class="highlighter-rouge">equal_to</code> instead of <code class="highlighter-rouge">above</code>. Thus for example you can get a table of all the Warriors:</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">nba</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s">'TEAM'</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">equal_to</span><span class="p">(</span><span class="s">'Golden State Warriors'</span><span class="p">))</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>PLAYER</th> <th>POSITION</th> <th>TEAM</th> <th>SALARY</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Klay Thompson    </td> <td>SG      </td> <td>Golden State Warriors</td> <td>15.501  </td>
+        </tr>
+        <tr>
+            <td>Draymond Green   </td> <td>PF      </td> <td>Golden State Warriors</td> <td>14.2609 </td>
+        </tr>
+        <tr>
+            <td>Andrew Bogut     </td> <td>C       </td> <td>Golden State Warriors</td> <td>13.8    </td>
+        </tr>
+        <tr>
+            <td>Andre Iguodala   </td> <td>SF      </td> <td>Golden State Warriors</td> <td>11.7105 </td>
+        </tr>
+        <tr>
+            <td>Stephen Curry    </td> <td>PG      </td> <td>Golden State Warriors</td> <td>11.3708 </td>
+        </tr>
+        <tr>
+            <td>Jason Thompson   </td> <td>PF      </td> <td>Golden State Warriors</td> <td>7.00847 </td>
+        </tr>
+        <tr>
+            <td>Shaun Livingston </td> <td>PG      </td> <td>Golden State Warriors</td> <td>5.54373 </td>
+        </tr>
+        <tr>
+            <td>Harrison Barnes  </td> <td>SF      </td> <td>Golden State Warriors</td> <td>3.8734  </td>
+        </tr>
+        <tr>
+            <td>Marreese Speights</td> <td>C       </td> <td>Golden State Warriors</td> <td>3.815   </td>
+        </tr>
+        <tr>
+            <td>Leandro Barbosa  </td> <td>SG      </td> <td>Golden State Warriors</td> <td>2.5     </td>
+        </tr>
+        <tr>
+            <td>Festus Ezeli     </td> <td>C       </td> <td>Golden State Warriors</td> <td>2.00875 </td>
+        </tr>
+        <tr>
+            <td>Brandon Rush     </td> <td>SF      </td> <td>Golden State Warriors</td> <td>1.27096 </td>
+        </tr>
+        <tr>
+            <td>Kevon Looney     </td> <td>SF      </td> <td>Golden State Warriors</td> <td>1.13196 </td>
+        </tr>
+        <tr>
+            <td>Anderson Varejao </td> <td>PF      </td> <td>Golden State Warriors</td> <td>0.289755</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<p>This portion of the table is already sorted by salary, because the original table listed players sorted by salary within the same team. The <code class="highlighter-rouge">.show()</code> at the end of the line ensures that all rows are shown, not just the first 10.</p>
+
+<p>It is so common to ask for the rows for which some column is equal to some value that the <code class="highlighter-rouge">are.equal_to</code> call is optional. Instead, the <code class="highlighter-rouge">where</code> method can be called with only a column name and a value to achieve the same effect.</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">nba</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s">'TEAM'</span><span class="p">,</span> <span class="s">'Denver Nuggets'</span><span class="p">)</span> <span class="c"># equivalent to nba.where('TEAM', are.equal_to('Denver Nuggets'))</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>PLAYER</th> <th>POSITION</th> <th>TEAM</th> <th>SALARY</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Danilo Gallinari </td> <td>SF      </td> <td>Denver Nuggets</td> <td>14     </td>
+        </tr>
+        <tr>
+            <td>Kenneth Faried   </td> <td>PF      </td> <td>Denver Nuggets</td> <td>11.236 </td>
+        </tr>
+        <tr>
+            <td>Wilson Chandler  </td> <td>SF      </td> <td>Denver Nuggets</td> <td>10.4494</td>
+        </tr>
+        <tr>
+            <td>JJ Hickson       </td> <td>C       </td> <td>Denver Nuggets</td> <td>5.6135 </td>
+        </tr>
+        <tr>
+            <td>Jameer Nelson    </td> <td>PG      </td> <td>Denver Nuggets</td> <td>4.345  </td>
+        </tr>
+        <tr>
+            <td>Will Barton      </td> <td>SF      </td> <td>Denver Nuggets</td> <td>3.53333</td>
+        </tr>
+        <tr>
+            <td>Emmanuel Mudiay  </td> <td>PG      </td> <td>Denver Nuggets</td> <td>3.10224</td>
+        </tr>
+        <tr>
+            <td>Darrell Arthur   </td> <td>PF      </td> <td>Denver Nuggets</td> <td>2.814  </td>
+        </tr>
+        <tr>
+            <td>Jusuf Nurkic     </td> <td>C       </td> <td>Denver Nuggets</td> <td>1.842  </td>
+        </tr>
+        <tr>
+            <td>Joffrey Lauvergne</td> <td>C       </td> <td>Denver Nuggets</td> <td>1.70972</td>
+        </tr>
+    </tbody>
+</table>
+<p>... (4 rows omitted)</p>
+</div>
+
+<h3 id="multiple-features">Multiple Features</h3>
+<p>You can access rows that have multiple specified features, by using <code class="highlighter-rouge">where</code> repeatedly. For example, here is a way to extract all the Point Guards whose salaries were over $$15$ million.</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">nba</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s">'POSITION'</span><span class="p">,</span> <span class="s">'PG'</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s">'SALARY'</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">above</span><span class="p">(</span><span class="mi">15</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>PLAYER</th> <th>POSITION</th> <th>TEAM</th> <th>SALARY</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Derrick Rose     </td> <td>PG      </td> <td>Chicago Bulls        </td> <td>20.0931</td>
+        </tr>
+        <tr>
+            <td>Kyrie Irving     </td> <td>PG      </td> <td>Cleveland Cavaliers  </td> <td>16.4075</td>
+        </tr>
+        <tr>
+            <td>Chris Paul       </td> <td>PG      </td> <td>Los Angeles Clippers </td> <td>21.4687</td>
+        </tr>
+        <tr>
+            <td>Russell Westbrook</td> <td>PG      </td> <td>Oklahoma City Thunder</td> <td>16.7442</td>
+        </tr>
+        <tr>
+            <td>John Wall        </td> <td>PG      </td> <td>Washington Wizards   </td> <td>15.852 </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<h3 id="general-form">General Form</h3>
+<p>By now you will have realized that the general way to create a new table by selecting rows with a given feature is to use <code class="highlighter-rouge">where</code> and <code class="highlighter-rouge">are</code> with the appropriate condition:</p>
+
+<p><code class="highlighter-rouge">original_table_name.where(column_label_string, are.condition)</code></p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">nba</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s">'SALARY'</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mf">10.3</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>PLAYER</th> <th>POSITION</th> <th>TEAM</th> <th>SALARY</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Luol Deng     </td> <td>SF      </td> <td>Miami Heat        </td> <td>10.1516</td>
+        </tr>
+        <tr>
+            <td>Gerald Wallace</td> <td>SF      </td> <td>Philadelphia 76ers</td> <td>10.1059</td>
+        </tr>
+        <tr>
+            <td>Danny Green   </td> <td>SG      </td> <td>San Antonio Spurs </td> <td>10     </td>
+        </tr>
+        <tr>
+            <td>DeMar DeRozan </td> <td>SG      </td> <td>Toronto Raptors   </td> <td>10.05  </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<p>Notice that the table above includes Danny Green who made $$10$ million, but <em>not</em> Monta Ellis who made $$10.3$ million. As elsewhere in Python, the range <code class="highlighter-rouge">between</code> includes the left end but not the right.</p>
+
+<p>If we specify a condition that isn’t satisfied by any row, we get a table with column labels but no rows.</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">nba</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s">'PLAYER'</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">equal_to</span><span class="p">(</span><span class="s">'Barack Obama'</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>PLAYER</th> <th>POSITION</th> <th>TEAM</th> <th>SALARY</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+</div>
+
+<h3 id="some-more-conditions">Some More Conditions</h3>
+<p>Here are some predicates of <code class="highlighter-rouge">are</code> that you might find useful. Note that <code class="highlighter-rouge">x</code> and <code class="highlighter-rouge">y</code> are numbers, <code class="highlighter-rouge">STRING</code> is a string, and <code class="highlighter-rouge">Z</code> is either a number or a string; you have to specify these depending on the feature you want.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Predicate</strong></th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">are.equal_to(Z)</code></td>
+      <td>Equal to <code class="highlighter-rouge">Z</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">are.above(x)</code></td>
+      <td>Greater than <code class="highlighter-rouge">x</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">are.above_or_equal_to(x)</code></td>
+      <td>Greater than or equal to <code class="highlighter-rouge">x</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">are.below(x)</code></td>
+      <td>Less than <code class="highlighter-rouge">x</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">are.below_or_equal_to(x)</code></td>
+      <td>Less than or equal to <code class="highlighter-rouge">x</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">are.between(x, y)</code></td>
+      <td>Greater than or equal to <code class="highlighter-rouge">x</code>, and less than <code class="highlighter-rouge">y</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">are.strictly_between(x, y)</code></td>
+      <td>Greater than <code class="highlighter-rouge">x</code> and less than <code class="highlighter-rouge">y</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">are.between_or_equal_to(x, y)</code></td>
+      <td>Greater than or equal to <code class="highlighter-rouge">x</code>, and less than or equal to <code class="highlighter-rouge">y</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">are.containing(S)</code></td>
+      <td>Contains the string <code class="highlighter-rouge">S</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>You can also specify the negation of any of these conditions, by using <code class="highlighter-rouge">.not_</code> before the condition:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Predicate</strong></th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">are.not_equal_to(Z)</code></td>
+      <td>Not equal to <code class="highlighter-rouge">Z</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">are.not_above(x)</code></td>
+      <td>Not above <code class="highlighter-rouge">x</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>… and so on. The usual rules of logic apply – for example, “not above x” is the same as “below or equal to x”.</p>
+
+<p>We end the section with a series of examples.</p>
+
+<p>The use of <code class="highlighter-rouge">are.containing</code> can help save some typing. For example, you can just specify <code class="highlighter-rouge">Warriors</code> instead of <code class="highlighter-rouge">Golden State Warriors</code>:</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">nba</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s">'TEAM'</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">containing</span><span class="p">(</span><span class="s">'Warriors'</span><span class="p">))</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>PLAYER</th> <th>POSITION</th> <th>TEAM</th> <th>SALARY</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Klay Thompson    </td> <td>SG      </td> <td>Golden State Warriors</td> <td>15.501  </td>
+        </tr>
+        <tr>
+            <td>Draymond Green   </td> <td>PF      </td> <td>Golden State Warriors</td> <td>14.2609 </td>
+        </tr>
+        <tr>
+            <td>Andrew Bogut     </td> <td>C       </td> <td>Golden State Warriors</td> <td>13.8    </td>
+        </tr>
+        <tr>
+            <td>Andre Iguodala   </td> <td>SF      </td> <td>Golden State Warriors</td> <td>11.7105 </td>
+        </tr>
+        <tr>
+            <td>Stephen Curry    </td> <td>PG      </td> <td>Golden State Warriors</td> <td>11.3708 </td>
+        </tr>
+        <tr>
+            <td>Jason Thompson   </td> <td>PF      </td> <td>Golden State Warriors</td> <td>7.00847 </td>
+        </tr>
+        <tr>
+            <td>Shaun Livingston </td> <td>PG      </td> <td>Golden State Warriors</td> <td>5.54373 </td>
+        </tr>
+        <tr>
+            <td>Harrison Barnes  </td> <td>SF      </td> <td>Golden State Warriors</td> <td>3.8734  </td>
+        </tr>
+        <tr>
+            <td>Marreese Speights</td> <td>C       </td> <td>Golden State Warriors</td> <td>3.815   </td>
+        </tr>
+        <tr>
+            <td>Leandro Barbosa  </td> <td>SG      </td> <td>Golden State Warriors</td> <td>2.5     </td>
+        </tr>
+        <tr>
+            <td>Festus Ezeli     </td> <td>C       </td> <td>Golden State Warriors</td> <td>2.00875 </td>
+        </tr>
+        <tr>
+            <td>Brandon Rush     </td> <td>SF      </td> <td>Golden State Warriors</td> <td>1.27096 </td>
+        </tr>
+        <tr>
+            <td>Kevon Looney     </td> <td>SF      </td> <td>Golden State Warriors</td> <td>1.13196 </td>
+        </tr>
+        <tr>
+            <td>Anderson Varejao </td> <td>PF      </td> <td>Golden State Warriors</td> <td>0.289755</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<p>You can extract data for all the guards, both Point Guards and Shooting Guards:</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">nba</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s">'POSITION'</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">containing</span><span class="p">(</span><span class="s">'G'</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>PLAYER</th> <th>POSITION</th> <th>TEAM</th> <th>SALARY</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Jeff Teague     </td> <td>PG      </td> <td>Atlanta Hawks </td> <td>8       </td>
+        </tr>
+        <tr>
+            <td>Kyle Korver     </td> <td>SG      </td> <td>Atlanta Hawks </td> <td>5.74648 </td>
+        </tr>
+        <tr>
+            <td>Dennis Schroder </td> <td>PG      </td> <td>Atlanta Hawks </td> <td>1.7634  </td>
+        </tr>
+        <tr>
+            <td>Tim Hardaway Jr.</td> <td>SG      </td> <td>Atlanta Hawks </td> <td>1.30452 </td>
+        </tr>
+        <tr>
+            <td>Jason Richardson</td> <td>SG      </td> <td>Atlanta Hawks </td> <td>0.947276</td>
+        </tr>
+        <tr>
+            <td>Lamar Patterson </td> <td>SG      </td> <td>Atlanta Hawks </td> <td>0.525093</td>
+        </tr>
+        <tr>
+            <td>Terran Petteway </td> <td>SG      </td> <td>Atlanta Hawks </td> <td>0.525093</td>
+        </tr>
+        <tr>
+            <td>Avery Bradley   </td> <td>PG      </td> <td>Boston Celtics</td> <td>7.73034 </td>
+        </tr>
+        <tr>
+            <td>Isaiah Thomas   </td> <td>PG      </td> <td>Boston Celtics</td> <td>6.91287 </td>
+        </tr>
+        <tr>
+            <td>Marcus Smart    </td> <td>PG      </td> <td>Boston Celtics</td> <td>3.43104 </td>
+        </tr>
+    </tbody>
+</table>
+<p>... (171 rows omitted)</p>
+</div>
+
+<p>You can get all the players who were not Cleveland Cavaliers and had a salary of no less than $$20$ million:</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">other_than_Cavs</span> <span class="o">=</span> <span class="n">nba</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s">'TEAM'</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">not_equal_to</span><span class="p">(</span><span class="s">'Cleveland Cavaliers'</span><span class="p">))</span>
+<span class="n">other_than_Cavs</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s">'SALARY'</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">not_below</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>PLAYER</th> <th>POSITION</th> <th>TEAM</th> <th>SALARY</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Joe Johnson    </td> <td>SF      </td> <td>Brooklyn Nets        </td> <td>24.8949</td>
+        </tr>
+        <tr>
+            <td>Derrick Rose   </td> <td>PG      </td> <td>Chicago Bulls        </td> <td>20.0931</td>
+        </tr>
+        <tr>
+            <td>Dwight Howard  </td> <td>C       </td> <td>Houston Rockets      </td> <td>22.3594</td>
+        </tr>
+        <tr>
+            <td>Chris Paul     </td> <td>PG      </td> <td>Los Angeles Clippers </td> <td>21.4687</td>
+        </tr>
+        <tr>
+            <td>Kobe Bryant    </td> <td>SF      </td> <td>Los Angeles Lakers   </td> <td>25     </td>
+        </tr>
+        <tr>
+            <td>Chris Bosh     </td> <td>PF      </td> <td>Miami Heat           </td> <td>22.1927</td>
+        </tr>
+        <tr>
+            <td>Dwyane Wade    </td> <td>SG      </td> <td>Miami Heat           </td> <td>20     </td>
+        </tr>
+        <tr>
+            <td>Carmelo Anthony</td> <td>SF      </td> <td>New York Knicks      </td> <td>22.875 </td>
+        </tr>
+        <tr>
+            <td>Kevin Durant   </td> <td>SF      </td> <td>Oklahoma City Thunder</td> <td>20.1586</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<p>The same table can be created in many ways. Here is another, and no doubt you can think of more.</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">other_than_Cavs</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s">'SALARY'</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">above_or_equal_to</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>PLAYER</th> <th>POSITION</th> <th>TEAM</th> <th>SALARY</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Joe Johnson    </td> <td>SF      </td> <td>Brooklyn Nets        </td> <td>24.8949</td>
+        </tr>
+        <tr>
+            <td>Derrick Rose   </td> <td>PG      </td> <td>Chicago Bulls        </td> <td>20.0931</td>
+        </tr>
+        <tr>
+            <td>Dwight Howard  </td> <td>C       </td> <td>Houston Rockets      </td> <td>22.3594</td>
+        </tr>
+        <tr>
+            <td>Chris Paul     </td> <td>PG      </td> <td>Los Angeles Clippers </td> <td>21.4687</td>
+        </tr>
+        <tr>
+            <td>Kobe Bryant    </td> <td>SF      </td> <td>Los Angeles Lakers   </td> <td>25     </td>
+        </tr>
+        <tr>
+            <td>Chris Bosh     </td> <td>PF      </td> <td>Miami Heat           </td> <td>22.1927</td>
+        </tr>
+        <tr>
+            <td>Dwyane Wade    </td> <td>SG      </td> <td>Miami Heat           </td> <td>20     </td>
+        </tr>
+        <tr>
+            <td>Carmelo Anthony</td> <td>SF      </td> <td>New York Knicks      </td> <td>22.875 </td>
+        </tr>
+        <tr>
+            <td>Kevin Durant   </td> <td>SF      </td> <td>Oklahoma City Thunder</td> <td>20.1586</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<p>As you can see, the use of <code class="highlighter-rouge">where</code> with <code class="highlighter-rouge">are</code> gives you great flexibility in accessing rows with features that interest you. Don’t hesitate to experiment!</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/jupyterhub-for-education-template/textbook/06/1/Sorting_Rows" class="pagination--pager" title="6.1 Sorting Rows
+">Previous</a>
+    
+    
+      <a href="/jupyterhub-for-education-template/textbook/06/3/Example_Trends_in_the_Population_of_the_United_States" class="pagination--pager" title="6.3 Example: Population Trends
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+    
+    
+    
+    
+    
+    <li><a href="/jupyterhub-for-education-template/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2018 Berkeley DSEP. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/jupyterhub-for-education-template/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
+
+
+
+
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,1786 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Decisions and Uncertainty ### - Data 8 Textbook</title>
+<meta name="description" content="">
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Data 8 Textbook">
+<meta property="og:title" content="Decisions and Uncertainty ###">
+<meta property="og:url" content="http://localhost:4000/jupyterhub-for-education-template/textbook/11/3/Decisions_and_Uncertainty/">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/jupyterhub-for-education-template/textbook/11/3/Decisions_and_Uncertainty/">
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "Berkeley DSEP",
+      "url": "http://localhost:4000/jupyterhub-for-education-template",
+      "sameAs": null
+    }
+  </script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/jupyterhub-for-education-template/feed.xml" type="application/atom+xml" rel="alternate" title="Data 8 Textbook Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/jupyterhub-for-education-template/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+    <link rel="stylesheet" href="/jupyterhub-for-education-template/assets/css/notebook-markdown.css">
+    <link rel="stylesheet" href="/jupyterhub-for-education-template/assets/css/custom.css">
+    <link rel="shortcut icon" type="image/png" href="/jupyterhub-for-education-template/favicon.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$']],
+        processEscapes: false
+      }
+    });
+    // MathJax Configuration
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+    function getQueryVariable(variable)
+    {
+           var query = window.location.search.substring(1);
+           var vars = query.split("&");
+           for (var i=0;i<vars.length;i++) {
+                   var pair = vars[i].split("=");
+                   if(pair[0] == variable){return pair[1];}
+           }
+           return(false);
+    }
+    window.onload = function() {
+        window.hubUrl = getQueryVariable("hubUrl");
+        if (window.hubUrl !== false) {
+            if (window.hubUrl.indexOf('http') < 0) {
+                window.hubUrl = 'http://' + window.hubUrl;
+            }
+            link = $("a.interact-button")[0];
+            if (link !== undefined) {
+                var href = link.getAttribute('href');
+                href = href.replace("http://datahub.berkeley.edu", window.hubUrl);
+                link.setAttribute('href', href);
+            }
+        }
+    }
+    </script>
+  </head>
+
+  <body class="layout--textbook">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="/jupyterhub-for-education-template/">Data 8 Textbook</a>
+        <ul class="visible-links">
+          
+            
+            <li class="masthead__menu-item">
+              <a href="http://localhost:4000/jupyterhub-for-education-template/about/" >About</a>
+            </li>
+          
+            
+            <li class="masthead__menu-item">
+              <a href="http://localhost:4000/jupyterhub-for-education-template/syllabus/" >Syllabus</a>
+            </li>
+          
+            
+            <li class="masthead__menu-item">
+              <a href="http://localhost:4000/jupyterhub-for-education-template/references/" >Resources</a>
+            </li>
+          
+            
+            <li class="masthead__menu-item">
+              <a href="http://localhost:4000/jupyterhub-for-education-template/textbook/01/what-is-data-science" >Textbook</a>
+            </li>
+          
+          <li class="masthead__menu-item">
+            <a href="http://datahub.berkeley.edu">DataHub</a>
+          </li>
+        </ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle Menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/01/what-is-data-science"><span class="nav__sub-title">1. Data Science</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/01/1/intro" class="level_1">1.1 Introduction</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/01/1/1/computational-tools" class="level_2">1.1.1 Computational Tools</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/01/1/2/statistical-techniques" class="level_2">1.1.2 Statistical Techniques</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/01/2/why-data-science" class="level_1">1.2 Why Data Science?</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/01/3/Plotting_the_Classics" class="level_1">1.3 Plotting the Classics</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/01/3/1/Literary_Characters" class="level_2">1.3.1 Literary Characters</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/01/3/2/Another_Kind_Of_Character" class="level_2">1.3.2 Another Kind of Character</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/02/causality-and-experiments"><span class="nav__sub-title">2. Causality and Experiments</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/02/1/observation-and-visualization-john-snow-and-the-broad-street-pump" class="level_1">2.1 John Snow and the Broad Street Pump</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/02/2/snow-s-grand-experiment" class="level_1">2.2 Snow’s “Grand Experiment”</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/02/3/establishing-causality" class="level_1">2.3 Establishing Causality</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/02/4/randomization" class="level_1">2.4 Randomization</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/02/5/endnote" class="level_1">2.5 Endnote</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/03/programming-in-python"><span class="nav__sub-title">3. Programming in Python</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/03/1/Expressions" class="level_1">3.1 Expressions</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/03/2/Names" class="level_1">3.2 Names</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/03/2/1/Growth" class="level_2">3.2.1 Example: Growth Rates</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/03/3/Calls" class="level_1">3.3 Call Expressions</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/03/4/Introduction_to_Tables" class="level_1">3.4 Introduction to Tables</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/04/Types"><span class="nav__sub-title">4. Data Types</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/04/1/Numbers" class="level_1">4.1 Numbers</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/04/2/Strings" class="level_1">4.2 Strings</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/04/2/1/String_Methods" class="level_2">4.2.1 String Methods</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/04/3/Comparison" class="level_1">4.3 Comparisons</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/05/Collections"><span class="nav__sub-title">5. Sequences</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/05/1/Arrays" class="level_1">5.1 Arrays</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/05/2/Ranges" class="level_1">5.2 Ranges</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/05/3/More_on_Arrays" class="level_1">5.3 More on Arrays</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/06/Tables"><span class="nav__sub-title">6. Tables</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/06/1/Sorting_Rows" class="level_1">6.1 Sorting Rows</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/06/2/Selecting_Rows" class="level_1">6.2 Selecting Rows</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/06/3/Example_Trends_in_the_Population_of_the_United_States" class="level_1">6.3 Example: Population Trends</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/06/4/Example_Gender_Ratio_in_the_US_Population" class="level_1">6.4 Example: Trends in Gender</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/07/Visualization"><span class="nav__sub-title">7. Visualization</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/07/1/Visualizing_Categorical_Distributions" class="level_1">7.1 Categorical Distributions</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/07/2/Visualizing_Numerical_Distributions" class="level_1">7.2 Numerical Distributions</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/07/3/Overlaid_Graphs" class="level_1">7.3 Overlaid Graphs</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/08/Functions_and_Tables"><span class="nav__sub-title">8. Functions and Tables</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/08/1/Applying_a_Function_to_a_Column" class="level_1">8.1 Applying Functions to Columns</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/08/2/Classifying_by_One_Variable" class="level_1">8.2 Classifying by One Variable</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/08/3/Cross-Classifying_by_More_than_One_Variable" class="level_1">8.3 Cross-Classifying</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/08/4/Joining_Tables_by_Columns" class="level_1">8.4 Joining Tables by Columns</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/08/5/Bike_Sharing_in_the_Bay_Area" class="level_1">8.5 Bike Sharing in the Bay Area</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/09/Randomness"><span class="nav__sub-title">9. Randomness</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/09/1/Conditional_Statements" class="level_1">9.1 Conditional Statements</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/09/2/Iteration" class="level_1">9.2 Iteration</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/09/3/Simulation" class="level_1">9.3 Simulation</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/09/4/Monty_Hall_Problem" class="level_1">9.4 The Monty Hall Problem</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/09/5/Finding_Probabilities" class="level_1">9.5 Finding Probabilities</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/10/Sampling_and_Empirical_Distributions"><span class="nav__sub-title">10. Sampling and Empirical Distributions</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/10/1/Empirical_Distributions" class="level_1">10.1 Empirical Distributions</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/10/2/Sampling_from_a_Population" class="level_1">10.2 Sampling from a Population</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/10/3/Empirical_Distribution_of_a_Statistic" class="level_1">10.3 Empirical Distibution of a Statistic</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/11/Testing_Hypotheses"><span class="nav__sub-title">11. Testing Hypotheses</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/11/1/Assessing_Models" class="level_1">11.1 Assessing Models</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/11/2/Multiple_Categories" class="level_1">11.2 Multiple Categories</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/11/3/Decisions_and_Uncertainty" class="level_1">11.3 Decisions and Uncertainty</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/12/Comparing_Two_Samples"><span class="nav__sub-title">12. Comparing Two Samples</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/12/1/AB_Testing" class="level_1">12.1 A/B Testing</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/12/2/Deflategate" class="level_1">12.2 Deflategate</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/12/3/Causality" class="level_1">12.3 Causality</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/13/Estimation"><span class="nav__sub-title">13. Estimation</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/13/1/Percentiles" class="level_1">13.1 Percentiles</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/13/2/Bootstrap" class="level_1">13.2 The Bootstrap</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/13/3/Confidence_Intervals" class="level_1">13.3 Confidence Intervals</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/13/4/Using_Confidence_Intervals" class="level_1">13.4 Using Confidence Intervals</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/14/Why_the_Mean_Matters"><span class="nav__sub-title">14. Why the Mean Matters</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/14/1/Properties_of_the_Mean" class="level_1">14.1 Properties of the Mean</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/14/2/Variability" class="level_1">14.2 Variability</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/14/3/SD_and_the_Normal_Curve" class="level_1">14.3 The SD and the Normal Curve</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/14/4/Central_Limit_Theorem" class="level_1">14.4 The Central Limit Theorem</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/14/5/Variability_of_the_Sample_Mean" class="level_1">14.5 The Variability of the Sample Mean</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/14/6/Choosing_a_Sample_Size" class="level_1">14.6 Choosing a Sample Size</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/15/Prediction"><span class="nav__sub-title">15. Prediction</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/15/1/Correlation" class="level_1">15.1 Correlation</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/15/2/Regression_Line" class="level_1">15.2 The Regression Line</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/15/3/Method_of_Least_Squares" class="level_1">15.3 The Method of Least Squares</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/15/4/Least_Squares_Regression" class="level_1">15.4 Least Squares Regression</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/15/5/Visual_Diagnostics" class="level_1">15.5 Visual Diagnostics</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/15/6/Numerical_Diagnostics" class="level_1">15.6 Numerical Diagnostics</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/16/Inference_for_Regression"><span class="nav__sub-title">16. Inference for Regression</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/16/1/Regression_Model" class="level_1">16.1 A Regression Model</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/16/2/Inference_for_the_True_Slope" class="level_1">16.2 Inference for the True Slope</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/16/3/Prediction_Intervals" class="level_1">16.3 Prediction Intervals</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/17/Classification"><span class="nav__sub-title">17. Classification</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/17/1/Nearest_Neighbors" class="level_1">17.1 Nearest Neighbors</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/17/2/Training_and_Testing" class="level_1">17.2 Training and Testing</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/17/3/Rows_of_Tables" class="level_1">17.3 Rows of Tables</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/17/4/Implementing_the_Classifier" class="level_1">17.4 Implementing the Classifier</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/17/5/Accuracy_of_the_Classifier" class="level_1">17.5 The Accuracy of the Classifier</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/17/6/Multiple_Regression" class="level_1">17.6 Multiple Regression</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          
+          
+
+          <a href="/jupyterhub-for-education-template/textbook/18/Updating_Predictions"><span class="nav__sub-title">18. Updating Predictions</span></a>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/18/1/More_Likely_than_Not_Binary_Classifier" class="level_1">18.1 A "More Likely Than Not" Binary Classifier</a></li>
+          
+            
+            
+
+            
+            
+
+            
+
+            <li><a href="/jupyterhub-for-education-template/textbook/18/2/Making_Decisions" class="level_1">18.2 Making Decisions</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Decisions and Uncertainty ###">
+    
+    
+    
+    <!-- INTERACT LINKS -->
+    <a class="interact-button" href="http://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https://github.com/choldgraf/data8-textbook&amp;branch=gh-pages&amp;subPath=notebooks/11/3/Decisions_and_Uncertainty.ipynb">Interact</a>
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <!-- <h1 id="page-title" class="page__title" itemprop="headline">Decisions and Uncertainty ###
+</h1> -->
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <h3 id="decisions-and-uncertainty">Decisions and Uncertainty</h3>
+<p>We have seen several examples of assessing models that involve chance, by comparing observed data to the predictions made by the models. In all of our examples, there has been no doubt about whether the data were consistent with the model’s predictions. The data were either very far away from the predictions, or very close to them.</p>
+
+<p>But outcomes are not always so clear cut. How far is “far”? Exactly what does “close” mean? While these questions don’t have universal answers, there are guidelines and conventions that you can follow. In this section we will describe some of them.</p>
+
+<p>But first let us develop a general framework of decision making, into which all our examples will fit.</p>
+
+<p>What we have developed while assessing models are some of the fundamental concepts of statistical tests of hypotheses. Using statistical tests as a way of making decisions is standard in many fields and has a standard terminology. Here is the sequence of the steps in most statistical tests, along with some terminology and examples. You will see that they are consistent with the sequence of steps we have used for assessing models.</p>
+
+<h3 id="step-1-the-hypotheses">Step 1: The Hypotheses</h3>
+
+<p>All statistical tests attempt to choose between two views of the world. Specifically, the choice is between two views about how the data were generated. These two views are called <em>hypotheses</em>.</p>
+
+<p><strong>The null hypothesis.</strong> This is a clearly defined model about chances. It says that the data were generated at random under clearly specified assumptions about the randomness. The word “null” reinforces the idea that if the data look different from what the null hypothesis predicts, the difference is due to <em>nothing</em> but chance.</p>
+
+<p>From a practical perspective, <strong>the null hypothesis is a hypothesis under which you can simulate data.</strong></p>
+
+<p>In the example about Mendel’s model for the colors of pea plants, the null hypothesis is that the assumptions of his model are good: each plant has a 75% chance of having purple flowers, independent of all other plants.</p>
+
+<p>Under this hypothesis, we were able to simulate random samples, by using <code class="highlighter-rouge">sample_proportions(929, [0.75, 0.25])</code>. We used a sample size of 929 because that’s the number of plants Mendel grew.</p>
+
+<p><strong>The alternative hypothesis.</strong> This says that some reason other than chance made the data differ from the predictions of the model in the null hypothesis.</p>
+
+<p>In the example about Mendel’s plants, the alternative hypothesis is simply that his model isn’t good.</p>
+
+<h3 id="step-2-the-test-statistic">Step 2: The Test Statistic</h3>
+
+<p>In order to decide between the two hypothesis, we must choose a statistic that we can use to make the decision. This is called the <strong>test statistic</strong>.</p>
+
+<p>In the example of Mendel’s plants, our statistic was the absolute difference between the sample percent and 75% which was predicted by his model.</p>
+
+<script type="math/tex; mode=display">\big{\vert} \text{sample percent of purple-flowering plants} - 75 \big{\vert}</script>
+
+<p>To see how to make the choice in general, look at the alternative hypothesis. What values of the statistic will make you think that the alternative hypothesis is a better choice than the null?</p>
+<ul>
+  <li>If the answer is “big values,” you might have a good choice of statistic.</li>
+  <li>So also if the answer is “small values.”</li>
+  <li>But if the answer is “both big values and small values,” we recommend that you look again at your statistic and see if taking an absolute value can change the answer to just “big values”.</li>
+</ul>
+
+<p>In the case of the pea plants, a sample percent of around 75% will be consistent with the model, but percents much bigger or much less than 75 will make you think that the model isn’t good. This indicates that the statistic should be the <em>distance</em> between the sample percent and 75, that is, the absolute value of the difference between them. Big values of the distance will make you lean towards the alternative.</p>
+
+<p>The <strong>observed value of the test statistic</strong> is the value of the statistic you get from the data in the study, not a simulated value. Among Mendel’s 929 plants, 705 had purple flowers. The observed value of the test statistic was therefore</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">abs</span> <span class="p">(</span> <span class="mi">100</span> <span class="o">*</span> <span class="p">(</span><span class="mi">705</span> <span class="o">/</span> <span class="mi">929</span><span class="p">)</span> <span class="o">-</span> <span class="mi">75</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0.8880516684607045
+</code></pre></div></div>
+
+<h3 id="step-3-the-distribution-of-the-test-statistic-under-the-null-hypothesis">Step 3: The Distribution of the Test Statistic, Under the Null Hypothesis</h3>
+
+<p>The main computational aspect of a test of hypotheses is figuring out <em>what the values of the test statistic might be if the null hypothesis were true</em>.</p>
+
+<p>The test statistic is simulated based on the assumptions of the model in the null hypothesis. That model involves chance, so the statistic comes out differently when you simulate it multiple times.</p>
+
+<p>By simulating the statistic repeatedly, we get a good sense of its possible values and which ones are more likely than others. In other words, we get a good approximation to the probability distribution of the statistic, as predicted by the model in the null hypothesis.</p>
+
+<p>As with all distributions, it is very useful to visualize this distribution by a histogram. We have done so in all our examples.</p>
+
+<h3 id="step-4-the-conclusion-of-the-test">Step 4. The Conclusion of the Test</h3>
+
+<p>The choice between the null and alternative hypotheses depends on the comparison between what you computed in Steps 2 and 3: the observed value of the test statistic and its distribution as predicted by the null hypothesis.</p>
+
+<p>If the two are consistent with each other, then the observed test statistic is in line with what the null hypothesis predicts. In other words, the test does not point towards the alternative hypothesis; the null hypothesis is better supported by the data. This was the case with the assessment of Mendel’s model.</p>
+
+<p>But if the two are not consistent with each other, as is the case in our example about Alameda County jury panels, then the data do not support the null hypothesis. That is why we concluded that the jury panels were not selected at random. Something other than chance affected their composition.</p>
+
+<p>If the data do not support the null hypothesis, we say that the test <em>rejects</em> the null hypothesis.</p>
+
+<h3 id="the-meaning-of-consistent">The Meaning of “Consistent”</h3>
+
+<p>In the example about Alameda County juries, it was apparent that our observed test statistic was far from what was predicted by the null hypothesis. In the example about pea flowers, it is just as clear that the observed statistic is consistent with the distribution that the null predicts. So in both of the examples, it is clear which hypothesis to choose.</p>
+
+<p>But sometimes the decision is not so clear. Whether the observed test statistic is consistent with its predicted distribution under the null hypothesis is a matter of judgment. We recommend that you provide your judgment along with the value of the test statistic and a graph of its predicted distribution under the null. That will allow your reader to make his or her own judgment about whether the two are consistent.</p>
+
+<p>Here is an example where the decision requires judgment.</p>
+
+<h3 id="the-gsis-defense">The GSI’s Defense</h3>
+<p>A Berkeley Statistics class of about 350 students was divided into 12 discussion sections led by Graduate Student Instructors (GSIs). After the midterm, students in Section 3 noticed that their scores were on average lower than the rest of the class.</p>
+
+<p>In such situations, students tend to grumble about the section’s GSI. Surely, they feel, there must have been something wrong with the GSI’s teaching. Or else why would their section have done worse than others?</p>
+
+<p>The GSI, typically more experienced about statistical variation, often has a different perspective: if you simply draw a section of students at random from the whole class, their average score could resemble the score that the students are unhappy about, just by chance.</p>
+
+<p>The GSI’s position is a clearly stated chance model. We can simulate data under this model. Let’s test it out.</p>
+
+<p><strong>Null Hypothesis.</strong> The average score of the students in Section 3 is like the average score of the same number of students picked at random from the class.</p>
+
+<p><strong>Alternative Hypothesis.</strong> No, it’s too low.</p>
+
+<p>A natural statistic here is the average of the scores. Low values of the average will make us lean towards the alternative.</p>
+
+<p>Let’s take a look at the data.</p>
+
+<p>The table <code class="highlighter-rouge">scores</code> contains the section number and midterm score for each student in the class. The midterm scores were integers in the range 0 through 25; 0 means that the student didn’t take the test.</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">scores</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="n">path_data</span> <span class="o">+</span> <span class="s">'scores_by_section.csv'</span><span class="p">)</span>
+<span class="n">scores</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>Section</th> <th>Midterm</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1      </td> <td>22     </td>
+        </tr>
+    </tbody>
+        <tr>
+            <td>2      </td> <td>12     </td>
+        </tr>
+    &lt;/tbody&gt;
+        <tr>
+            <td>2      </td> <td>23     </td>
+        </tr>
+    &lt;/tbody&gt;
+        <tr>
+            <td>2      </td> <td>14     </td>
+        </tr>
+    &lt;/tbody&gt;
+        <tr>
+            <td>1      </td> <td>20     </td>
+        </tr>
+    &lt;/tbody&gt;
+        <tr>
+            <td>3      </td> <td>25     </td>
+        </tr>
+    &lt;/tbody&gt;
+        <tr>
+            <td>4      </td> <td>19     </td>
+        </tr>
+    &lt;/tbody&gt;
+        <tr>
+            <td>1      </td> <td>24     </td>
+        </tr>
+    &lt;/tbody&gt;
+        <tr>
+            <td>5      </td> <td>8      </td>
+        </tr>
+    &lt;/tbody&gt;
+        <tr>
+            <td>6      </td> <td>14     </td>
+        </tr>
+    &lt;/tbody&gt;
+</table>
+<p>... (349 rows omitted)</p>
+</div>
+
+<p>To find the average score in each section, we will use <code class="highlighter-rouge">group</code>.</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">section_averages</span> <span class="o">=</span> <span class="n">scores</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s">'Section'</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">)</span>
+<span class="n">section_averages</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>Section</th> <th>Midterm average</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1      </td> <td>15.5938        </td>
+        </tr>
+    </tbody>
+        <tr>
+            <td>2      </td> <td>15.125         </td>
+        </tr>
+    &lt;/tbody&gt;
+        <tr>
+            <td>3      </td> <td>13.6667        </td>
+        </tr>
+    &lt;/tbody&gt;
+        <tr>
+            <td>4      </td> <td>14.7667        </td>
+        </tr>
+    &lt;/tbody&gt;
+        <tr>
+            <td>5      </td> <td>17.4545        </td>
+        </tr>
+    &lt;/tbody&gt;
+        <tr>
+            <td>6      </td> <td>15.0312        </td>
+        </tr>
+    &lt;/tbody&gt;
+        <tr>
+            <td>7      </td> <td>16.625         </td>
+        </tr>
+    &lt;/tbody&gt;
+        <tr>
+            <td>8      </td> <td>16.3103        </td>
+        </tr>
+    &lt;/tbody&gt;
+        <tr>
+            <td>9      </td> <td>14.5667        </td>
+        </tr>
+    &lt;/tbody&gt;
+        <tr>
+            <td>10     </td> <td>15.2353        </td>
+        </tr>
+    &lt;/tbody&gt;
+        <tr>
+            <td>11     </td> <td>15.8077        </td>
+        </tr>
+    &lt;/tbody&gt;
+        <tr>
+            <td>12     </td> <td>15.7333        </td>
+        </tr>
+    &lt;/tbody&gt;
+</table>
+</div>
+
+<p>The average score of Section 3 is 13.667, which does look low compared to the other section averages. But is it lower than the average of a section of the same size selected at random from the class?</p>
+
+<p>To answer this, we can select a section at random from the class and find its average. To select a section at random to we need to know how big Section 3 is, which we can by once again using <code class="highlighter-rouge">group</code>.</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">scores</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s">'Section'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>Section</th> <th>count</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1      </td> <td>32   </td>
+        </tr>
+    </tbody>
+        <tr>
+            <td>2      </td> <td>32   </td>
+        </tr>
+    &lt;/tbody&gt;
+        <tr>
+            <td>3      </td> <td>27   </td>
+        </tr>
+    &lt;/tbody&gt;
+        <tr>
+            <td>4      </td> <td>30   </td>
+        </tr>
+    &lt;/tbody&gt;
+        <tr>
+            <td>5      </td> <td>33   </td>
+        </tr>
+    &lt;/tbody&gt;
+        <tr>
+            <td>6      </td> <td>32   </td>
+        </tr>
+    &lt;/tbody&gt;
+        <tr>
+            <td>7      </td> <td>24   </td>
+        </tr>
+    &lt;/tbody&gt;
+        <tr>
+            <td>8      </td> <td>29   </td>
+        </tr>
+    &lt;/tbody&gt;
+        <tr>
+            <td>9      </td> <td>30   </td>
+        </tr>
+    &lt;/tbody&gt;
+        <tr>
+            <td>10     </td> <td>34   </td>
+        </tr>
+    &lt;/tbody&gt;
+</table>
+<p>... (2 rows omitted)</p>
+</div>
+
+<p>Section 3 had 27 students.</p>
+
+<p>Now we can figure out how to create one simulated value of our test statistic, the random sample average.</p>
+
+<p>First we have to select 27 scores at random without replacement. Since the data are already in a table, we will use the Table method <code class="highlighter-rouge">sample</code>.</p>
+
+<p>Remember that by default, <code class="highlighter-rouge">sample</code> draws with replacement. The optional argument <code class="highlighter-rouge">with_replacement = False</code> produces a random sample drawn without replacement.</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">scores_only</span> <span class="o">=</span> <span class="n">scores</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s">'Section'</span><span class="p">)</span>
+<span class="n">sampled_scores</span> <span class="o">=</span> <span class="n">scores_only</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">27</span><span class="p">,</span> <span class="n">with_replacement</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">sampled_scores</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>Midterm</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>13     </td>
+        </tr>
+    </tbody>
+        <tr>
+            <td>21     </td>
+        </tr>
+    &lt;/tbody&gt;
+        <tr>
+            <td>23     </td>
+        </tr>
+    &lt;/tbody&gt;
+        <tr>
+            <td>15     </td>
+        </tr>
+    &lt;/tbody&gt;
+        <tr>
+            <td>24     </td>
+        </tr>
+    &lt;/tbody&gt;
+        <tr>
+            <td>18     </td>
+        </tr>
+    &lt;/tbody&gt;
+        <tr>
+            <td>17     </td>
+        </tr>
+    &lt;/tbody&gt;
+        <tr>
+            <td>13     </td>
+        </tr>
+    &lt;/tbody&gt;
+        <tr>
+            <td>8      </td>
+        </tr>
+    &lt;/tbody&gt;
+        <tr>
+            <td>0      </td>
+        </tr>
+    &lt;/tbody&gt;
+</table>
+<p>... (17 rows omitted)</p>
+</div>
+
+<p>The average of these 27 randomly selected scores is</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">sampled_scores</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s">'Midterm'</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>15.592592592592593
+</code></pre></div></div>
+
+<p>That’s the average of 27 randomly selected scores. The cell below collects the code necessary for generating this random average.</p>
+
+<p>Now we can simulate the random sample average by repeating the calculation multple times.</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">averages</span> <span class="o">=</span> <span class="n">make_array</span><span class="p">()</span>
+
+<span class="n">repetitions</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">repetitions</span><span class="p">):</span>
+    <span class="n">sampled_scores</span> <span class="o">=</span> <span class="n">scores_only</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">27</span><span class="p">,</span> <span class="n">with_replacement</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    <span class="n">averages</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">averages</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">sampled_scores</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s">'Midterm'</span><span class="p">)))</span>
+</code></pre></div></div>
+
+<p>Here is the histogram of the simulated averages. It shows the distribution of what the Section 3 average might have been, if Section 3 had been selected at random from the class.</p>
+
+<p>The observed Section 3 average score of 13.667 is shown as a red dot on the horizontal axis. You can ignore the last line of code; it just draws the dot.</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sample_averages</span> <span class="o">=</span> <span class="n">Table</span><span class="p">()</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="s">'Sample Average'</span><span class="p">,</span> <span class="n">averages</span><span class="p">)</span>
+<span class="n">sample_averages</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
+
+<span class="n">observed_statistic</span> <span class="o">=</span> <span class="mf">13.667</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">observed_statistic</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'red'</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">30</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><img src="/jupyterhub-for-education-template/images/textbook/11/3/Decisions_and_Uncertainty_21_0.png" alt="png" /></p>
+
+<p>As we said earlier, small values of the test statistic will make us lean towards the alternative hypothesis, that the average score in the section is too low for it to look like a random sample from the class.</p>
+
+<p>Is the observed statistic of 13.667 “too low” in relation to this distribution? In other words, is the red far enough out into the left hand tail of the histogram for you to think that it is “too far”?</p>
+
+<p>It’s up to you to decide! Use your judgment. Go ahead – it’s OK to do so.</p>
+
+<h3 id="conventional-cut-offs-and-the-p-value">Conventional Cut-offs and the P-value</h3>
+<p>If you don’t want to make your own judgment, there are conventions that you can follow. These conventions tell us how far out into the tails is considered “too far”.</p>
+
+<p>The conventions are based on the area in the tail, starting at the observed statistic (the red dot) and looking in the direction that makes us lean toward the alternative (the left side, in this example). If the area of the tail is small, the observed statistic is far away from the values most commonly predicted by the null hypothesis.</p>
+
+<p>Remember that in a histogram, area represents percent. To find the area in the tail, we have to find the percent of sample averages that were less than or equal to the average score of Section 3, where the red dot is. The array <code class="highlighter-rouge">averages</code> contains the averages for all 10,000 repetitions of the random sampling, and <code class="highlighter-rouge">section_3_average</code> is 13.667, the average score of Section 3.</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">(</span><span class="n">averages</span> <span class="o">&lt;=</span> <span class="n">section_3_average</span><span class="p">)</span><span class="o">/</span><span class="n">repetitions</span>
+</code></pre></div></div>
+
+<div class="output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0.0569
+</code></pre></div></div>
+
+<p>Just about 5.7% of the simulated random sample averages were 3.667 or below. If we had drawn the students of Section 3 at random from the whole class, the chance that their average would be 13.667 or lower is about 5.7%.</p>
+
+<p>This chance has an impressive name. It is called the <em>observed significance level</em> of the test. That’s a mouthful, and so it is commonly called the <em>P-value</em> of the test.</p>
+
+<h4 id="definition-of-p-value">Definition of P-value</h4>
+
+<p>The P-value is the chance, based on the model in the null hypothesis, that the test statistic is equal to the value that was observed in the data or is even further in the direction of the alternative.</p>
+
+<p>If a P-value is small, that means the tail beyond the observed statistic is small and so the observed statistic is far away from what the null predicts. This implies that the data support the alternative hypothesis better than they support the null.</p>
+
+<p>How small is “small”? According to the conventions:</p>
+
+<ul>
+  <li>
+    <p>If the P-value is less than 5%, it is considered small and the result is called “statistically significant.”</p>
+  </li>
+  <li>
+    <p>If the P-value is even smaller – less than 1% – the result is called “highly statistically significant.”</p>
+  </li>
+</ul>
+
+<p>By this convention, our P-value of 5.7% is not considered small. So we have to conclude that the GSI’s defense holds good – the average score of Section 3 is like those generated by random chance. Formally, the result of the test is not statistically significant.</p>
+
+<p>When you make a conclusion in this way, we recommend that you don’t just say whether or not the result is statistically significant. Along with your conclusion, provide the observed statistic and the P-value as well, so that readers can use their own judgment.</p>
+
+<h3 id="historical-note-on-the-conventions">Historical Note on the Conventions</h3>
+
+<p>The determination of statistical significance, as defined above, has become standard in statistical analyses in all fields of application. When a convention is so universally followed, it is interesting to examine how it arose.</p>
+
+<p>The method of statistical testing – choosing between hypotheses based on data in random samples – was developed by Sir Ronald Fisher in the early 20th century. Sir Ronald might have set the convention for statistical significance somewhat unwittingly, in the following statement in his 1925 book <em>Statistical Methods for Research Workers</em>. About the 5% level, he wrote, “It is convenient to take this point as a limit in judging whether a deviation is to be considered significant or not.”</p>
+
+<p>What was “convenient” for Sir Ronald became a cutoff that has acquired the status of a universal constant. No matter that Sir Ronald himself made the point that the value was his personal choice from among many: in an article in 1926, he wrote, “If one in twenty does not seem high enough odds, we may, if we prefer it draw the line at one in fifty (the 2 percent point), or one in a hundred (the 1 percent point). Personally, the author prefers to set a low standard of significance at the 5 percent point …”</p>
+
+<p>Fisher knew that “low” is a matter of judgment and has no unique definition. We suggest that you follow his excellent example. Provide your data, make your judgment, and explain why you made it.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/jupyterhub-for-education-template/textbook/11/2/Multiple_Categories" class="pagination--pager" title="11.2 Multiple Categories
+">Previous</a>
+    
+    
+      <a href="/jupyterhub-for-education-template/textbook/12/Comparing_Two_Samples" class="pagination--pager" title="
+  Comparing Two Samples
+
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+    
+    
+    
+    
+    
+    <li><a href="/jupyterhub-for-education-template/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2018 Berkeley DSEP. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/jupyterhub-for-education-template/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
+
+
+
+
+
+
+
+
+  </body>
+</html>
