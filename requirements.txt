@@ -1,8 +1,0 @@
-bs4
-tqdm
-numpy
-prob140
-datascience
-pyyaml
-nbformat
-nbclean
