@@ -2,6 +2,7 @@
 author_profile: false
 layout: textbook
 permalink: /
+masthead: false
 sidebar:
     nav: sidebar-textbook
 ---

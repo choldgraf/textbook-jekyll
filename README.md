@@ -17,7 +17,9 @@ This will:
 * Generate the yaml for the site sidebar automatically
 
 You can the push the changes to GitHub, which will automatically build a Jekyll site with
-your newly-created Markdown files. Alternatively, you can preview your built site
+your newly-created Markdown files.
+
+Alternatively, you can preview your built site
 using Jekyll on your computer by taking the following steps:
 
 1. Ensure that Jekyll and Ruby are installed. [See the Jekyll docs](https://jekyllrb.com/docs/installation/) for information on this.
@@ -38,6 +40,10 @@ This should open up a port on your computer with a live version of the textbook.
 
 * `_config.yml` contains all site configuration.
 * `_data/navigation.yml` contains site navigation as well as auto-generated sidebar yaml
-* `notebooks/` contain all course content in Jupyter notebook form
+* `notebooks/` contains all course content in Jupyter notebook form
+* `data/` contains the CSV data files used in the course textbook
+* `images/` contains images referenced in the course
+* `images/ntbk` contains images *generated* during the notebook conversion
 * `textbook/` contain notebooks converted to markdown
 * `scripts/` contains scripts to generate the textbook from the Jupyter notebooks
+* `assets/css` contains CSS for the textbook and website

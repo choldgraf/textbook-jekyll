@@ -13,7 +13,7 @@ DESCRIPTION = ("Convert a collection of Jupyter Notebooks into Jekyll "
                "markdown suitable for a course textbook.")
 
 parser = argparse.ArgumentParser(description=DESCRIPTION)
-parser.add_argument("site_root", help="Path to the root of the course repository.")
+parser.add_argument("--site_root", default=None, help="Path to the root of the textbook repository.")
 parser.add_argument("--overwrite", action='store_true', help="Overwrite md files if they already exist.")
 parser.add_argument("--execute", action='store_true', help="Execute notebooks before converting to MD.")
 parser.set_defaults(overwrite=False, execute=False)
@@ -43,6 +43,7 @@ def _strip_suffixes(string, suffixes=None):
         string = string.replace(suff, '')
     return string
 
+
 def _clean_lines(lines):
     """Replace images with jekyll image root and add escape chars as needed."""
     IMG_STRINGS = [ii*'../' + IMAGES_FOLDER for ii in range(4)]
@@ -63,7 +64,10 @@ def _clean_lines(lines):
 
 
 def _generate_sidebar(files):
-    sidebar_text = ['sidebar-textbook:']
+    sidebar_text = ['sidebar-textbook:',
+                    '  - title: Home',
+                    '    class: level_0',
+                    '    url: /']
     sp = '  '
     chapter_ix = 1
     for ix_file, (title, link, level) in tqdm(list(enumerate(files))):
@@ -77,7 +81,6 @@ def _generate_sidebar(files):
             chapter_ix += 1
         new_link = link.replace(NOTEBOOKS_FOLDER_NAME, TEXTBOOK_FOLDER_NAME)
         new_link = _strip_suffixes(new_link).strip('.')
-        print(link, '\n', new_link)
         space = '  ' if level == 0 else '    '
         level = int(level)
         sidebar_text.append(space + "- title: '{}'".format(title))
@@ -112,6 +115,8 @@ if __name__ == '__main__':
     args = parser.parse_args()
     overwrite = bool(args.overwrite)
     execute = bool(args.execute)
+    if args.site_root is None:
+        args.site_root = op.join(op.dirname(op.abspath(__file__)), '..')
 
     # Paths for our notebooks
     SITE_ROOT = op.abspath(args.site_root)
