@@ -15,8 +15,17 @@ are steps to get started:
 
        conda activate textbook
 
+3. Ensure that a `SUMMARY.md` file exists in the root of the repository. This contains
+   a markdown list of bullet points and links. Each item corresponds to a chapter in the
+   textbook, and is used to build the table of contents in the sidebar.
+   
+   If you **do not** have a `SUMMARY.md` file made for this textbook, you may create one
+   by hand, or generate one from the folders/files in `notebooks/` by running the following
+   script:
+   
+       python scripts/generate_summary_from_folders.py
+       
 3. Build the textbook with the following command:
-
 
        python scripts/generate_textbook.py
 
@@ -47,13 +56,30 @@ This should open up a port on your computer with a live version of the textbook.
 
 ## Relevant files
 
-* `_config.yml` contains all site configuration.
-* `_data/navigation.yml` contains site navigation as well as auto-generated sidebar yaml
+### Course materials
+
 * `notebooks/` contains all course content in Jupyter notebook form
 * `data/` contains the CSV data files used in the course textbook
 * `images/` contains images referenced in the course
+* `SUMMARY.md` contains a markdown list of chapters / paths to your textbook files. For
+  example, here is a sample from the Data 8 textbook:
+  
+  ```
+  * [1. Data Science](notebooks/01/what-is-data-science.md)
+    * [1.1 Introduction](notebooks/01/1/intro.md)
+      * [1.1.1 Computational Tools](notebooks/01/1/1/computational-tools.md)
+    * [1.2 Why Data Science?](notebooks/01/2/why-data-science.md)
+  * [2. Causality and Experiments](notebooks/02/causality-and-experiments.md)
+    * [2.1 John Snow and the Broad Street Pump](notebooks/02/1/observation-and-visualization-john-snow-and-the-broad-street-pump.md)
+    * [2.2 Snow’s “Grand Experiment”](notebooks/02/2/snow-s-grand-experiment.md)
+   ```
+### Auto-generated folders and files
 * `images/ntbk` contains images *generated* during the notebook conversion
 * `textbook/` contain notebooks converted to markdown
+
+### Repository configuration and build files
+* `_config.yml` contains all site configuration.
+* `_data/navigation.yml` contains site navigation as well as auto-generated sidebar yaml
 * `scripts/` contains scripts to generate the textbook from the Jupyter notebooks
 * `assets/css` contains CSS for the textbook and website
 * `environment.yml` contains the environment needed to build the textbook
