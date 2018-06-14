@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/13/3/Confidence_Intervals.ipynb
-previous:
+title: '13.3 Confidence Intervals'
+previouschapter:
   url: textbook/13/2/Bootstrap
   title: '13.2 The Bootstrap'
-next:
+nextchapter:
   url: textbook/13/4/Using_Confidence_Intervals
   title: '13.4 Using Confidence Intervals'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### Confidence Intervals ###

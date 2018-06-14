@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/16/3/Prediction_Intervals.ipynb
-previous:
+title: '16.3 Prediction Intervals'
+previouschapter:
   url: textbook/16/2/Inference_for_the_True_Slope
   title: '16.2 Inference for the True Slope'
-next:
+nextchapter:
   url: textbook/17/Classification
   title: '17. Classification'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### Prediction Intervals ###

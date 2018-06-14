@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/06/3/Example_Trends_in_the_Population_of_the_United_States.ipynb
-previous:
+title: '6.3 Example: Population Trends'
+previouschapter:
   url: textbook/06/2/Selecting_Rows
   title: '6.2 Selecting Rows'
-next:
+nextchapter:
   url: textbook/06/4/Example_Gender_Ratio_in_the_US_Population
   title: '6.4 Example: Trends in Gender'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 We are now ready to work with large tables of data. The file below contains "Annual Estimates of the Resident Population by Single Year of Age and Sex for the United States." Notice that `read_table` can read data directly from a URL.

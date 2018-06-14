@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/17/6/Multiple_Regression.ipynb
-previous:
+title: '17.6 Multiple Regression'
+previouschapter:
   url: textbook/17/5/Accuracy_of_the_Classifier
   title: '17.5 The Accuracy of the Classifier'
-next:
+nextchapter:
   url: textbook/18/Updating_Predictions
   title: '18. Updating Predictions'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 Now that we have explored ways to use multiple attributes to predict a categorical variable, let us return to predicting a quantitative variable. Predicting a numerical quantity is called regression, and a commonly used method to use multiple attributes for regression is called *multiple linear regression*.
@@ -295,9 +293,9 @@ RMSE of all training examples using the best slopes: 32283.50513136445
 
 #### Interpreting Multiple Regression 
 
-Let's interpret these results. The best slopes give us a method for estimating the price of a house from its attributes. A square foot of area on the first floor is worth about \$75 (the first slope), while one on the second floor is worth about \$70 (the second slope). The final negative value describes the market: prices in later years were lower on average.
+Let's interpret these results. The best slopes give us a method for estimating the price of a house from its attributes. A square foot of area on the first floor is worth about \\$75 (the first slope), while one on the second floor is worth about \\$70 (the second slope). The final negative value describes the market: prices in later years were lower on average.
 
-The RMSE of around \$30,000 means that our best linear prediction of the sale price based on all of the attributes is off by around \$30,000 on the training set, on average.  We find a similar error when predicting prices on the test set, which indicates that our prediction method will generalize to other samples from the same population.
+The RMSE of around \\$30,000 means that our best linear prediction of the sale price based on all of the attributes is off by around \\$30,000 on the training set, on average.  We find a similar error when predicting prices on the test set, which indicates that our prediction method will generalize to other samples from the same population.
 
 
 {:.input_area}

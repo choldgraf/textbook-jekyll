@@ -1,13 +1,11 @@
 ---
-layout: textbook
-previous:
+title: '2.4 Randomization'
+previouschapter:
   url: textbook/02/3/establishing-causality
   title: '2.3 Establishing Causality'
-next:
+nextchapter:
   url: textbook/02/5/endnote
   title: '2.5 Endnote'
-sidebar:
-  nav: sidebar-textbook
 ---
 Randomization
 --------------

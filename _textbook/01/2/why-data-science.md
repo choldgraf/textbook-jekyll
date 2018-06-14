@@ -1,13 +1,11 @@
 ---
-layout: textbook
-previous:
+title: '1.2 Why Data Science?'
+previouschapter:
   url: textbook/01/1/2/statistical-techniques
   title: '1.1.2 Statistical Techniques'
-next:
+nextchapter:
   url: textbook/01/3/Plotting_the_Classics
   title: '1.3 Plotting the Classics'
-sidebar:
-  nav: sidebar-textbook
 ---
 Why Data Science?
 =================

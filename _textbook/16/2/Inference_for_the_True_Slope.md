@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/16/2/Inference_for_the_True_Slope.ipynb
-previous:
+title: '16.2 Inference for the True Slope'
+previouschapter:
   url: textbook/16/1/Regression_Model
   title: '16.1 A Regression Model'
-next:
+nextchapter:
   url: textbook/16/3/Prediction_Intervals
   title: '16.3 Prediction Intervals'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### Inference for the True Slope ###

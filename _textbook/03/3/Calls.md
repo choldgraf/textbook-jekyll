@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/03/3/Calls.ipynb
-previous:
+title: '3.3 Call Expressions'
+previouschapter:
   url: textbook/03/2/1/Growth
   title: '3.2.1 Example: Growth Rates'
-next:
+nextchapter:
   url: textbook/03/4/Introduction_to_Tables
   title: '3.4 Introduction to Tables'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 *Call expressions* invoke functions, which are named operations. The name of the function appears first, followed by expressions in parentheses. 

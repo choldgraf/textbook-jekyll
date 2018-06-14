@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/18/2/Making_Decisions.ipynb
-previous:
+title: '18.2 Making Decisions'
+previouschapter:
   url: textbook/18/1/More_Likely_than_Not_Binary_Classifier
   title: '18.1 A "More Likely Than Not" Binary Classifier'
-next:
+nextchapter:
   url: 
   title: ''
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### Making Decisions ###

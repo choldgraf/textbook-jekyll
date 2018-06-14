@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/07/3/Overlaid_Graphs.ipynb
-previous:
+title: '7.3 Overlaid Graphs'
+previouschapter:
   url: textbook/07/2/Visualizing_Numerical_Distributions
   title: '7.2 Numerical Distributions'
-next:
+nextchapter:
   url: textbook/08/Functions_and_Tables
   title: '8. Functions and Tables'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### Overlaid Graphs ###

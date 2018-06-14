@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/07/1/Visualizing_Categorical_Distributions.ipynb
-previous:
+title: '7.1 Categorical Distributions'
+previouschapter:
   url: textbook/07/Visualization
   title: '7. Visualization'
-next:
+nextchapter:
   url: textbook/07/2/Visualizing_Numerical_Distributions
   title: '7.2 Numerical Distributions'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### Visualizing Categorical Distributions ###

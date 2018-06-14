@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/14/4/Central_Limit_Theorem.ipynb
-previous:
+title: '14.4 The Central Limit Theorem'
+previouschapter:
   url: textbook/14/3/SD_and_the_Normal_Curve
   title: '14.3 The SD and the Normal Curve'
-next:
+nextchapter:
   url: textbook/14/5/Variability_of_the_Sample_Mean
   title: '14.5 The Variability of the Sample Mean'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### The Central Limit Theorem ###
@@ -73,7 +71,7 @@ wheel
 
 
 
-Recall that the bet on red pays even money, 1 to 1. We defined the function `red_winnings` that returns the net winnings on one \$1 bet on red. Specifically, the function takes a color as its argument and returns 1 if the color is red. For all other colors it returns -1.
+Recall that the bet on red pays even money, 1 to 1. We defined the function `red_winnings` that returns the net winnings on one \\$1 bet on red. Specifically, the function takes a color as its argument and returns 1 if the color is red. For all other colors it returns -1.
 
 
 {:.input_area}
@@ -144,7 +142,7 @@ red
 
 
 
-Your net gain on one bet is one random draw from the `Winnings: Red` column. There is an 18/38 chance making \$1, and a 20/38 chance of making -$1. This probability distribution is shown in the histogram below.
+Your net gain on one bet is one random draw from the `Winnings: Red` column. There is an 18/38 chance making \\$1, and a 20/38 chance of making -$1. This probability distribution is shown in the histogram below.
 
 
 {:.input_area}
@@ -160,7 +158,7 @@ Now suppose you bet many times on red. Your net winnings will be the sum of many
 
 It will take a bit of math to list all the possible values of your net winnings along with all of their chances. We won't do that; instead, we will approximate the probability distribution by simulation, as we have done all along in this course. 
 
-The code below simulates your net gain if you bet \$1 on red on 400 different spins of the roulette wheel. 
+The code below simulates your net gain if you bet \\$1 on red on 400 different spins of the roulette wheel. 
 
 
 {:.input_area}
@@ -193,7 +191,7 @@ results.hist(bins=np.arange(-80, 50, 6))
 
 That's a roughly bell shaped histogram, even though the distribution we are drawing from is nowhere near bell shaped.
 
-**Center.** The distribution is centered near -\$20, roughly. To see why, note that your winnings will be \$1 on about 18/38 of the bets, and -\$1 on the remaining 20/38. So your average winnings per dollar bet will be roughly -5.26 cents:
+**Center.** The distribution is centered near -\$20, roughly. To see why, note that your winnings will be \\$1 on about 18/38 of the bets, and -\$1 on the remaining 20/38. So your average winnings per dollar bet will be roughly -5.26 cents:
 
 
 {:.input_area}
@@ -248,9 +246,9 @@ np.mean(results.column(0))
 
 
 
-**Spread.** Run your eye along the curve starting at the center and notice that the point of inflection is near 0. On a bell shaped curve, the SD is the distance from the center to a point of inflection. The center is roughly -\$20, which means that the SD of the distribution is around \$20.
+**Spread.** Run your eye along the curve starting at the center and notice that the point of inflection is near 0. On a bell shaped curve, the SD is the distance from the center to a point of inflection. The center is roughly -\$20, which means that the SD of the distribution is around \\$20.
 
-In the next section we will see where the \$20 comes from. For now, let's confirm our observation by simply calculating the SD of the 10,000 simulated net gains:
+In the next section we will see where the \\$20 comes from. For now, let's confirm our observation by simply calculating the SD of the 10,000 simulated net gains:
 
 
 {:.input_area}

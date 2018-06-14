@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/17/1/Nearest_Neighbors.ipynb
-previous:
+title: '17.1 Nearest Neighbors'
+previouschapter:
   url: textbook/17/Classification
   title: '17. Classification'
-next:
+nextchapter:
   url: textbook/17/2/Training_and_Testing
   title: '17.2 Training and Testing'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### Nearest Neighbors ###

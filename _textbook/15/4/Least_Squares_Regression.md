@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/15/4/Least_Squares_Regression.ipynb
-previous:
+title: '15.4 Least Squares Regression'
+previouschapter:
   url: textbook/15/3/Method_of_Least_Squares
   title: '15.3 The Method of Least Squares'
-next:
+nextchapter:
   url: textbook/15/5/Visual_Diagnostics
   title: '15.5 Visual Diagnostics'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### Least Squares Regression ###

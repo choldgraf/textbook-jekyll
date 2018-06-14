@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/17/4/Implementing_the_Classifier.ipynb
-previous:
+title: '17.4 Implementing the Classifier'
+previouschapter:
   url: textbook/17/3/Rows_of_Tables
   title: '17.3 Rows of Tables'
-next:
+nextchapter:
   url: textbook/17/5/Accuracy_of_the_Classifier
   title: '17.5 The Accuracy of the Classifier'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### Implementing the Classifier ###
@@ -16,7 +14,7 @@ We are now ready to impelment a $k$-nearest neighbor classifier based on multipl
 
 ### Banknote authentication
 
-This time we'll look at predicting whether a banknote (e.g., a \$20 bill) is counterfeit or legitimate.  Researchers have put together a data set for us, based on photographs of many individual banknotes: some counterfeit, some legitimate.  They computed a few numbers from each image, using techniques that we won't worry about for this course.  So, for each banknote, we know a few numbers that were computed from a photograph of it as well as its class (whether it is counterfeit or not).  Let's load it into a table and take a look.
+This time we'll look at predicting whether a banknote (e.g., a \\$20 bill) is counterfeit or legitimate.  Researchers have put together a data set for us, based on photographs of many individual banknotes: some counterfeit, some legitimate.  They computed a few numbers from each image, using techniques that we won't worry about for this course.  So, for each banknote, we know a few numbers that were computed from a photograph of it as well as its class (whether it is counterfeit or not).  Let's load it into a table and take a look.
 
 
 {:.input_area}

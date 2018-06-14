@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/10/3/Empirical_Distribution_of_a_Statistic.ipynb
-previous:
+title: '10.3 Empirical Distibution of a Statistic'
+previouschapter:
   url: textbook/10/2/Sampling_from_a_Population
   title: '10.2 Sampling from a Population'
-next:
+nextchapter:
   url: textbook/11/Testing_Hypotheses
   title: '11. Testing Hypotheses'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### Empirical Distribution of a Statistic ###

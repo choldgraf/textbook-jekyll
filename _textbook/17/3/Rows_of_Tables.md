@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/17/3/Rows_of_Tables.ipynb
-previous:
+title: '17.3 Rows of Tables'
+previouschapter:
   url: textbook/17/2/Training_and_Testing
   title: '17.2 Training and Testing'
-next:
+nextchapter:
   url: textbook/17/4/Implementing_the_Classifier
   title: '17.4 Implementing the Classifier'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### Rows of Tables ###

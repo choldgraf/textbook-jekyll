@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/05/3/More_on_Arrays.ipynb
-previous:
+title: '5.3 More on Arrays'
+previouschapter:
   url: textbook/05/2/Ranges
   title: '5.2 Ranges'
-next:
+nextchapter:
   url: textbook/06/Tables
   title: '6. Tables'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 # More on Arrays

@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/03/1/Expressions.ipynb
-previous:
+title: '3.1 Expressions'
+previouschapter:
   url: textbook/03/programming-in-python
   title: '3. Programming in Python'
-next:
+nextchapter:
   url: textbook/03/2/Names
   title: '3.2 Names'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 Programming languages are much simpler than human languages. Nonetheless, there are some rules of grammar to learn in any language, and that is where we will begin. In this text, we will use the [Python](https://www.python.org/) programming language. Learning the grammar rules is essential, and the same rules used in the most basic programs are also central to more sophisticated programs.

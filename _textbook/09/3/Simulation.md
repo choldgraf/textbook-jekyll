@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/09/3/Simulation.ipynb
-previous:
+title: '9.3 Simulation'
+previouschapter:
   url: textbook/09/2/Iteration
   title: '9.2 Iteration'
-next:
+nextchapter:
   url: textbook/09/4/Monty_Hall_Problem
   title: '9.4 The Monty Hall Problem'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### Simulation ###

@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/11/1/Assessing_Models.ipynb
-previous:
+title: '11.1 Assessing Models'
+previouschapter:
   url: textbook/11/Testing_Hypotheses
   title: '11. Testing Hypotheses'
-next:
+nextchapter:
   url: textbook/11/2/Multiple_Categories
   title: '11.2 Multiple Categories'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### Assessing Models ###

@@ -1,13 +1,11 @@
 ---
-layout: textbook
-previous:
-  url: 
-  title: ''
-next:
+title: '1. Data Science'
+previouschapter:
+  url: textbook/intro
+  title: '0. Introduction'
+nextchapter:
   url: textbook/01/1/intro
   title: '1.1 Introduction'
-sidebar:
-  nav: sidebar-textbook
 ---
 What is Data Science
 ====================

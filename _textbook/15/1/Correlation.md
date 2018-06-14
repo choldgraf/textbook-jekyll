@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/15/1/Correlation.ipynb
-previous:
+title: '15.1 Correlation'
+previouschapter:
   url: textbook/15/Prediction
   title: '15. Prediction'
-next:
+nextchapter:
   url: textbook/15/2/Regression_Line
   title: '15.2 The Regression Line'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### Correlation ###

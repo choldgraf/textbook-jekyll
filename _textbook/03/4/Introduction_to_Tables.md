@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/03/4/Introduction_to_Tables.ipynb
-previous:
+title: '3.4 Introduction to Tables'
+previouschapter:
   url: textbook/03/3/Calls
   title: '3.3 Call Expressions'
-next:
+nextchapter:
   url: textbook/04/Types
   title: '4. Data Types'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 We can now apply Python to analyze data. We will work with data stored in Table structures.

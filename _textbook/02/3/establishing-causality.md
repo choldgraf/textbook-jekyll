@@ -1,13 +1,11 @@
 ---
-layout: textbook
-previous:
+title: '2.3 Establishing Causality'
+previouschapter:
   url: textbook/02/2/snow-s-grand-experiment
   title: '2.2 Snow’s “Grand Experiment”'
-next:
+nextchapter:
   url: textbook/02/4/randomization
   title: '2.4 Randomization'
-sidebar:
-  nav: sidebar-textbook
 ---
 Establishing Causality
 ----------------------

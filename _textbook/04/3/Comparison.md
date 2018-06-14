@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/04/3/Comparison.ipynb
-previous:
+title: '4.3 Comparisons'
+previouschapter:
   url: textbook/04/2/1/String_Methods
   title: '4.2.1 String Methods'
-next:
+nextchapter:
   url: textbook/05/Collections
   title: '5. Sequences'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 Boolean values most often arise from comparison operators. Python includes a variety of operators that compare values. For example, `3` is larger than `1 + 1`.

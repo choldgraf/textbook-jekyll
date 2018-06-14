@@ -33,10 +33,7 @@ hub_name                 : "DataHub"  # The name of your JupyterHub
 textbook_url             : "https://github.com/choldgraf/textbook-jekyll"  # The URL for your version of the textbook on GitHub.
 textbook_branch          : "master"  # The branch on which your textbook is hosted.
 number_chapters          : false  # Whether to number the chapers in the sidebar for the textbook
-
-collections:
-  textbook:
-    output: true
+chapter_titles           : false  # Whether to include the title of the chapter at the top of each chapter
 
 
 # breadcrumbs            : false # true, false (default)
@@ -222,6 +219,7 @@ plugins:
   - jekyll-gist
   - jekyll-feed
   - jemoji
+  - jekyll-redirect-from
 
 # mimic GitHub Pages with --safe
 whitelist:
@@ -230,6 +228,7 @@ whitelist:
   - jekyll-gist
   - jekyll-feed
   - jemoji
+  - jekyll-redirect-from
 
 
 # Archives
@@ -269,6 +268,11 @@ compress_html:
     envs: development
 
 
+collections:
+  textbook:
+    output: true
+
+
 # Defaults
 defaults:
   # _posts
@@ -293,3 +297,12 @@ defaults:
       sidebar: false
       masthead: true
       footer: true
+  # _textbook
+  - scope:
+      path: ""
+      type: textbook
+    values:
+      layout: textbook
+      masthead: false
+      sidebar:
+        nav: sidebar-textbook

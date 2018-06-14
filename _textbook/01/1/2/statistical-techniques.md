@@ -1,13 +1,11 @@
 ---
-layout: textbook
-previous:
+title: '1.1.2 Statistical Techniques'
+previouschapter:
   url: textbook/01/1/1/computational-tools
   title: '1.1.1 Computational Tools'
-next:
+nextchapter:
   url: textbook/01/2/why-data-science
   title: '1.2 Why Data Science?'
-sidebar:
-  nav: sidebar-textbook
 ---
 Statistical Techniques
 ----------------------

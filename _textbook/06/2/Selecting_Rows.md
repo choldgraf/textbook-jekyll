@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/06/2/Selecting_Rows.ipynb
-previous:
+title: '6.2 Selecting Rows'
+previouschapter:
   url: textbook/06/1/Sorting_Rows
   title: '6.1 Sorting Rows'
-next:
+nextchapter:
   url: textbook/06/3/Example_Trends_in_the_Population_of_the_United_States
   title: '6.3 Example: Population Trends'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 Often, we would like to extract just those rows that correspond to entries with a particular feature. For example, we might want only the rows corresponding to the Warriors, or to players who earned more than $\$10$ million. Or we might just want the top five earners.

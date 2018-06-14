@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/17/5/Accuracy_of_the_Classifier.ipynb
-previous:
+title: '17.5 The Accuracy of the Classifier'
+previouschapter:
   url: textbook/17/4/Implementing_the_Classifier
   title: '17.4 Implementing the Classifier'
-next:
+nextchapter:
   url: textbook/17/6/Multiple_Regression
   title: '17.6 Multiple Regression'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### The Accuracy of the Classifier ###

@@ -1,13 +1,11 @@
 ---
-layout: textbook
-previous:
+title: '2.2 Snow’s “Grand Experiment”'
+previouschapter:
   url: textbook/02/1/observation-and-visualization-john-snow-and-the-broad-street-pump
   title: '2.1 John Snow and the Broad Street Pump'
-next:
+nextchapter:
   url: textbook/02/3/establishing-causality
   title: '2.3 Establishing Causality'
-sidebar:
-  nav: sidebar-textbook
 ---
 Snow’s “Grand Experiment”
 -------------------------

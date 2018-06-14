@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/08/3/Cross-Classifying_by_More_than_One_Variable.ipynb
-previous:
+title: '8.3 Cross-Classifying'
+previouschapter:
   url: textbook/08/2/Classifying_by_One_Variable
   title: '8.2 Classifying by One Variable'
-next:
+nextchapter:
   url: textbook/08/4/Joining_Tables_by_Columns
   title: '8.4 Joining Tables by Columns'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### Cross-Classifying by More than One Variable ###

@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/14/6/Choosing_a_Sample_Size.ipynb
-previous:
+title: '14.6 Choosing a Sample Size'
+previouschapter:
   url: textbook/14/5/Variability_of_the_Sample_Mean
   title: '14.5 The Variability of the Sample Mean'
-next:
+nextchapter:
   url: textbook/15/Prediction
   title: '15. Prediction'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### Choosing a Sample Size ###

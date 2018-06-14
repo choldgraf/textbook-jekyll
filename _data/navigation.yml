@@ -7,7 +7,7 @@ main:
   - title: "Resources"
     url: /references/
   - title: "Textbook"
-    url: /textbook/
+    url: /textbook/intro
 
 
 # --- Textbook sidebar --- PROGRAMATICALLY GENERATED
@@ -15,6 +15,9 @@ sidebar-textbook:
   - title: Home
     class: level_0
     url: /
+  - title: '0. Introduction'
+    class: level_0
+    url: textbook/intro
   - title: '1. Data Science'
     class: level_0
     url: textbook/01/what-is-data-science

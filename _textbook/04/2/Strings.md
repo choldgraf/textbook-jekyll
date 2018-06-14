@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/04/2/Strings.ipynb
-previous:
+title: '4.2 Strings'
+previouschapter:
   url: textbook/04/1/Numbers
   title: '4.1 Numbers'
-next:
+nextchapter:
   url: textbook/04/2/1/String_Methods
   title: '4.2.1 String Methods'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 Much of the world's data is text, and a piece of text represented in a computer is called a *string*. A string can represent a word, a sentence, or even the contents of every book in a library. Since text can include numbers (like this: 5) or truth values (True), a string can also describe those things.

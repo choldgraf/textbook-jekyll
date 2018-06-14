@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/09/2/Iteration.ipynb
-previous:
+title: '9.2 Iteration'
+previouschapter:
   url: textbook/09/1/Conditional_Statements
   title: '9.1 Conditional Statements'
-next:
+nextchapter:
   url: textbook/09/3/Simulation
   title: '9.3 Simulation'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### Iteration ###

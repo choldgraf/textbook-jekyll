@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/12/1/AB_Testing.ipynb
-previous:
+title: '12.1 A/B Testing'
+previouschapter:
   url: textbook/12/Comparing_Two_Samples
   title: '12. Comparing Two Samples'
-next:
+nextchapter:
   url: textbook/12/2/Deflategate
   title: '12.2 Deflategate'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### A/B Testing ###

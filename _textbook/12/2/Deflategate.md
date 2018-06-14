@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/12/2/Deflategate.ipynb
-previous:
+title: '12.2 Deflategate'
+previouschapter:
   url: textbook/12/1/AB_Testing
   title: '12.1 A/B Testing'
-next:
+nextchapter:
   url: textbook/12/3/Causality
   title: '12.3 Causality'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### Deflategate ###

@@ -1,13 +1,11 @@
 ---
-layout: textbook
-previous:
+title: '2.5 Endnote'
+previouschapter:
   url: textbook/02/4/randomization
   title: '2.4 Randomization'
-next:
+nextchapter:
   url: textbook/03/programming-in-python
   title: '3. Programming in Python'
-sidebar:
-  nav: sidebar-textbook
 ---
 Endnote
 -------

@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/14/1/Properties_of_the_Mean.ipynb
-previous:
+title: '14.1 Properties of the Mean'
+previouschapter:
   url: textbook/14/Why_the_Mean_Matters
   title: '14. Why the Mean Matters'
-next:
+nextchapter:
   url: textbook/14/2/Variability
   title: '14.2 Variability'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### Properties of the Mean ###
@@ -71,7 +69,7 @@ We will now study some other properties that are helpful in understanding the me
 
 ### The Mean is a "Smoother" ##
 
-You can think of taking the mean as an "equalizing" or "smoothing" operation. For example, imagine the entries in `not_symmetric` above as the dollars in the pockets of four different people. To get the mean, you first put all of the money into one big pot and then divide it evenly among the four people. They had started out with different amounts of money in their pockets (\$2, \$3, \$3, and \$9), but now each person has \$4.25, the mean amount.
+You can think of taking the mean as an "equalizing" or "smoothing" operation. For example, imagine the entries in `not_symmetric` above as the dollars in the pockets of four different people. To get the mean, you first put all of the money into one big pot and then divide it evenly among the four people. They had started out with different amounts of money in their pockets (\$2, \\$3, \\$3, and \\$9), but now each person has \\$4.25, the mean amount.
 
 ### Proportions are Means ###
 If a collection consists only of ones and zeroes, then the sum of the collection is the number of ones in it, and the mean of the collection is the proportion of ones.
@@ -262,7 +260,7 @@ The table `sf2015` contains salary and benefits data for San Francisco City empl
 sf2015 = Table.read_table(path_data + 'san_francisco_2015.csv').where('Salaries', are.above(10000))
 ```
 
-As we saw earlier, the highest compensation was above \$600,000 but the vast majority of employees had compensations below \$300,000.
+As we saw earlier, the highest compensation was above \\$600,000 but the vast majority of employees had compensations below \\$300,000.
 
 
 {:.input_area}

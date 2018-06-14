@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/06/1/Sorting_Rows.ipynb
-previous:
+title: '6.1 Sorting Rows'
+previouschapter:
   url: textbook/06/Tables
   title: '6. Tables'
-next:
+nextchapter:
   url: textbook/06/2/Selecting_Rows
   title: '6.2 Selecting Rows'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 "The NBA is the highest paying professional sports league in the world," [reported CNN](http://edition.cnn.com/2015/12/04/sport/gallery/highest-paid-nba-players/) in March 2016. The table `nba_salaries` contains the salaries of all National Basketball Association players in 2015-2016.

@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/15/5/Visual_Diagnostics.ipynb
-previous:
+title: '15.5 Visual Diagnostics'
+previouschapter:
   url: textbook/15/4/Least_Squares_Regression
   title: '15.4 Least Squares Regression'
-next:
+nextchapter:
   url: textbook/15/6/Numerical_Diagnostics
   title: '15.6 Numerical Diagnostics'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### Visual Diagnostics ###

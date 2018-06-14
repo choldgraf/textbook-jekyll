@@ -1,13 +1,12 @@
 ---
-author_profile: false
-layout: textbook
-permalink: /
-masthead: false
-sidebar:
-    nav: sidebar-textbook
+title: '0. Introduction'
+previouschapter:
+  url: 
+  title: ''
+nextchapter:
+  url: textbook/01/what-is-data-science
+  title: '1. Data Science'
 ---
-
-
 Computational and Inferential Thinking
 ======================================
 

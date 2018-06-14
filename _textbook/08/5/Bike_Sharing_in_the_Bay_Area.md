@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/08/5/Bike_Sharing_in_the_Bay_Area.ipynb
-previous:
+title: '8.5 Bike Sharing in the Bay Area'
+previouschapter:
   url: textbook/08/4/Joining_Tables_by_Columns
   title: '8.4 Joining Tables by Columns'
-next:
+nextchapter:
   url: textbook/09/Randomness
   title: '9. Randomness'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### Bike Sharing in the Bay Area ###

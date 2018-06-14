@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/03/2/Names.ipynb
-previous:
+title: '3.2 Names'
+previouschapter:
   url: textbook/03/1/Expressions
   title: '3.1 Expressions'
-next:
+nextchapter:
   url: textbook/03/2/1/Growth
   title: '3.2.1 Example: Growth Rates'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 Names are given to values in Python using an *assignment* statement. In an assignment, a name is followed by `=`, which is followed by any expression. The value of the expression to the right of `=` is *assigned* to the name. Once a name has a value assigned to it, the value will be substituted for that name in future expressions.

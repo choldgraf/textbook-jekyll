@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/04/1/Numbers.ipynb
-previous:
+title: '4.1 Numbers'
+previouschapter:
   url: textbook/04/Types
   title: '4. Data Types'
-next:
+nextchapter:
   url: textbook/04/2/Strings
   title: '4.2 Strings'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 Computers are designed to perform numerical calculations, but there are some important details about working with numbers that every programmer working with quantitative data should know. Python (and most other programming languages) distinguishes between two different types of numbers:

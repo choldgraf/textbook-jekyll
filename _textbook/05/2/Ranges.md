@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/05/2/Ranges.ipynb
-previous:
+title: '5.2 Ranges'
+previouschapter:
   url: textbook/05/1/Arrays
   title: '5.1 Arrays'
-next:
+nextchapter:
   url: textbook/05/3/More_on_Arrays
   title: '5.3 More on Arrays'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 A *range* is an array of numbers in increasing or decreasing order, each separated by a regular interval. 

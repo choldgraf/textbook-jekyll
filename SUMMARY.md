@@ -1,5 +1,6 @@
 # Summary
 
+* [0. Introduction](notebooks/intro.md)
 * [1. Data Science](notebooks/01/what-is-data-science.md)
   * [1.1 Introduction](notebooks/01/1/intro.md)
     * [1.1.1 Computational Tools](notebooks/01/1/1/computational-tools.md)

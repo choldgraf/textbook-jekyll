@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/18/Updating_Predictions.ipynb
-previous:
+title: '18. Updating Predictions'
+previouschapter:
   url: textbook/17/6/Multiple_Regression
   title: '17.6 Multiple Regression'
-next:
+nextchapter:
   url: textbook/18/1/More_Likely_than_Not_Binary_Classifier
   title: '18.1 A "More Likely Than Not" Binary Classifier'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### Updating Predictions ###

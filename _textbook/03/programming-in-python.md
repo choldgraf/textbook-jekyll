@@ -1,13 +1,11 @@
 ---
-layout: textbook
-previous:
+title: '3. Programming in Python'
+previouschapter:
   url: textbook/02/5/endnote
   title: '2.5 Endnote'
-next:
+nextchapter:
   url: textbook/03/1/Expressions
   title: '3.1 Expressions'
-sidebar:
-  nav: sidebar-textbook
 ---
 Programming in Python
 =====================

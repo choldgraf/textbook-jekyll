@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/05/Collections.ipynb
-previous:
+title: '5. Sequences'
+previouschapter:
   url: textbook/04/3/Comparison
   title: '4.3 Comparisons'
-next:
+nextchapter:
   url: textbook/05/1/Arrays
   title: '5.1 Arrays'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 Values can be grouped together into collections, which allows programmers to organize those values and refer to all of them with a single name. By grouping values together, we can write code that performs a computation on many pieces of data at once.

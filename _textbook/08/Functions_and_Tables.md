@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/08/Functions_and_Tables.ipynb
-previous:
+title: '8. Functions and Tables'
+previouschapter:
   url: textbook/07/3/Overlaid_Graphs
   title: '7.3 Overlaid Graphs'
-next:
+nextchapter:
   url: textbook/08/1/Applying_a_Function_to_a_Column
   title: '8.1 Applying Functions to Columns'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### Functions and Tables ###

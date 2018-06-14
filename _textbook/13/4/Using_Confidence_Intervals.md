@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/13/4/Using_Confidence_Intervals.ipynb
-previous:
+title: '13.4 Using Confidence Intervals'
+previouschapter:
   url: textbook/13/3/Confidence_Intervals
   title: '13.3 Confidence Intervals'
-next:
+nextchapter:
   url: textbook/14/Why_the_Mean_Matters
   title: '14. Why the Mean Matters'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 

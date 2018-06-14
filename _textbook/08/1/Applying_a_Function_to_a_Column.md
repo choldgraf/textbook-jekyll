@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/08/1/Applying_a_Function_to_a_Column.ipynb
-previous:
+title: '8.1 Applying Functions to Columns'
+previouschapter:
   url: textbook/08/Functions_and_Tables
   title: '8. Functions and Tables'
-next:
+nextchapter:
   url: textbook/08/2/Classifying_by_One_Variable
   title: '8.2 Classifying by One Variable'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### Applying a Function to a Column ###

@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/10/Sampling_and_Empirical_Distributions.ipynb
-previous:
+title: '10. Sampling and Empirical Distributions'
+previouschapter:
   url: textbook/09/5/Finding_Probabilities
   title: '9.5 Finding Probabilities'
-next:
+nextchapter:
   url: textbook/10/1/Empirical_Distributions
   title: '10.1 Empirical Distributions'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### Sampling and Empirical Distributions ###

@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/11/Testing_Hypotheses.ipynb
-previous:
+title: '11. Testing Hypotheses'
+previouschapter:
   url: textbook/10/3/Empirical_Distribution_of_a_Statistic
   title: '10.3 Empirical Distibution of a Statistic'
-next:
+nextchapter:
   url: textbook/11/1/Assessing_Models
   title: '11.1 Assessing Models'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### Testing Hypotheses ###

@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/13/1/Percentiles.ipynb
-previous:
+title: '13.1 Percentiles'
+previouschapter:
   url: textbook/13/Estimation
   title: '13. Estimation'
-next:
+nextchapter:
   url: textbook/13/2/Bootstrap
   title: '13.2 The Bootstrap'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### Percentiles ###

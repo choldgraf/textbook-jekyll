@@ -54,13 +54,14 @@ def _clean_lines(lines):
         # Images: replace relative image paths to baseurl paths
         for IMG_STRING in IMG_STRINGS:
             line = line.replace(IMG_STRING, '{{ site.baseurl }}/images')
-
-        dollars = np.where(['$' == char for char in line])[0]
+        # Adding escape slashes since Jekyll removes them
         # Make sure we have at least two dollar signs and they
         # Aren't right next to each other
+        dollars = np.where(['$' == char for char in line])[0]
         if len(dollars) > 2 and all(ii > 1 for ii in (dollars[1:] - dollars[:1])):
             for char in inline_replace_chars:
                 line = line.replace('\\#', '\\\\#')
+        line = line.replace(' \\$', ' \\\\$')
         lines[ii] = line
     return lines
 
@@ -208,17 +209,15 @@ if __name__ == '__main__':
         # Front-matter YAML
         yaml = []
         yaml += ['---']
-        yaml += ['layout: textbook']
         if link.endswith('.ipynb'):
             yaml += ['interact_link: {}'.format(link.lstrip('./'))]
-        yaml += ['previous:']
+        yaml += ["title: '{}'".format(title)]
+        yaml += ['previouschapter:']
         yaml += ['  url: {}'.format(prev_page_link.lstrip('._').replace('"', "'"))]
         yaml += ["  title: '{}'".format(prev_file_title)]
-        yaml += ['next:']
+        yaml += ['nextchapter:']
         yaml += ['  url: {}'.format(next_page_link.lstrip('._').replace('"', "'"))]
         yaml += ["  title: '{}'".format(next_file_title)]
-        yaml += ['sidebar:']
-        yaml += ['  nav: sidebar-textbook']
         yaml += ['---']
         yaml = [ii + '\n' for ii in yaml]
         lines = yaml + lines

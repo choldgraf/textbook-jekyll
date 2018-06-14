@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/12/3/Causality.ipynb
-previous:
+title: '12.3 Causality'
+previouschapter:
   url: textbook/12/2/Deflategate
   title: '12.2 Deflategate'
-next:
+nextchapter:
   url: textbook/13/Estimation
   title: '13. Estimation'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### Causality ###

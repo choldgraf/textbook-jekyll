@@ -74,8 +74,9 @@ This should open up a port on your computer with a live version of the textbook.
     * [2.2 Snow’s “Grand Experiment”](notebooks/02/2/snow-s-grand-experiment.md)
    ```
 ### Auto-generated folders and files
-* `images/ntbk` contains images *generated* during the notebook conversion
+* `images/textbook` contains images *generated* during the notebook conversion
 * `_textbook/` contain notebooks converted to markdown
+* `_site/` contains the HTML for the built site. It is created by Jekyll, and should only exist if you build the site locally
 
 ### Repository configuration and build files
 * `_config.yml` contains all site configuration.

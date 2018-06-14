@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/13/2/Bootstrap.ipynb
-previous:
+title: '13.2 The Bootstrap'
+previouschapter:
   url: textbook/13/1/Percentiles
   title: '13.1 Percentiles'
-next:
+nextchapter:
   url: textbook/13/3/Confidence_Intervals
   title: '13.3 Confidence Intervals'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### The Bootstrap ###
@@ -177,7 +175,7 @@ sf2015.sort('Total Compensation')
 
 
 
-For clarity of comparison, we will focus our attention on those who had at least the equivalent of a half-time job for the whole year. At a minimum wage of about \$10 per hour, and 20 hours per week for 52 weeks, that's a salary of about \$10,000.
+For clarity of comparison, we will focus our attention on those who had at least the equivalent of a half-time job for the whole year. At a minimum wage of about \\$10 per hour, and 20 hours per week for 52 weeks, that's a salary of about \\$10,000.
 
 
 {:.input_area}
@@ -215,7 +213,7 @@ sf2015.select('Total Compensation').hist(bins=sf_bins)
 ![png]({{ site.baseurl }}/images/textbook/13/2/Bootstrap_13_0.png)
 
 
-While most of the values are below \$300,000, a few are quite a bit higher. For example, the total compensation of the Chief Investment Officer was almost \$650,000. That is why the horizontal axis stretches to \$700,000.
+While most of the values are below \\$300,000, a few are quite a bit higher. For example, the total compensation of the Chief Investment Officer was almost \\$650,000. That is why the horizontal axis stretches to \\$700,000.
 
 
 {:.input_area}
@@ -265,7 +263,7 @@ pop_median
 
 
 
-The median total compensation of all employees was just over \$110,300. 
+The median total compensation of all employees was just over \\$110,300. 
 
 From a practical perspective, there is no reason for us to draw a sample to estimate this parameter since we simply know its value. But in this section we are going to pretend we don't know the value, and see how well we can estimate it based on a random sample. 
 
@@ -430,7 +428,7 @@ plots.scatter(pop_median, 0, color='red', s=30);
 ![png]({{ site.baseurl }}/images/textbook/13/2/Bootstrap_35_0.png)
 
 
-It is important to remember that the red dot is fixed: it is \$110,305.79, the population median. The empirical histogram is the result of random draws, and will be situated randomly relative to the red dot. 
+It is important to remember that the red dot is fixed: it is \\$110,305.79, the population median. The empirical histogram is the result of random draws, and will be situated randomly relative to the red dot. 
 
 Remember also that the point of all these computations is to estimate the population median, which is the red dot. Our estimates are all the randomly generated sampled medians whose histogram you see above. We want those estimates to contain the parameter – it they don't, then they are off.
 
@@ -474,7 +472,7 @@ right
 
 
 
-The population median of \$110,305 is between these two numbers. The interval and the population median are shown on the histogram below.
+The population median of \\$110,305 is between these two numbers. The interval and the population median are shown on the histogram below.
 
 
 {:.input_area}

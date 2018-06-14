@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/16/1/Regression_Model.ipynb
-previous:
+title: '16.1 A Regression Model'
+previouschapter:
   url: textbook/16/Inference_for_Regression
   title: '16. Inference for Regression'
-next:
+nextchapter:
   url: textbook/16/2/Inference_for_the_True_Slope
   title: '16.2 Inference for the True Slope'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### A Regression Model ###

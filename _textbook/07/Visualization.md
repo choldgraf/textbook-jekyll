@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/07/Visualization.ipynb
-previous:
+title: '7. Visualization'
+previouschapter:
   url: textbook/06/4/Example_Gender_Ratio_in_the_US_Population
   title: '6.4 Example: Trends in Gender'
-next:
+nextchapter:
   url: textbook/07/1/Visualizing_Categorical_Distributions
   title: '7.1 Categorical Distributions'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### Visualization ###

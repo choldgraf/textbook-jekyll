@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/06/Tables.ipynb
-previous:
+title: '6. Tables'
+previouschapter:
   url: textbook/05/3/More_on_Arrays
   title: '5.3 More on Arrays'
-next:
+nextchapter:
   url: textbook/06/1/Sorting_Rows
   title: '6.1 Sorting Rows'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 Tables are a fundamental object type for representing data sets. A table can be viewed in two ways:

@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/11/2/Multiple_Categories.ipynb
-previous:
+title: '11.2 Multiple Categories'
+previouschapter:
   url: textbook/11/1/Assessing_Models
   title: '11.1 Assessing Models'
-next:
+nextchapter:
   url: textbook/11/3/Decisions_and_Uncertainty
   title: '11.3 Decisions and Uncertainty'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### Multiple Categories ###

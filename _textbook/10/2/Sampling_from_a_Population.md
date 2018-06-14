@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/10/2/Sampling_from_a_Population.ipynb
-previous:
+title: '10.2 Sampling from a Population'
+previouschapter:
   url: textbook/10/1/Empirical_Distributions
   title: '10.1 Empirical Distributions'
-next:
+nextchapter:
   url: textbook/10/3/Empirical_Distribution_of_a_Statistic
   title: '10.3 Empirical Distibution of a Statistic'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### Sampling from a Population ###

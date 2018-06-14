@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/15/2/Regression_Line.ipynb
-previous:
+title: '15.2 The Regression Line'
+previouschapter:
   url: textbook/15/1/Correlation
   title: '15.1 Correlation'
-next:
+nextchapter:
   url: textbook/15/3/Method_of_Least_Squares
   title: '15.3 The Method of Least Squares'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### The Regression Line ###

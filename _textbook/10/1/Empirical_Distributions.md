@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/10/1/Empirical_Distributions.ipynb
-previous:
+title: '10.1 Empirical Distributions'
+previouschapter:
   url: textbook/10/Sampling_and_Empirical_Distributions
   title: '10. Sampling and Empirical Distributions'
-next:
+nextchapter:
   url: textbook/10/2/Sampling_from_a_Population
   title: '10.2 Sampling from a Population'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### Empirical Distributions ###

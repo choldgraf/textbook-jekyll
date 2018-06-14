@@ -1,13 +1,11 @@
 ---
-layout: textbook
-previous:
+title: '1.1.1 Computational Tools'
+previouschapter:
   url: textbook/01/1/intro
   title: '1.1 Introduction'
-next:
+nextchapter:
   url: textbook/01/1/2/statistical-techniques
   title: '1.1.2 Statistical Techniques'
-sidebar:
-  nav: sidebar-textbook
 ---
 Computational Tools
 -------------------

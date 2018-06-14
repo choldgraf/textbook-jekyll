@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/15/Prediction.ipynb
-previous:
+title: '15. Prediction'
+previouschapter:
   url: textbook/14/6/Choosing_a_Sample_Size
   title: '14.6 Choosing a Sample Size'
-next:
+nextchapter:
   url: textbook/15/1/Correlation
   title: '15.1 Correlation'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### Prediction ###

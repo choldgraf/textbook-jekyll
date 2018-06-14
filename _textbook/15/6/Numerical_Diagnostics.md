@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/15/6/Numerical_Diagnostics.ipynb
-previous:
+title: '15.6 Numerical Diagnostics'
+previouschapter:
   url: textbook/15/5/Visual_Diagnostics
   title: '15.5 Visual Diagnostics'
-next:
+nextchapter:
   url: textbook/16/Inference_for_Regression
   title: '16. Inference for Regression'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### Numerical Diagnostics ###

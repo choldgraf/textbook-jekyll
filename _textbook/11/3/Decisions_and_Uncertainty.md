@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/11/3/Decisions_and_Uncertainty.ipynb
-previous:
+title: '11.3 Decisions and Uncertainty'
+previouschapter:
   url: textbook/11/2/Multiple_Categories
   title: '11.2 Multiple Categories'
-next:
+nextchapter:
   url: textbook/12/Comparing_Two_Samples
   title: '12. Comparing Two Samples'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### Decisions and Uncertainty ###

@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/17/2/Training_and_Testing.ipynb
-previous:
+title: '17.2 Training and Testing'
+previouschapter:
   url: textbook/17/1/Nearest_Neighbors
   title: '17.1 Nearest Neighbors'
-next:
+nextchapter:
   url: textbook/17/3/Rows_of_Tables
   title: '17.3 Rows of Tables'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### Training and Testing ###

@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/07/2/Visualizing_Numerical_Distributions.ipynb
-previous:
+title: '7.2 Numerical Distributions'
+previouschapter:
   url: textbook/07/1/Visualizing_Categorical_Distributions
   title: '7.1 Categorical Distributions'
-next:
+nextchapter:
   url: textbook/07/3/Overlaid_Graphs
   title: '7.3 Overlaid Graphs'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### Visualizing Numerical Distributions ###
@@ -261,7 +259,7 @@ bin_counts.show()
 </div>
 
 
-Notice the `bin` value 2000 in the last row. That's not the left end-point of any bar – it's the right end point of the last bar. By the endpoint convention, the data there are not included. So the corresponding `count` is recorded as 0, and would have been recorded as 0 even if there had been movies that made more than \$2,000$ million dollars. When either `bin` or `hist` is called with a `bins` argument, the graph only considers values that are in the specified bins.
+Notice the `bin` value 2000 in the last row. That's not the left end-point of any bar – it's the right end point of the last bar. By the endpoint convention, the data there are not included. So the corresponding `count` is recorded as 0, and would have been recorded as 0 even if there had been movies that made more than \\$2,000$ million dollars. When either `bin` or `hist` is called with a `bins` argument, the graph only considers values that are in the specified bins.
 
 Once values have been binned, the resulting counts can be used to generate a histogram using the `bin_column` named argument to specify which column contains the bin lower bounds.
 

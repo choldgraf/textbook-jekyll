@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/06/4/Example_Gender_Ratio_in_the_US_Population.ipynb
-previous:
+title: '6.4 Example: Trends in Gender'
+previouschapter:
   url: textbook/06/3/Example_Trends_in_the_Population_of_the_United_States
   title: '6.3 Example: Population Trends'
-next:
+nextchapter:
   url: textbook/07/Visualization
   title: '7. Visualization'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 We are now equipped with enough coding skills to examine features and trends in subgroups of the U.S. population. In this example, we will look at the distribution of males and females across age groups. We will continue using the `us_pop` table from the previous section.

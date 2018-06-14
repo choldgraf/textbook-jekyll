@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/17/Classification.ipynb
-previous:
+title: '17. Classification'
+previouschapter:
   url: textbook/16/3/Prediction_Intervals
   title: '16.3 Prediction Intervals'
-next:
+nextchapter:
   url: textbook/17/1/Nearest_Neighbors
   title: '17.1 Nearest Neighbors'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### Classification ###

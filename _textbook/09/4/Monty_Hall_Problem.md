@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/09/4/Monty_Hall_Problem.ipynb
-previous:
+title: '9.4 The Monty Hall Problem'
+previouschapter:
   url: textbook/09/3/Simulation
   title: '9.3 Simulation'
-next:
+nextchapter:
   url: textbook/09/5/Finding_Probabilities
   title: '9.5 Finding Probabilities'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### The Monty Hall Problem ###

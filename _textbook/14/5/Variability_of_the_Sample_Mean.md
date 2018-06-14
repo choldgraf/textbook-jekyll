@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/14/5/Variability_of_the_Sample_Mean.ipynb
-previous:
+title: '14.5 The Variability of the Sample Mean'
+previouschapter:
   url: textbook/14/4/Central_Limit_Theorem
   title: '14.4 The Central Limit Theorem'
-next:
+nextchapter:
   url: textbook/14/6/Choosing_a_Sample_Size
   title: '14.6 Choosing a Sample Size'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### The Variability of the Sample Mean ###

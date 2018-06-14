@@ -1,13 +1,11 @@
 ---
-layout: textbook
-previous:
+title: '2. Causality and Experiments'
+previouschapter:
   url: textbook/01/3/2/Another_Kind_Of_Character
   title: '1.3.2 Another Kind of Character'
-next:
+nextchapter:
   url: textbook/02/1/observation-and-visualization-john-snow-and-the-broad-street-pump
   title: '2.1 John Snow and the Broad Street Pump'
-sidebar:
-  nav: sidebar-textbook
 ---
 Causality and Experiments
 ======================

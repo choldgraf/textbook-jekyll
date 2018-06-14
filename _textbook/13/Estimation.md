@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/13/Estimation.ipynb
-previous:
+title: '13. Estimation'
+previouschapter:
   url: textbook/12/3/Causality
   title: '12.3 Causality'
-next:
+nextchapter:
   url: textbook/13/1/Percentiles
   title: '13.1 Percentiles'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### Estimation ###

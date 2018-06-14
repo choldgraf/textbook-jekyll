@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/09/Randomness.ipynb
-previous:
+title: '9. Randomness'
+previouschapter:
   url: textbook/08/5/Bike_Sharing_in_the_Bay_Area
   title: '8.5 Bike Sharing in the Bay Area'
-next:
+nextchapter:
   url: textbook/09/1/Conditional_Statements
   title: '9.1 Conditional Statements'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### Randomness ###

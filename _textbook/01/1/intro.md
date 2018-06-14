@@ -1,13 +1,11 @@
 ---
-layout: textbook
-previous:
+title: '1.1 Introduction'
+previouschapter:
   url: textbook/01/what-is-data-science
   title: '1. Data Science'
-next:
+nextchapter:
   url: textbook/01/1/1/computational-tools
   title: '1.1.1 Computational Tools'
-sidebar:
-  nav: sidebar-textbook
 ---
 Chapter 1: Introduction
 =======================

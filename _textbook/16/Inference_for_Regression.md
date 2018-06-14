@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/16/Inference_for_Regression.ipynb
-previous:
+title: '16. Inference for Regression'
+previouschapter:
   url: textbook/15/6/Numerical_Diagnostics
   title: '15.6 Numerical Diagnostics'
-next:
+nextchapter:
   url: textbook/16/1/Regression_Model
   title: '16.1 A Regression Model'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### Inference for Regression ###

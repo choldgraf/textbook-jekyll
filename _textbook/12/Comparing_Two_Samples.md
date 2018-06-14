@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/12/Comparing_Two_Samples.ipynb
-previous:
+title: '12. Comparing Two Samples'
+previouschapter:
   url: textbook/11/3/Decisions_and_Uncertainty
   title: '11.3 Decisions and Uncertainty'
-next:
+nextchapter:
   url: textbook/12/1/AB_Testing
   title: '12.1 A/B Testing'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### Comparing Two Samples ###

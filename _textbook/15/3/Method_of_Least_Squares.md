@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/15/3/Method_of_Least_Squares.ipynb
-previous:
+title: '15.3 The Method of Least Squares'
+previouschapter:
   url: textbook/15/2/Regression_Line
   title: '15.2 The Regression Line'
-next:
+nextchapter:
   url: textbook/15/4/Least_Squares_Regression
   title: '15.4 Least Squares Regression'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### The Method of Least Squares ###

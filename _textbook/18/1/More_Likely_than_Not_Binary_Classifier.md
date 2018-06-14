@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/18/1/More_Likely_than_Not_Binary_Classifier.ipynb
-previous:
+title: '18.1 A "More Likely Than Not" Binary Classifier'
+previouschapter:
   url: textbook/18/Updating_Predictions
   title: '18. Updating Predictions'
-next:
+nextchapter:
   url: textbook/18/2/Making_Decisions
   title: '18.2 Making Decisions'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### A "More Likely Than Not" Binary Classifier ###
@@ -200,26 +198,29 @@ We will state the rule in the context of our population of students. First, some
 
 **Posterior probabilities.** These are the chances of the two Year categories, *after* we have taken into account information about the Major declaration status. We computed one of these:
 
-The *posterior probability* that the student is a Third Year, given that the student has Declared, is denoted $P(\mbox{Third Year} ~\big{|}~ \mbox{Declared})$ and is calculated as follows.
+The *posterior probability* that the student is a Third Year, given that the student has Declared, is denoted $P(\text{Third Year} ~\big{\vert}~ Declared)$ and is calculated as follows.
 
+$$
 \begin{align*}
-P(\mbox{Third Year} ~\big{|}~ \mbox{Declared}) 
+P(Third Year ~\big{\vert}~ Declared) 
 ~ &=~ \frac{ 0.4 \times 0.8}{0.6 \times 0.5 ~+~ 0.4 \times  0.8} \\ \\
 &=~ \frac{\mbox{(prior probability of Third Year)} \times
 \mbox{(likelihood of Declared given Third Year)}}
 {\mbox{total probability of Declared}}
 \end{align*}
+$$
 
 The other posterior probability is
 
+$$
 \begin{align*}
-P(\mbox{Second Year} ~\big{|}~ \mbox{Declared})
+P(\mbox{Second Year} ~\big{\vert}~ \mbox{Declared})
 ~ &=~ \frac{ 0.6 \times 0.5}{0.6 \times 0.5 ~+~ 0.4 \times  0.8} \\ \\
 &=~ \frac{\mbox{(prior probability of Second Year)} \times
 \mbox{(likelihood of Declared given Second Year)}}
 {\mbox{total probability of Declared}}
 \end{align*}
-
+$$
 
 
 {:.input_area}

@@ -1,14 +1,12 @@
 ---
-layout: textbook
 interact_link: notebooks/08/4/Joining_Tables_by_Columns.ipynb
-previous:
+title: '8.4 Joining Tables by Columns'
+previouschapter:
   url: textbook/08/3/Cross-Classifying_by_More_than_One_Variable
   title: '8.3 Cross-Classifying'
-next:
+nextchapter:
   url: textbook/08/5/Bike_Sharing_in_the_Bay_Area
   title: '8.5 Bike Sharing in the Bay Area'
-sidebar:
-  nav: sidebar-textbook
 ---
 
 ### Joining Tables by Columns ###
