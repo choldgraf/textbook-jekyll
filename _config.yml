@@ -25,14 +25,19 @@ baseurl                  : "/textbook-jekyll" # the subpath of your site, e.g. "
 repository               : # GitHub username/repo-name for this site
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 footer                   : false # Whether to include a footer with the built site
-masthead                 : false  # Whether to include a masthead with the site. If false, the site will *only* be a textbook.
+masthead                 : true  # Whether to include a masthead with the site. If false, the site will *only* be a textbook.
 
-# Data 8 settings
+# Textbook settings
 hub_url                  : "http://datahub.berkeley.edu"  # The URL for your JupyterHub. Should be a string.
 hub_name                 : "DataHub"  # The name of your JupyterHub
 textbook_url             : "https://github.com/choldgraf/textbook-jekyll"  # The URL for your version of the textbook on GitHub.
 textbook_branch          : "master"  # The branch on which your textbook is hosted.
 number_chapters          : false  # Whether to number the chapers in the sidebar for the textbook
+
+collections:
+  textbook:
+    output: true
+
 
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
@@ -68,8 +73,8 @@ reCaptcha:
   secret                 :
 atom_feed:
   path                   : # blank (default) uses feed.xml
-search                   : # true, false (default)
-search_full_content      : # true, false (default)
+search                   : true # true, false (default)
+search_full_content      : false # true, false (default)
 search_provider          : # lunr (default), algolia
 algolia:
   application_id         : # YOUR_APPLICATION_ID

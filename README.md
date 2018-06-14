@@ -18,13 +18,13 @@ are steps to get started:
 3. Ensure that a `SUMMARY.md` file exists in the root of the repository. This contains
    a markdown list of bullet points and links. Each item corresponds to a chapter in the
    textbook, and is used to build the table of contents in the sidebar.
-   
+
    If you **do not** have a `SUMMARY.md` file made for this textbook, you may create one
    by hand, or generate one from the folders/files in `notebooks/` by running the following
    script:
-   
+
        python scripts/generate_summary_from_folders.py
-       
+
 3. Build the textbook with the following command:
 
        python scripts/generate_textbook.py
@@ -63,7 +63,7 @@ This should open up a port on your computer with a live version of the textbook.
 * `images/` contains images referenced in the course
 * `SUMMARY.md` contains a markdown list of chapters / paths to your textbook files. For
   example, here is a sample from the Data 8 textbook:
-  
+
   ```
   * [1. Data Science](notebooks/01/what-is-data-science.md)
     * [1.1 Introduction](notebooks/01/1/intro.md)
@@ -75,7 +75,7 @@ This should open up a port on your computer with a live version of the textbook.
    ```
 ### Auto-generated folders and files
 * `images/ntbk` contains images *generated* during the notebook conversion
-* `textbook/` contain notebooks converted to markdown
+* `_textbook/` contain notebooks converted to markdown
 
 ### Repository configuration and build files
 * `_config.yml` contains all site configuration.

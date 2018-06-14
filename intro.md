@@ -11,16 +11,6 @@ sidebar:
 Computational and Inferential Thinking
 ======================================
 
-<!-- Required to ensure that mathjax loads correctly on interior pages... -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-      processEscapes: true
-    }
-  });
-</script>
-
 The Foundations of Data Science
 -------------------------------
 

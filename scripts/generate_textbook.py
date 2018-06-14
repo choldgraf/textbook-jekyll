@@ -46,7 +46,9 @@ def _strip_suffixes(string, suffixes=None):
 
 def _clean_lines(lines):
     """Replace images with jekyll image root and add escape chars as needed."""
-    IMG_STRINGS = [ii*'../' + IMAGES_FOLDER for ii in range(4)]
+    IMAGES_FOLDER_NAME = IMAGES_FOLDER.split(os.sep)[-1]
+    IMG_STRINGS = [op.join(*(['..']*ii + [IMAGES_FOLDER_NAME])) for ii in np.arange(1, 5)[::-1]]  # To replace relative filepaths in markdown
+    IMG_STRINGS.append(IMAGES_FOLDER)  # This is the nbconvert-generated name
     inline_replace_chars = ['#']
     for ii, line in enumerate(lines):
         # Images: replace relative image paths to baseurl paths
@@ -79,8 +81,8 @@ def _generate_sidebar(files):
             if site_yaml.get('number_chapters', False) is True:
                 title = '{}. {}'.format(chapter_ix, title)
             chapter_ix += 1
-        new_link = link.replace(NOTEBOOKS_FOLDER_NAME, TEXTBOOK_FOLDER_NAME)
-        new_link = _strip_suffixes(new_link).strip('.')
+        new_link = link.replace(NOTEBOOKS_FOLDER_NAME, TEXTBOOK_FOLDER_NAME.lstrip('_'))
+        new_link = _strip_suffixes(new_link).lstrip('.')
         space = '  ' if level == 0 else '    '
         level = int(level)
         sidebar_text.append(space + "- title: '{}'".format(title))
@@ -123,7 +125,7 @@ if __name__ == '__main__':
     SITE_NAVIGATION = op.join(SITE_ROOT, '_data', 'navigation.yml')
     CONFIG_FILE = op.join(SITE_ROOT, '_config.yml')
     TEMPLATE_PATH = op.join(SITE_ROOT, 'assets', 'templates', 'jekyllmd.tpl')
-    TEXTBOOK_FOLDER_NAME = 'textbook'
+    TEXTBOOK_FOLDER_NAME = '_textbook'
     NOTEBOOKS_FOLDER_NAME = 'notebooks'
     TEXTBOOK_FOLDER = op.join(SITE_ROOT, TEXTBOOK_FOLDER_NAME)
     NOTEBOOKS_FOLDER = op.join(SITE_ROOT, NOTEBOOKS_FOLDER_NAME)
@@ -156,18 +158,18 @@ if __name__ == '__main__':
 
         # Collect previous/next md file for pagination
         if ix_file == 0:
-            prev_file_link = ''
+            prev_page_link = ''
             prev_file_title = ''
         else:
-            prev_file_title, prev_file_link, _ = files[ix_file-1]
-            prev_file_link = _strip_suffixes(prev_file_link.replace(NOTEBOOKS_FOLDER_NAME, TEXTBOOK_FOLDER_NAME))
+            prev_file_title, prev_page_link, _ = files[ix_file-1]
+            prev_page_link = _strip_suffixes(prev_page_link.replace(NOTEBOOKS_FOLDER_NAME, TEXTBOOK_FOLDER_NAME))
 
         if ix_file == len(files) - 1:
-            next_file_link = ''
+            next_page_link = ''
             next_file_title = ''
         else:
-            next_file_title, next_file_link, _ = files[ix_file+1]
-            next_file_link = _strip_suffixes(next_file_link.replace(NOTEBOOKS_FOLDER_NAME, TEXTBOOK_FOLDER_NAME))
+            next_file_title, next_page_link, _ = files[ix_file+1]
+            next_page_link = _strip_suffixes(next_page_link.replace(NOTEBOOKS_FOLDER_NAME, TEXTBOOK_FOLDER_NAME))
 
         # Convert notebooks or just copy md if no notebook.
         if link.endswith('.ipynb'):
@@ -179,9 +181,11 @@ if __name__ == '__main__':
             _clean_notebook(tmp_notebook)
 
             # Run nbconvert moving it to the output folder
+            # This is the output directory for `.md` files
             build_call = '--FilesWriter.build_directory={}'.format(new_folder)
+            # This is where images go - remove the _ so Jekyll will copy them over
             images_call = '--NbConvertApp.output_files_dir={}'.format(
-                op.join(IMAGES_FOLDER, new_folder))
+                op.join(IMAGES_FOLDER, new_folder.lstrip('_')))
             call = ['jupyter', 'nbconvert', '--log-level="CRITICAL"',
                     '--to', 'markdown', '--template', TEMPLATE_PATH,
                     images_call, build_call, tmp_notebook]
@@ -208,10 +212,10 @@ if __name__ == '__main__':
         if link.endswith('.ipynb'):
             yaml += ['interact_link: {}'.format(link.lstrip('./'))]
         yaml += ['previous:']
-        yaml += ['  url: {}'.format(prev_file_link.lstrip('.').replace('"', "'"))]
+        yaml += ['  url: {}'.format(prev_page_link.lstrip('._').replace('"', "'"))]
         yaml += ["  title: '{}'".format(prev_file_title)]
         yaml += ['next:']
-        yaml += ['  url: {}'.format(next_file_link.lstrip('.').replace('"', "'"))]
+        yaml += ['  url: {}'.format(next_page_link.lstrip('._').replace('"', "'"))]
         yaml += ["  title: '{}'".format(next_file_title)]
         yaml += ['sidebar:']
         yaml += ['  nav: sidebar-textbook']
